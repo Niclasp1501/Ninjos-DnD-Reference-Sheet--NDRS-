@@ -1,0 +1,166 @@
+<div class="ndrs-app-container">
+
+    <header class="ndrs-topbar">
+        <div class="ndrs-topbar-row">
+            <div class="ndrs-logo">D&amp;D 5.5 <span>{{localize "NDRS.Subtitle"}}</span></div>
+            <div class="ndrs-search">
+                <i class="fas fa-search" style="color:#999"></i>
+                <input type="text" id="ndrs-search-input" placeholder="{{localize "NDRS.UI.SearchPlaceholder"}}" />
+                {{#if search}}
+                <button type="button" data-action="clearSearch" title="{{localize 'NDRS.UI.SearchClear'}}">
+                    <i class="fas fa-times"></i>
+                </button>
+                {{/if}}
+            </div>
+        </div>
+        <nav class="ndrs-tabs">
+            {{#each tabs}}
+            <button type="button"
+                    class="ndrs-tab-btn {{#if active}}active{{/if}}"
+                    data-action="selectTab" data-tab="{{id}}">
+                <i class="fas {{iconClass}}"></i>{{label}}
+            </button>
+            {{/each}}
+        </nav>
+    </header>
+
+    <main class="ndrs-content">
+        {{#each sections}}
+            <section class="ndrs-section">
+                <div class="ndrs-section-header">{{localize titleKey}}</div>
+
+                {{#if custom}}
+                    {{#if (eq custom "exhaustion")}}
+                        <p class="ndrs-exh-intro">{{data.intro}}</p>
+                        <table class="ndrs-exh-table">
+                            <thead>
+                                <tr>
+                                    <th>{{localize "NDRS.UI.ExhaustionLevel"}}</th>
+                                    <th>{{localize "NDRS.UI.ExhaustionEffect"}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each data.levels}}
+                                <tr>
+                                    <td>
+                                        <span class="ndrs-exh-level-badge {{#if isDeath}}is-death{{/if}}">{{level}}</span>
+                                    </td>
+                                    <td>{{desc}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <p class="ndrs-exh-notes">{{data.notes}}</p>
+                    {{/if}}
+
+                    {{#if (eq custom "calendar")}}
+                        <div class="ndrs-calendar-intro">{{data.intro}}</div>
+
+                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarMonths"}}</div>
+                        <div class="ndrs-calendar-grid">
+                            {{#each data.months}}
+                            <div class="ndrs-calendar-month">
+                                <div class="ndrs-calendar-month-name">{{name}}</div>
+                                <div class="ndrs-calendar-month-meta">30 Tage · 3 × {{../data.weekName}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarHolidays"}}</div>
+                        {{#each data.holidays}}
+                        <div class="ndrs-calendar-holiday">
+                            <span class="ndrs-calendar-holiday-name">{{name}}</span>
+                            <span class="ndrs-calendar-holiday-desc">{{desc}}</span>
+                        </div>
+                        {{/each}}
+
+                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarLeap"}}</div>
+                        <div class="ndrs-calendar-holiday ndrs-calendar-leap">
+                            <span class="ndrs-calendar-holiday-name">{{data.leap.name}}</span>
+                            <span class="ndrs-calendar-holiday-desc">{{data.leap.desc}}</span>
+                        </div>
+                    {{/if}}
+                {{else}}
+                    {{#if cards.length}}
+                        <div class="ndrs-grid">
+                            {{#each cards}}
+                            <div class="ndrs-card {{#if isFavorite}}is-favorite{{/if}}"
+                                 data-action="openCard" data-card-id="{{id}}">
+                                {{#if new2024}}<span class="ndrs-badge-2024">{{localize "NDRS.UI.New2024"}}</span>{{/if}}
+                                <div class="ndrs-card-header">
+                                    <i class="fas {{icon}} ndrs-card-icon"></i>
+                                    <div class="ndrs-card-title">{{title}}</div>
+                                    <button type="button" class="ndrs-card-fav"
+                                            data-action="toggleFav" data-card-id="{{id}}"
+                                            title="{{localize 'NDRS.UI.Favorite'}}">
+                                        <i class="fas fa-star"></i>
+                                    </button>
+                                </div>
+                                <div class="ndrs-card-subtitle">{{subtitle}}</div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    {{else}}
+                        <div class="ndrs-empty">{{localize "NDRS.UI.Empty"}}</div>
+                    {{/if}}
+                {{/if}}
+            </section>
+        {{/each}}
+    </main>
+
+    <footer class="ndrs-footer">
+        <span>{{localize "NDRS.Footer.Version"}} {{version}}</span>
+        <span class="sep">•</span>
+        <span>{{localize "NDRS.Footer.By"}}</span>
+        <span class="sep">•</span>
+        <div class="ndrs-unit-toggle">
+            <span class="ndrs-unit-label {{#unless isMetric}}active{{/unless}}">{{localize "NDRS.Units.Imperial"}}</span>
+            <button type="button" class="ndrs-unit-btn" data-action="toggleUnits">
+                {{#if isMetric}}M ◀▶ FT{{else}}FT ◀▶ M{{/if}}
+            </button>
+            <span class="ndrs-unit-label {{#if isMetric}}active{{/if}}">{{localize "NDRS.Units.Metric"}}</span>
+        </div>
+    </footer>
+
+    {{#if hasOpenCard}}
+    <div class="ndrs-modal-overlay" data-action="closeModal">
+        <div class="ndrs-modal" onclick="event.stopPropagation()">
+            <header class="ndrs-modal-header">
+                <h2 class="ndrs-modal-title">
+                    <i class="fas {{openCard.icon}}"></i> {{openCard.title}}
+                </h2>
+                <div class="ndrs-modal-subtitle">{{openCard.subtitle}}</div>
+                <button class="ndrs-modal-close" data-action="closeModal" title="{{localize 'NDRS.UI.ModalClose'}}">&times;</button>
+            </header>
+            <div class="ndrs-modal-body">
+                {{#if openCard.summary}}
+                <div class="ndrs-modal-section">
+                    <h4>{{localize "NDRS.UI.ModalSummary"}}</h4>
+                    <div>{{openCard.summary}}</div>
+                </div>
+                {{/if}}
+                {{#if openCard.example}}
+                <div class="ndrs-modal-section">
+                    <h4>{{localize "NDRS.UI.ModalExample"}}</h4>
+                    <div>{{openCard.example}}</div>
+                </div>
+                {{/if}}
+                {{#if openCard.hasNotes}}
+                <div class="ndrs-modal-section">
+                    <h4>{{localize "NDRS.UI.ModalNotes"}}</h4>
+                    <div>{{openCard.notes}}</div>
+                </div>
+                {{/if}}
+            </div>
+            <footer class="ndrs-modal-footer">
+                <span>
+                    {{localize "NDRS.UI.ModalSource"}}: <strong>{{openCard.source.book}}</strong>
+                    {{#if openCard.source.page}} · {{localize "NDRS.UI.ModalPage"}} {{openCard.source.page}}{{/if}}
+                </span>
+                {{#if openCard.new2024}}<span class="ndrs-badge-2024" style="position:static">{{localize "NDRS.UI.New2024"}}</span>{{/if}}
+            </footer>
+        </div>
+    </div>
+    {{/if}}
+
+</div>

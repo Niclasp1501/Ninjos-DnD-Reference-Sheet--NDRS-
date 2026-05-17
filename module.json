@@ -1,0 +1,61 @@
+{
+  "id": "ndrs",
+  "title": "Ninjo's DnD Reference Sheet (NDRS)",
+  "description": "An in-session quick reference for D&D 5.5 (2024) rules — actions, movement, conditions, exhaustion and calendar — natively integrated into Foundry VTT v13 and v14, in the FANG-Fantasy visual design. Read-only, lightweight, and strictly 2024.",
+  "version": "14.2605.1-beta.1",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Ninjo",
+      "discord": "n1nj0"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/ndrs.css"
+  ],
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "4.0.0"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "fang",
+        "type": "module",
+        "reason": "Shared visual theme and companion graph tool."
+      },
+      {
+        "id": "dnd-players-handbook-deutsch",
+        "type": "module",
+        "reason": "Optional deeplink targets for German PHB pages (activated from v14.2606.x)."
+      }
+    ]
+  },
+  "flags": {
+    "hotReload": false
+  }
+}
