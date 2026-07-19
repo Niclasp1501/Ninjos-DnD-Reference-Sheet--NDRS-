@@ -4,6 +4,7 @@
 export const ACTIONS = Object.freeze([
   {
     id: "attack",
+    phbAliases: ["Angriff", "Attack", "Waffenloser Schlag", "Unarmed Strike"],
     icon: "fa-hand-fist",
     tags: ["combat", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -20,6 +21,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "magic",
+    phbAliases: ["Magie", "Magic"],
     icon: "fa-wand-sparkles",
     tags: ["combat", "magic", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -35,6 +37,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "dash",
+    phbAliases: ["Spurt", "Dash"],
     icon: "fa-person-running",
     tags: ["movement", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -50,6 +53,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "disengage",
+    phbAliases: ["Rückzug", "Disengage"],
     icon: "fa-arrows-turn-to-dots",
     tags: ["movement", "combat", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -65,6 +69,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "dodge",
+    phbAliases: ["Ausweichen", "Dodge"],
     icon: "fa-shield-halved",
     tags: ["defense", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -80,6 +85,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "help",
+    phbAliases: ["Helfen", "Help"],
     icon: "fa-handshake",
     tags: ["support", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -96,6 +102,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "hide",
+    phbAliases: ["Verstecken", "Hide", "Heimlichkeit", "Stealth"],
     icon: "fa-user-secret",
     tags: ["stealth", "exploration", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -112,6 +119,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "influence",
+    phbAliases: ["Beeinflussen", "Influence", "Soziale Interaktion"],
     icon: "fa-comments",
     tags: ["social", "core"],
     source: { book: "PHB 2024", page: 25 },
@@ -128,6 +136,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "ready",
+    phbAliases: ["Bereithalten", "Ready", "Vorbereiten"],
     icon: "fa-stopwatch",
     tags: ["combat", "tactics", "core"],
     source: { book: "PHB 2024", page: 26 },
@@ -143,6 +152,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "search",
+    phbAliases: ["Suchen", "Search"],
     icon: "fa-magnifying-glass",
     tags: ["exploration", "core"],
     source: { book: "PHB 2024", page: 26 },
@@ -158,6 +168,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "study",
+    phbAliases: ["Studieren", "Study"],
     icon: "fa-book-open-reader",
     tags: ["knowledge", "core"],
     source: { book: "PHB 2024", page: 26 },
@@ -174,6 +185,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "utilize",
+    phbAliases: ["Benutzen", "Utilize", "Verwenden"],
     icon: "fa-screwdriver-wrench",
     tags: ["utility", "core"],
     source: { book: "PHB 2024", page: 26 },

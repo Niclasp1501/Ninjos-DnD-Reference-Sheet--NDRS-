@@ -2,6 +2,7 @@
 // Foundry VTT v13/v14
 
 import { TABS, ALL_ENTRIES, EXHAUSTION, CALENDAR, findEntryById } from "./data/index.js";
+import { findPhbLink, openPhbPage } from "./phb-link.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
@@ -21,12 +22,15 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     },
     position: { width: 1100, height: 720 },
     actions: {
-      selectTab:   NDRSApplication._onSelectTab,
-      openCard:    NDRSApplication._onOpenCard,
-      closeModal:  NDRSApplication._onCloseModal,
-      toggleFav:   NDRSApplication._onToggleFav,
-      toggleUnits: NDRSApplication._onToggleUnits,
-      clearSearch: NDRSApplication._onClearSearch
+      selectTab:           NDRSApplication._onSelectTab,
+      openCard:            NDRSApplication._onOpenCard,
+      closeModal:          NDRSApplication._onCloseModal,
+      closeModalBackdrop:  NDRSApplication._onCloseModalBackdrop,
+      toggleFav:           NDRSApplication._onToggleFav,
+      toggleUnits:         NDRSApplication._onToggleUnits,
+      setUnits:            NDRSApplication._onSetUnits,
+      clearSearch:         NDRSApplication._onClearSearch,
+      openPhb:             NDRSApplication._onOpenPhb
     }
   };
 
@@ -120,36 +124,48 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
       return game.i18n.localize(key);
     };
 
+    const title = t(entry.i18n.titleKey);
+
     return {
       id: entry.id,
       icon: entry.icon || "fa-circle",
       tags: entry.tags ?? [],
-      title: t(entry.i18n.titleKey),
-      subtitle: t(entry.i18n.subtitleKey),
+      title,
+      subtitle: localizeUnitAware(entry.i18n.subtitleKey),
       summary: localizeUnitAware(entry.i18n.summaryKey),
       example: localizeUnitAware(entry.i18n.exampleKey),
       notes: entry.i18n.notesKey ? localizeUnitAware(entry.i18n.notesKey) : "",
       hasNotes: !!entry.i18n.notesKey,
       source: entry.source,
-      new2024: !!entry.new2024,
-      isFavorite: favorites.has(entry.id)
+      isFavorite: favorites.has(entry.id),
+      phbLink: findPhbLink([title, ...(entry.phbAliases ?? [])])
     };
   }
 
   _prepareExhaustion() {
     const t = (k) => game.i18n.localize(k);
+    const f = (k, d) => game.i18n.format(k, d);
+    const isMetric = this._units === "metric";
+    const lang = game.i18n.lang || "en";
+    const nfmt = new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+    const unitStep = isMetric ? `${nfmt.format(1.5)} m` : "5 ft";
+    const formatSpeed = (l) => isMetric
+      ? `−${nfmt.format(Math.abs(l.speedM))} m`
+      : `−${Math.abs(l.speedFt)} ft`;
+    const formatD20 = (l) => `−${Math.abs(l.d20Penalty)}`;
+
     return {
       title: t(EXHAUSTION.titleKey),
-      intro: t(EXHAUSTION.introKey),
+      intro: f(EXHAUSTION.introKey, { unitStep }),
       notes: t(EXHAUSTION.notesKey),
-      isMetric: this._units === "metric",
+      isMetric,
       levels: EXHAUSTION.levels.map(l => ({
         level: l.level,
-        d20Penalty: l.d20Penalty,
-        speedFt: l.speedFt,
-        speedM: l.speedM,
-        desc: t(l.descKey),
-        isDeath: l.level === 6
+        isDeath: l.level === 6,
+        desc: l.level === 6
+          ? t("NDRS.Exhaustion.LevelDeath")
+          : f("NDRS.Exhaustion.LevelLine", { d20: formatD20(l), speed: formatSpeed(l) })
       })),
       source: EXHAUSTION.source
     };
@@ -157,26 +173,60 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
 
   _prepareCalendar() {
     const t = (k) => game.i18n.localize(k);
+    const fmt = (k, data) => game.i18n.format(k, data);
+
+    // Build a 30-day grid as 3 tendays x 10 days for each month.
+    const buildDayGrid = () => {
+      const grid = [];
+      for (let td = 0; td < 3; td++) {
+        const days = [];
+        for (let d = 1; d <= 10; d++) {
+          const dayNum = td * 10 + d;
+          days.push({ day: dayNum, isTenday: dayNum % 10 === 0 });
+        }
+        grid.push({ label: fmt("NDRS.UI.TendayN", { n: td + 1 }), days });
+      }
+      return grid;
+    };
+
+    // Interleave months and holidays in calendar order.
+    const timeline = [];
+    const holidaysAfter = (monthIdx) => CALENDAR.holidays.filter(h => h.afterMonth === monthIdx);
+
+    // Year-opener holidays (afterMonth === 0) before month 1.
+    for (const h of holidaysAfter(0)) {
+      timeline.push({ type: "holiday", name: t(h.nameKey), desc: t(h.descKey), leap: false });
+    }
+
+    // Each month, then any holidays positioned after it, then leap holiday if applicable.
+    for (const m of CALENDAR.months) {
+      timeline.push({
+        type: "month",
+        idx: m.idx,
+        name: t(m.nameKey),
+        subtitle: m.subtitleKey ? t(m.subtitleKey) : "",
+        grid: buildDayGrid()
+      });
+
+      for (const h of holidaysAfter(m.idx)) {
+        timeline.push({ type: "holiday", name: t(h.nameKey), desc: t(h.descKey), leap: false });
+      }
+
+      if (CALENDAR.leap?.afterMonth === m.idx) {
+        timeline.push({
+          type: "holiday",
+          name: t(CALENDAR.leap.nameKey),
+          desc: t(CALENDAR.leap.descKey),
+          leap: true,
+          everyYears: CALENDAR.leap.everyYears
+        });
+      }
+    }
+
     return {
       intro: t(CALENDAR.introKey),
       weekName: t(CALENDAR.weekNameKey),
-      months: CALENDAR.months.map(m => ({
-        idx: m.idx,
-        position: m.position,
-        name: t(m.nameKey)
-      })),
-      holidays: CALENDAR.holidays.map(h => ({
-        id: h.id,
-        afterMonth: h.afterMonth,
-        name: t(h.nameKey),
-        desc: t(h.descKey)
-      })),
-      leap: {
-        name: t(CALENDAR.leap.nameKey),
-        desc: t(CALENDAR.leap.descKey),
-        afterMonth: CALENDAR.leap.afterMonth,
-        everyYears: CALENDAR.leap.everyYears
-      }
+      timeline
     };
   }
 
@@ -226,6 +276,18 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     this.render({ parts: ["main"] });
   }
 
+  // Only close when the backdrop itself is clicked, not the dialog inside it.
+  static _onCloseModalBackdrop(event, target) {
+    if (event.target !== target) return;
+    this._openCardId = null;
+    this.render({ parts: ["main"] });
+  }
+
+  static async _onOpenPhb(event, target) {
+    event.stopPropagation();
+    await openPhbPage(target?.dataset?.uuid);
+  }
+
   static async _onToggleFav(event, target) {
     event.stopPropagation();
     const id = target?.dataset?.cardId;
@@ -239,6 +301,15 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   static async _onToggleUnits() {
     this._units = this._units === "metric" ? "imperial" : "metric";
     await game.settings.set(MODULE_ID, "defaultUnits", this._units);
+    this.render({ parts: ["main"] });
+  }
+
+  static async _onSetUnits(event, target) {
+    const unit = target?.dataset?.unit;
+    if (unit !== "metric" && unit !== "imperial") return;
+    if (this._units === unit) return;
+    this._units = unit;
+    await game.settings.set(MODULE_ID, "defaultUnits", unit);
     this.render({ parts: ["main"] });
   }
 

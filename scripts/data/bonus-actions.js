@@ -3,6 +3,7 @@
 export const BONUS_ACTIONS = Object.freeze([
   {
     id: "ba-overview",
+    phbAliases: ["Bonusaktion", "Bonusaktionen", "Bonus Action", "Bonus Actions"],
     icon: "fa-bolt",
     tags: ["combat", "core"],
     source: { book: "PHB 2024", page: 24 },
@@ -18,6 +19,7 @@ export const BONUS_ACTIONS = Object.freeze([
   },
   {
     id: "ba-offhand",
+    phbAliases: ["Waffeneigenschaften", "Leicht", "Light", "Weapon Properties"],
     icon: "fa-khanda",
     tags: ["combat", "two-weapon"],
     source: { book: "PHB 2024", page: 27 },
@@ -34,6 +36,7 @@ export const BONUS_ACTIONS = Object.freeze([
   },
   {
     id: "ba-spell",
+    phbAliases: ["Wirkzeit", "Casting Time", "Zauberwirken", "Spellcasting"],
     icon: "fa-hat-wizard",
     tags: ["magic"],
     source: { book: "PHB 2024", page: 24 },
@@ -50,6 +53,7 @@ export const BONUS_ACTIONS = Object.freeze([
   },
   {
     id: "ba-class",
+    phbAliases: ["Klassen", "Classes", "Klassenmerkmale"],
     icon: "fa-gears",
     tags: ["class"],
     source: { book: "PHB 2024", page: 24 },

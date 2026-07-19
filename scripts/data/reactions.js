@@ -3,6 +3,7 @@
 export const REACTIONS = Object.freeze([
   {
     id: "rx-overview",
+    phbAliases: ["Reaktion", "Reaktionen", "Reaction", "Reactions"],
     icon: "fa-reply",
     tags: ["combat", "core"],
     source: { book: "PHB 2024", page: 24 },
@@ -18,6 +19,7 @@ export const REACTIONS = Object.freeze([
   },
   {
     id: "rx-opportunity",
+    phbAliases: ["Gelegenheitsangriffe", "Gelegenheitsangriff", "Opportunity Attacks"],
     icon: "fa-bullseye",
     tags: ["combat", "core"],
     source: { book: "PHB 2024", page: 27 },
@@ -34,6 +36,7 @@ export const REACTIONS = Object.freeze([
   },
   {
     id: "rx-ready",
+    phbAliases: ["Bereithalten", "Ready"],
     icon: "fa-clock",
     tags: ["combat", "tactics"],
     source: { book: "PHB 2024", page: 26 },
@@ -49,6 +52,7 @@ export const REACTIONS = Object.freeze([
   },
   {
     id: "rx-spell",
+    phbAliases: ["Wirkzeit", "Casting Time", "Auslöser für Reaktionen und Bonusaktionen"],
     icon: "fa-shield-virus",
     tags: ["magic"],
     source: { book: "PHB 2024", page: 24 },

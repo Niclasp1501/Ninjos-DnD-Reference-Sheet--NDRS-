@@ -56,28 +56,34 @@
                     {{#if (eq custom "calendar")}}
                         <div class="ndrs-calendar-intro">{{data.intro}}</div>
 
-                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarMonths"}}</div>
-                        <div class="ndrs-calendar-grid">
-                            {{#each data.months}}
-                            <div class="ndrs-calendar-month">
-                                <div class="ndrs-calendar-month-name">{{name}}</div>
-                                <div class="ndrs-calendar-month-meta">30 Tage · 3 × {{../data.weekName}}</div>
-                            </div>
+                        <div class="ndrs-calendar-timeline">
+                            {{#each data.timeline}}
+                                {{#if (eq type "month")}}
+                                    <div class="ndrs-calendar-month">
+                                        <div class="ndrs-calendar-month-name">
+                                            {{name}}{{#if subtitle}}<span class="ndrs-calendar-month-sub">{{subtitle}}</span>{{/if}}
+                                        </div>
+                                        <div class="ndrs-calendar-month-grid">
+                                            {{#each grid}}
+                                                <div class="ndrs-tenday-col">
+                                                    <div class="ndrs-tenday-label">{{label}}</div>
+                                                    {{#each days}}
+                                                        <div class="ndrs-day-cell {{#if isTenday}}is-tenday{{/if}}">{{day}}</div>
+                                                    {{/each}}
+                                                </div>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                {{else}}
+                                    <div class="ndrs-calendar-holiday {{#if leap}}ndrs-calendar-leap{{/if}}">
+                                        <span class="ndrs-calendar-holiday-name">
+                                            <i class="fas fa-star"></i> {{name}}
+                                            {{#if leap}}<span class="ndrs-calendar-leap-meta">· {{localize "NDRS.UI.CalendarLeap"}} ({{everyYears}})</span>{{/if}}
+                                        </span>
+                                        <span class="ndrs-calendar-holiday-desc">{{desc}}</span>
+                                    </div>
+                                {{/if}}
                             {{/each}}
-                        </div>
-
-                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarHolidays"}}</div>
-                        {{#each data.holidays}}
-                        <div class="ndrs-calendar-holiday">
-                            <span class="ndrs-calendar-holiday-name">{{name}}</span>
-                            <span class="ndrs-calendar-holiday-desc">{{desc}}</span>
-                        </div>
-                        {{/each}}
-
-                        <div class="ndrs-calendar-section-title">{{localize "NDRS.UI.CalendarLeap"}}</div>
-                        <div class="ndrs-calendar-holiday ndrs-calendar-leap">
-                            <span class="ndrs-calendar-holiday-name">{{data.leap.name}}</span>
-                            <span class="ndrs-calendar-holiday-desc">{{data.leap.desc}}</span>
                         </div>
                     {{/if}}
                 {{else}}
@@ -86,7 +92,6 @@
                             {{#each cards}}
                             <div class="ndrs-card {{#if isFavorite}}is-favorite{{/if}}"
                                  data-action="openCard" data-card-id="{{id}}">
-                                {{#if new2024}}<span class="ndrs-badge-2024">{{localize "NDRS.UI.New2024"}}</span>{{/if}}
                                 <div class="ndrs-card-header">
                                     <i class="fas {{icon}} ndrs-card-icon"></i>
                                     <div class="ndrs-card-title">{{title}}</div>
@@ -113,24 +118,33 @@
         <span class="sep">•</span>
         <span>{{localize "NDRS.Footer.By"}}</span>
         <span class="sep">•</span>
-        <div class="ndrs-unit-toggle">
-            <span class="ndrs-unit-label {{#unless isMetric}}active{{/unless}}">{{localize "NDRS.Units.Imperial"}}</span>
-            <button type="button" class="ndrs-unit-btn" data-action="toggleUnits">
-                {{#if isMetric}}M ◀▶ FT{{else}}FT ◀▶ M{{/if}}
+        <div class="ndrs-unit-toggle" role="group" aria-label="{{localize 'NDRS.UI.UnitsLabel'}}">
+            <button type="button"
+                    class="ndrs-unit-seg {{#if isMetric}}active{{/if}}"
+                    data-action="setUnits" data-unit="metric"
+                    title="{{localize 'NDRS.Settings.DefaultUnits.Metric'}}">
+                {{localize "NDRS.Units.Metric"}}
             </button>
-            <span class="ndrs-unit-label {{#if isMetric}}active{{/if}}">{{localize "NDRS.Units.Metric"}}</span>
+            <button type="button"
+                    class="ndrs-unit-seg {{#unless isMetric}}active{{/unless}}"
+                    data-action="setUnits" data-unit="imperial"
+                    title="{{localize 'NDRS.Settings.DefaultUnits.Imperial'}}">
+                {{localize "NDRS.Units.Imperial"}}
+            </button>
         </div>
     </footer>
 
     {{#if hasOpenCard}}
-    <div class="ndrs-modal-overlay" data-action="closeModal">
-        <div class="ndrs-modal" onclick="event.stopPropagation()">
+    <div class="ndrs-modal-overlay" data-action="closeModalBackdrop">
+        <div class="ndrs-modal">
             <header class="ndrs-modal-header">
                 <h2 class="ndrs-modal-title">
                     <i class="fas {{openCard.icon}}"></i> {{openCard.title}}
                 </h2>
                 <div class="ndrs-modal-subtitle">{{openCard.subtitle}}</div>
-                <button class="ndrs-modal-close" data-action="closeModal" title="{{localize 'NDRS.UI.ModalClose'}}">&times;</button>
+                <button type="button" class="ndrs-modal-close" data-action="closeModal"
+                        title="{{localize 'NDRS.UI.ModalClose'}}"
+                        aria-label="{{localize 'NDRS.UI.ModalClose'}}">&times;</button>
             </header>
             <div class="ndrs-modal-body">
                 {{#if openCard.summary}}
@@ -157,7 +171,13 @@
                     {{localize "NDRS.UI.ModalSource"}}: <strong>{{openCard.source.book}}</strong>
                     {{#if openCard.source.page}} · {{localize "NDRS.UI.ModalPage"}} {{openCard.source.page}}{{/if}}
                 </span>
-                {{#if openCard.new2024}}<span class="ndrs-badge-2024" style="position:static">{{localize "NDRS.UI.New2024"}}</span>{{/if}}
+                {{#if openCard.phbLink}}
+                <button type="button" class="ndrs-phb-btn"
+                        data-action="openPhb" data-uuid="{{openCard.phbLink.uuid}}"
+                        title="{{openCard.phbLink.label}}">
+                    <i class="fas fa-book-open"></i> {{localize "NDRS.UI.OpenInPhb"}}
+                </button>
+                {{/if}}
             </footer>
         </div>
     </div>

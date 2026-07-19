@@ -1,16 +1,14 @@
 {
   "NDRS": {
     "AppTitle": "Ninjo's DnD Reference Sheet",
-    "Subtitle": "D&D 5.5 Quick Reference",
+    "Subtitle": "Quick Reference",
     "ButtonOpen": "Open Cheat-Sheet",
     "KeybindingHint": "Toggles the NDRS window.",
-
     "Footer": {
       "By": "Module by Ninjo & Roxy",
       "Repo": "GitHub Repo (Coming Soon)",
       "Version": "Version"
     },
-
     "UI": {
       "TabActions": "Round Actions",
       "TabMovement": "Movement",
@@ -21,7 +19,7 @@
       "SectionReaction": "Reaction",
       "SectionMovement": "Movement",
       "SectionConditions": "Conditions",
-      "SectionExhaustion": "Exhaustion (2024)",
+      "SectionExhaustion": "Exhaustion",
       "SectionCalendar": "Calendar",
       "SearchPlaceholder": "Search…",
       "SearchClear": "Clear search",
@@ -32,8 +30,9 @@
       "ModalPage": "p.",
       "ModalSummary": "What it does",
       "ModalExample": "Example",
-      "ModalNotes": "Notes (2024)",
-      "New2024": "New 2024",
+      "ModalNotes": "Notes",
+      "UnitsLabel": "Toggle measurement units",
+      "TendayN": "Tenday {n}",
       "Empty": "No entries match.",
       "ExhaustionLevel": "Level",
       "ExhaustionPenalty": "d20 penalty",
@@ -43,9 +42,9 @@
       "CalendarYearStructure": "Year structure",
       "CalendarMonths": "Months",
       "CalendarHolidays": "Holidays",
-      "CalendarLeap": "Leap year"
+      "CalendarLeap": "Leap year",
+      "OpenInPhb": "In the handbook"
     },
-
     "Settings": {
       "DefaultTab": {
         "Name": "Default tab",
@@ -60,21 +59,23 @@
       "ReplaceOnlySheet": {
         "Name": "Only-Sheet: show button",
         "Hint": "Injects an NDRS button into the Only-Sheet button bar."
+      },
+      "PhbLinks": {
+        "Name": "Handbook cross-references",
+        "Hint": "Shows a button in expanded cards linking to the matching page, if a Player's Handbook module is active."
       }
     },
-
     "Units": {
       "Metric": "M",
       "Imperial": "FT"
     },
-
     "Action": {
       "Attack": {
         "Title": "Attack",
-        "Subtitle": "A melee or ranged attack against a target in reach.",
-        "Summary": "The Attack action lets you make one attack roll against a target's Armor Class. If you have the Extra Attack class feature you can make multiple attacks within the same action. The Unarmed Strike option folds Damage, Grapple and Shove into the Attack action — Grapple and Shove replace the damage with an effect. A weapon may use one of its mastery property options per Attack action, provided you are proficient with it.",
-        "Example": "A level-5 Fighter takes two attacks (Extra Attack), and chooses on the second swing to Shove the target prone with an Unarmed Strike instead of dealing damage.",
-        "Notes": "2024 unifies Grapple, Shove, and a basic punch as options of the Unarmed Strike — none of them are separate actions any longer."
+        "Subtitle": "One attack roll with a weapon or an Unarmed Strike.",
+        "Summary": "When you take the Attack action you make one attack roll with a weapon or an Unarmed Strike. Features such as Extra Attack let you make several attacks within the same action, and you may move between those attacks. You can also draw or stow one weapon as part of the action, before or after the attack. If you have the weapon's mastery property, you can use it with this attack.",
+        "Example": "A level-5 Fighter has Extra Attack. She strikes a Goblin, moves 10 feet to the next enemy and makes her second attack there.",
+        "Notes": "The Unarmed Strike offers three options: Damage, Grapple or Shove. Grapple and Shove replace the damage with an effect and are not separate actions."
       },
       "Magic": {
         "Title": "Magic",
@@ -85,8 +86,8 @@
       "Dash": {
         "Title": "Dash",
         "Subtitle": "Gain extra movement equal to your current speed.",
-        "Summary": "Dash effectively doubles your movement for the turn: you gain extra distance equal to your current speed (after all modifiers like difficult terrain or exhaustion). The extra movement may be used in any order, including split before and after other actions you take this turn.",
-        "Example": "A Monk with 40 ft of speed takes Dash and can cover up to 80 ft this turn — perfect for sprinting out of an archer's line of sight into cover."
+        "Summary": "When you take the Dash action you gain extra movement for the current turn. The increase equals your Speed after applying any modifiers. If you have a special speed such as a Fly Speed or Swim Speed, you may use that instead of your normal Speed, choosing each time you take the action.",
+        "Example": "A Monk with 30 feet of Speed dashes and can move up to 60 feet this turn. If his Speed were reduced to 15 feet, dashing would allow only 30 feet."
       },
       "Disengage": {
         "Title": "Disengage",
@@ -97,7 +98,7 @@
       "Dodge": {
         "Title": "Dodge",
         "Subtitle": "Attacks against you have disadvantage; your Dexterity saves have advantage.",
-        "Summary": "Until the start of your next turn, attacks against you have disadvantage as long as you can see the attacker and you are not incapacitated. You also roll Dexterity saving throws with advantage. The benefit ends if your speed drops to 0 or you become incapacitated.",
+        "Summary": "Until the start of your next turn every attack roll against you has Disadvantage if you can see the attacker, and you make Dexterity saving throws with Advantage. You lose these benefits if you gain the Incapacitated condition or your Speed drops to 0.",
         "Example": "A wounded Cleric facing two Goblins skips attacking and Dodges instead — both Goblins must roll their attacks against him with disadvantage this round."
       },
       "Help": {
@@ -107,93 +108,92 @@
           "imperial": "Grant an ally advantage on a roll — attack target must be within 5 ft."
         },
         "Summary": {
-          "metric": "Help has two clearly separated forms: (1) you assist an ally's ability check on a task you can meaningfully contribute to — the ally rolls with advantage. (2) You distract an enemy within 1.5 m of you; the next attack roll an ally makes against that enemy before the start of your next turn has advantage.",
-          "imperial": "Help has two clearly separated forms: (1) you assist an ally's ability check on a task you can meaningfully contribute to — the ally rolls with advantage. (2) You distract an enemy within 5 ft of you; the next attack roll an ally makes against that enemy before the start of your next turn has advantage."
+          "metric": "The Help action offers two options. First, you can assist an ability check: choose one of your skill or tool proficiencies and an ally you can help verbally or physically, and that ally has Advantage on their next check with it. Second, you can assist an attack roll by briefly distracting an enemy within 1.5 metres of you, giving one ally Advantage on their next attack roll against that enemy. Both benefits expire at the start of your next turn.",
+          "imperial": "The Help action offers two options. First, you can assist an ability check: choose one of your skill or tool proficiencies and an ally you can help verbally or physically, and that ally has Advantage on their next check with it. Second, you can assist an attack roll by briefly distracting an enemy within 5 feet of you, giving one ally Advantage on their next attack roll against that enemy. Both benefits expire at the start of your next turn."
         },
         "Example": {
           "metric": "The Rogue stands adjacent to an Ogre guard. She Helps the Fighter: the Fighter's next attack against the Ogre has advantage.",
           "imperial": "The Rogue stands adjacent to an Ogre guard. She Helps the Fighter: the Fighter's next attack against the Ogre has advantage."
         },
         "Notes": {
-          "metric": "New in 2024: Helping with an ability check now requires that you can meaningfully contribute to the task — pure cheering does not qualify.",
-          "imperial": "New in 2024: Helping with an ability check now requires that you can meaningfully contribute to the task — pure cheering does not qualify."
+          "metric": "The DM decides whether your assistance is possible at all. You need the matching skill or tool proficiency to assist an ability check.",
+          "imperial": "The DM decides whether your assistance is possible at all. You need the matching skill or tool proficiency to assist an ability check."
         }
       },
       "Hide": {
         "Title": "Hide",
-        "Subtitle": "Stealth check vs DC 15; on success you gain the Invisible condition.",
-        "Summary": "You make a Dexterity (Stealth) check with DC 15 while you have cover or are heavily obscured. On success you gain the Invisible condition. The condition ends as soon as you make a noise louder than a whisper, attack, cast a spell with a verbal component, or are seen — for example by leaving cover.",
+        "Subtitle": "A Dexterity (Stealth) check against DC 15.",
+        "Summary": "You make a Dexterity (Stealth) check against DC 15 while you are Heavily Obscured or behind Total Cover and no enemy can see you. On a success you gain the Invisible condition. It ends as soon as you make a noise louder than a whisper, make an attack roll, cast a spell with a verbal component, or an enemy finds you.",
         "Example": "The Ranger ducks behind a wagon, rolls a 18 on Stealth, and gains the Invisible condition. The next attack from cover has advantage — but that attack also ends the hidden state.",
-        "Notes": "New in 2024: Hide explicitly grants the Invisible condition and uses a fixed DC 15 instead of a passive-Perception contest."
+        "Notes": "The Invisible condition is tied to the hiding. If an enemy finds you it ends immediately, regardless of your check result."
       },
       "Influence": {
         "Title": "Influence",
         "Subtitle": "Get an NPC to do something via Persuasion, Deception, Intimidation, or Performance.",
-        "Summary": "Influence is the formal action for social manipulation in play. You choose to persuade, deceive, intimidate, or perform, and roll the appropriate Charisma check against a DC tied to the NPC's attitude. A creature that does not understand your language, or one that is hostile, cannot be influenced — the action fails automatically.",
-        "Example": "A Bard tries to talk a city guard captain into releasing a prisoner. The DM sets the DC at 15 because the captain is friendly — the Bard rolls Persuasion.",
-        "Notes": "New in 2024: social interaction is now a defined action with a documented framework, rather than purely free-form roleplay."
+        "Summary": "You describe or roleplay how you communicate with the monster, and the DM decides whether it is willing, unwilling or hesitant. A willing monster complies without a check; an unwilling one refuses without a check. Only a hesitant monster calls for a check, usually Deception, Intimidation, Performance, Persuasion or Animal Handling. The DC is 15 or the monster's Intelligence score, whichever is higher.",
+        "Example": "A Bard tries to persuade a guard captain to release a prisoner. The DM rules him hesitant, so the Bard rolls Charisma (Persuasion) against DC 15.",
+        "Notes": "After a failed check you must wait 24 hours before pressing the same monster in the same way again."
       },
       "Ready": {
         "Title": "Ready",
-        "Subtitle": "Set a trigger and execute an action or movement later as a reaction.",
-        "Summary": "You describe a perceivable trigger (\"when the Goblin steps through the door\") and an action or movement to take in response. Until then your action is spent; the later execution consumes your reaction. If the trigger does not occur before the start of your next turn, the readied action is wasted. Readying a spell expends the slot at the moment of readying — the spell also requires concentration to hold.",
-        "Example": "The Wizard says: \"As soon as anyone opens the trapdoor, I cast Magic Missile.\" The DM narrates the Goblin opening it — the Wizard spends his reaction, the spell triggers."
+        "Subtitle": "Set a trigger and act later with your Reaction.",
+        "Summary": "You choose a perceivable circumstance as the trigger and the action you will take in response, or movement up to your Speed. If the trigger occurs before the start of your next turn you take it with your Reaction, or you may ignore the trigger. Readying a spell means casting it immediately and spending its resources, holding its energy with Concentration until the trigger releases it.",
+        "Example": "The Wizard says: when the cultist steps on the trapdoor, I cast Magic Missile. As soon as the cultist does, the Wizard spends his Reaction and the spell triggers.",
+        "Notes": "A readied spell must have a casting time of one action. If your Concentration breaks first, the spell dissipates with no effect."
       },
       "Search": {
         "Title": "Search",
         "Subtitle": "A Wisdom check to find something concealed or a hidden creature.",
-        "Summary": "With Search you make a Wisdom check — typically Perception, Insight, or Survival — to look for tracks, a hidden creature, a concealed compartment, or to read a creature's body language. Against a creature that has hidden, the DC is its Stealth result (or DC 15 if the DM keeps that result hidden).",
+        "Summary": "When you take the Search action you make a Wisdom check to notice something that is not obvious. Which skill applies depends on what you are looking for: Insight for a creature's state of mind, Medicine for its ailment or cause of death, Perception for a hidden creature or object, Survival for tracks and food.",
         "Example": "The Ranger investigates an abandoned watchtower, rolls 17 on Perception, and finds fresh footprints — the DM describes them as medium-size, less than an hour old."
       },
       "Study": {
         "Title": "Study",
         "Subtitle": "An Intelligence check to recall lore or analyze a creature, object, or phenomenon.",
-        "Summary": "Study is the action you take to draw on your background knowledge or to analyze something in detail. Depending on the question you roll Arcana, History, Nature, Religion, or Investigation. On success you learn a relevant fact, a hint, or a vulnerability — the exact information is at the DM's discretion.",
+        "Summary": "When you take the Study action you make an Intelligence check to draw on your memory, a book, a clue or another source of knowledge. Arcana covers spells, magic items and certain creatures; History covers events, civilisations and wars; Investigation covers traps, ciphers and contraptions; Nature covers terrain, flora and weather; Religion covers deities, rites and cults.",
         "Example": "Facing a Gargoyle guardian, the Cleric rolls Religion via Study and recalls its weakness to bludgeoning damage — the DM grants a narrative hint.",
-        "Notes": "New in 2024: Study replaces the 2014-era mix of \"Search\" and \"recall lore\" — Intelligence-based checks are now an explicit action of their own."
+        "Notes": "Each field of knowledge also covers certain creature types. Arcana, for instance, includes Aberrations, Constructs, Elementals, Fey and Monstrosities."
       },
       "Utilize": {
         "Title": "Utilize",
-        "Subtitle": "Operate a non-magical object that requires an action to use.",
-        "Summary": "Utilize covers the use of mundane objects whose activation requires an action — pulling a lever, opening a lock with the right key, ringing a bell, or beating a drum, when those mechanically demand an action. Magic items use the Magic action; Utilize is the mundane counterpart.",
-        "Example": "The Dwarf Fighter stands before a rusty wall lever. He uses Utilize to throw it — the trapdoor under the troll's table swings open."
+        "Subtitle": "Use a nonmagical object that requires an action.",
+        "Summary": "Normally you interact with an object while doing something else, such as drawing a sword as part of the Attack action. If an object explicitly requires an action to use, you take the Utilize action. Magic items use the Magic action instead.",
+        "Example": "The Dwarf Fighter faces a rusty wall lever. He utilizes it, and the trapdoor under the troll's table swings open."
       }
     },
-
     "Bonus": {
       "Overview": {
         "Title": "Bonus Action",
         "Subtitle": "An additional, short action — only when a feature explicitly grants one.",
-        "Summary": "Bonus actions are not a free slot — you can take one in a turn only when a class feature, spell, feat, or weapon mastery explicitly offers one. A turn allows exactly one bonus action regardless of how many sources you have. A bonus action does not consume your reaction or your action.",
-        "Example": "A Rogue takes the Attack action and then uses Cunning Action as a bonus action to Hide — both stem from clearly defined class features."
+        "Summary": "Various class features, spells and other abilities let you take one additional action on your turn. You can take a Bonus Action only when a special ability, spell or feature explicitly says so. Only one Bonus Action is possible per turn even if several are available. Anything that prevents you from taking actions also prevents a Bonus Action.",
+        "Example": "A Rogue attacks with their action and then uses Cunning Action as a Bonus Action to hide."
       },
       "OffHand": {
-        "Title": "Off-Hand Attack",
-        "Subtitle": "Attack with a Light weapon in your other hand if your main attack used a Light melee weapon.",
-        "Summary": "If you take the Attack action with a Light melee weapon, you may use a bonus action to make one additional attack with another Light weapon held in your free hand. Your ability modifier adds to the bonus-attack damage only if it is negative — otherwise only the weapon die counts.",
-        "Example": "A Rogue attacks with a Shortsword (Light property) and uses a bonus action to attack again with her Dagger — the bonus attack deals only weapon-die damage, no Dexterity modifier.",
-        "Notes": "New in 2024: Two-Weapon Fighting is now a universal weapon option keyed off the Light property, no longer a separate fighting style on its own."
+        "Title": "Two-Weapon Attack",
+        "Subtitle": "An extra attack with a weapon that has the Light property.",
+        "Summary": "If you attack with a weapon that has the Light property, you can use your Bonus Action to make one extra attack with a different Light weapon in your other hand. Both weapons must have the Light property. The second attack adds your ability modifier to damage only if that modifier is negative.",
+        "Example": "A Rogue attacks with her Shortsword and uses her Bonus Action for a second attack with her Dagger. The Dagger deals only its weapon die without her Dexterity modifier.",
+        "Notes": "Two-Weapon Fighting depends solely on the Light weapon property and is not tied to a Fighting Style."
       },
       "Spell": {
         "Title": "Bonus Action Spell",
         "Subtitle": "Spells whose casting time is a bonus action (e.g. Healing Word).",
-        "Summary": "Some spells have a casting time of 1 bonus action. A central rule applies: when you cast a bonus-action spell during your turn, the only spell you may cast as your regular action that turn is a cantrip — no second leveled spell.",
+        "Summary": "Some spells have a casting time of one Bonus Action and must be cast on your turn. If you cast such a spell, the only spell you may cast as your action in the same turn is a cantrip, not a second leveled spell.",
         "Example": "The Cleric casts Healing Word as a bonus action on the falling Fighter, then in the same turn casts only a cantrip like Sacred Flame, never a second leveled spell.",
-        "Notes": "The \"one-spell-per-turn\" rule is cleanly worded in 2024: the cantrip is allowed as the action, a second leveled spell is not."
+        "Notes": "The restriction applies only to leveled spells. Cantrips remain available as your action."
       },
       "Class": {
         "Title": "Class Bonus Actions",
         "Subtitle": "Class-specific bonus actions — see your class entry.",
-        "Summary": "Many class features grant their own bonus actions: a Monk's Flurry of Blows, a Rogue's Cunning Action, a Barbarian's Rage, a Paladin's Divine Smite, to name only a few. Check your class description for the trigger and any per-day or per-rest limit.",
-        "Example": "A Monk takes the Attack action and then uses Flurry of Blows as a bonus action to add two unarmed strikes via Ki points."
+        "Summary": "Many class features bring their own Bonus Actions. The Rogue has Cunning Action, the Barbarian has Rage, the Monk has its focus features and the Paladin has Divine Smite. Check your class description for the trigger and any usage limit.",
+        "Example": "A Rogue uses Cunning Action to Disengage as a Bonus Action instead of spending their action on it."
       }
     },
-
     "Reaction": {
       "Overview": {
         "Title": "Reaction",
         "Subtitle": "A once-per-round response to a trigger outside your turn.",
-        "Summary": "You have exactly one reaction per round, refreshed at the start of your next turn. Reactions are triggered by clearly described events — you must perceive the trigger, and your response resolves immediately. Movement reactions do not interrupt the triggering creature's turn unless the description says otherwise.",
+        "Summary": "A Reaction is a special action taken in response to a trigger. You have exactly one Reaction per round, which returns at the start of your next turn. The trigger must be perceivable, and the Reaction resolves immediately after it unless described otherwise.",
         "Example": "A Fighter sees a Goblin shaman casting a spell and uses her reaction for Counterspell — assuming she knows the spell herself."
       },
       "Opportunity": {
@@ -203,8 +203,8 @@
           "imperial": "When a visible enemy leaves your reach, you make one melee attack."
         },
         "Summary": {
-          "metric": "When a creature you can see moves out of your reach, you may use your reaction to make one melee attack against it. The attack uses whatever weapon you currently wield (unarmed counts). Movement such as teleportation, the Disengage action, forced movement, or moving into your reach does not trigger an opportunity attack.",
-          "imperial": "When a creature you can see moves out of your reach, you may use your reaction to make one melee attack against it. The attack uses whatever weapon you currently wield (unarmed counts). Movement such as teleportation, the Disengage action, forced movement, or moving into your reach does not trigger an opportunity attack."
+          "metric": "When a creature you can see leaves your reach using its action, Bonus Action, Reaction or one of its movement modes, you can use your Reaction to make one melee attack with a weapon or an Unarmed Strike against it. The attack occurs right before the creature leaves your reach.",
+          "imperial": "When a creature you can see leaves your reach using its action, Bonus Action, Reaction or one of its movement modes, you can use your Reaction to make one melee attack with a weapon or an Unarmed Strike against it. The attack occurs right before the creature leaves your reach."
         },
         "Example": {
           "metric": "A Goblin tries to run past the Fighter to reach the Wizard. The Fighter takes her reaction and swings her sword as soon as the Goblin leaves her reach.",
@@ -218,7 +218,7 @@
       "Ready": {
         "Title": "Readied Reaction",
         "Subtitle": "A previously readied action triggers now.",
-        "Summary": "The reaction half of the Ready action. When the trigger you specified occurs, you spend your reaction and execute the planned action or movement. If the trigger does not occur before the start of your next turn, the readying is lost.",
+        "Summary": "The Reaction half of the Ready action. When your chosen trigger occurs you spend your Reaction and take the planned action or movement. You may also ignore the trigger. If it does not occur before the start of your next turn, the readying is lost.",
         "Example": "The Archer has readied a draw aimed at the doorframe. As soon as the first Goblin slips through, the reaction triggers — the arrow flies."
       },
       "Spell": {
@@ -228,17 +228,16 @@
         "Example": "The Wizard is hit by an arrow that would just barely beat her AC. She casts Shield as a reaction: +5 AC until the start of her next turn — the arrow misses."
       }
     },
-
     "Movement": {
       "Speed": {
-        "Title": "Movement Speed",
+        "Title": "Speed",
         "Subtitle": {
           "metric": "Your speed defines how far you can move in a single turn.",
           "imperial": "Your speed defines how far you can move in a single turn."
         },
         "Summary": {
-          "metric": "On your turn you have movement points equal to your speed — the standard speed for most player characters is 9 m. You may freely interleave movement with action, bonus action, and free interactions. You can save part of your movement for later in the same turn, but anything unspent at turn end is lost.",
-          "imperial": "On your turn you have movement points equal to your speed — the standard speed for most player characters is 30 ft. You may freely interleave movement with action, bonus action, and free interactions. You can save part of your movement for later in the same turn, but anything unspent at turn end is lost."
+          "metric": "On your turn you have movement equal to your Speed, which is 9 metres for most player characters. You may freely interleave movement with your action, Bonus Action and object interactions, and split it into several stretches. Unused movement is lost at the end of your turn.",
+          "imperial": "On your turn you have movement equal to your Speed, which is 30 feet for most player characters. You may freely interleave movement with your action, Bonus Action and object interactions, and split it into several stretches. Unused movement is lost at the end of your turn."
         },
         "Example": {
           "metric": "A Halfling Rogue with 7.5 m of speed moves 4.5 m forward, attacks a Goblin, then slips 3 m behind a column.",
@@ -247,46 +246,82 @@
       },
       "Difficult": {
         "Title": "Difficult Terrain",
-        "Subtitle": "Each step in difficult terrain costs double movement.",
-        "Summary": "Swamp, dense rubble, low furniture, or thick undergrowth count as difficult terrain. Each foot of movement costs double. Difficult terrain does not stack with itself — double remains double, not quadruple. Specific effects can make steps even more expensive; their description will say so explicitly.",
-        "Example": "A Wizard with 30 ft speed wants to walk through a 20 ft rubble field. The 20 ft of difficult terrain cost 40 ft — she just barely makes it across with no movement to spare."
+        "Subtitle": {
+          "metric": "Each metre of movement there costs one extra metre.",
+          "imperial": "Each foot of movement there costs one extra foot."
+        },
+        "Summary": {
+          "metric": "If a space is Difficult Terrain, every metre of movement in it costs one extra metre. Moving 1.5 metres through Difficult Terrain therefore costs 3 metres of movement. Difficult Terrain is not cumulative: a space either is Difficult Terrain or it is not, and multiple causes do not raise the cost further.",
+          "imperial": "If a space is Difficult Terrain, every foot of movement in it costs one extra foot. Moving 5 feet through Difficult Terrain therefore costs 10 feet of movement. Difficult Terrain is not cumulative: a space either is Difficult Terrain or it is not, and multiple causes do not raise the cost further."
+        },
+        "Example": {
+          "metric": "A Wizard with 9 metres of Speed crosses a 4.5 metre rubble field. It costs her 9 metres, all of her movement for the turn.",
+          "imperial": "A Wizard with 30 feet of Speed crosses a 15 foot rubble field. It costs her 30 feet, all of her movement for the turn."
+        }
       },
       "Jump": {
         "Title": "Jumping",
         "Subtitle": {
-          "metric": "Long jump = Strength score in feet (~0.30 m per point). High jump = 90 cm + 30 cm per Str mod.",
-          "imperial": "Long jump = Strength score in feet. High jump = 3 + Str modifier in feet."
+          "metric": "Long Jump: Strength score divided by 3 in metres. High Jump: (3 + Strength modifier) divided by 3.",
+          "imperial": "Long Jump: Strength score in feet. High Jump: 3 + Strength modifier in feet."
         },
         "Summary": {
-          "metric": "With at least 3 m of running start, your long jump distance equals your Strength score in feet (so STR 16 ≈ 4.8 m). Your high jump reaches 90 cm plus 30 cm per Strength modifier. From a standstill both values are halved. Each foot of jumping consumes the equivalent foot of your movement.",
-          "imperial": "With at least 10 ft of running start, your long jump distance equals your Strength score in feet (so STR 16 ≈ 16 ft). Your high jump reaches 3 ft plus 1 ft per Strength modifier. From a standstill both values are halved. Each foot of jumping consumes the equivalent foot of your movement."
+          "metric": "With a Long Jump you leap horizontally a number of metres equal to your Strength score divided by 3, provided you moved at least 3 metres immediately before. With a High Jump you reach (3 plus your Strength modifier) divided by 3 metres. From a standing start both are halved. Each metre jumped costs a metre of movement. Landing in Difficult Terrain requires a DC 10 Acrobatics check or you gain the Prone condition.",
+          "imperial": "With a Long Jump you leap horizontally a number of feet equal to your Strength score, provided you moved at least 10 feet immediately before. With a High Jump you reach 3 plus your Strength modifier in feet. From a standing start both are halved. Each foot jumped costs a foot of movement. Landing in Difficult Terrain requires a DC 10 Acrobatics check or you gain the Prone condition."
         },
         "Example": {
-          "metric": "A Barbarian with Strength 18 takes a 9 m running start and jumps 5.4 m across a chasm.",
-          "imperial": "A Barbarian with Strength 18 takes a 30 ft running start and jumps 18 ft across a chasm."
+          "metric": "A Barbarian with Strength 18 takes a running start and clears 6 metres across a chasm, since 18 divided by 3 is 6.",
+          "imperial": "A Barbarian with Strength 18 takes a running start and clears 18 feet across a chasm, since the Strength score equals the distance in feet."
         },
         "Notes": {
-          "metric": "Jump distance can never exceed your remaining movement — if you run out mid-air, you fall.",
-          "imperial": "Jump distance can never exceed your remaining movement — if you run out mid-air, you fall."
+          "metric": "A low obstacle in your path may require a DC 10 Athletics check. During the jump you can reach up half your height above yourself.",
+          "imperial": "A low obstacle in your path may require a DC 10 Athletics check. During the jump you can reach up half your height above yourself."
         }
       },
       "Climb": {
         "Title": "Climbing",
-        "Subtitle": "Climbing costs double movement — or normal movement if you have a climb speed.",
-        "Summary": "When climbing walls, trees, or ropes, each step costs double movement. With an innate climb speed (some species, certain forms) you pay the regular movement cost. Particularly slick or sheer surfaces may also call for a Strength (Athletics) check — the DM decides per situation.",
-        "Example": "A Rogue climbs 15 ft up a building wall — costing 30 ft of his 30 ft of speed. He has nothing left to do this turn."
+        "Subtitle": {
+          "metric": "Each metre costs one extra metre unless you have a Climb Speed.",
+          "imperial": "Each foot costs one extra foot unless you have a Climb Speed."
+        },
+        "Summary": {
+          "metric": "While climbing, each metre of movement costs one extra metre, or two extra metres in Difficult Terrain. You ignore this extra cost if you have a Climb Speed and use it. On a slippery surface or one with few handholds the DM may require a DC 15 Athletics check.",
+          "imperial": "While climbing, each foot of movement costs one extra foot, or two extra feet in Difficult Terrain. You ignore this extra cost if you have a Climb Speed and use it. On a slippery surface or one with few handholds the DM may require a DC 15 Athletics check."
+        },
+        "Example": {
+          "metric": "A Rogue climbs 4.5 metres up a building wall. It costs him 9 metres, his entire Speed for the turn.",
+          "imperial": "A Rogue climbs 15 feet up a building wall. It costs him 30 feet, his entire Speed for the turn."
+        }
       },
       "Swim": {
         "Title": "Swimming",
-        "Subtitle": "Swimming costs double movement — unless you have a swim speed.",
-        "Summary": "Swimming works like climbing: double movement cost, regular cost with a swim speed. Strong currents or storms may additionally require a Strength (Athletics) check. Heavy armor or significant load affect swimming — the DM may forbid forward progress in extreme conditions.",
-        "Example": "A Wizard in robes swims through a calm river: 15 ft of distance costs 30 ft of movement. Add a storm and an Athletics check is in order."
+        "Subtitle": {
+          "metric": "Each metre costs one extra metre unless you have a Swim Speed.",
+          "imperial": "Each foot costs one extra foot unless you have a Swim Speed."
+        },
+        "Summary": {
+          "metric": "While swimming, each metre of movement costs one extra metre, or two extra metres in Difficult Terrain. A Swim Speed removes this extra cost. Moving any distance in rough water may require a DC 15 Athletics check.",
+          "imperial": "While swimming, each foot of movement costs one extra foot, or two extra feet in Difficult Terrain. A Swim Speed removes this extra cost. Moving any distance in rough water may require a DC 15 Athletics check."
+        },
+        "Example": {
+          "metric": "A Wizard swims across a calm river. Covering 4.5 metres costs him 9 metres of movement. In a storm an Athletics check would be added.",
+          "imperial": "A Wizard swims across a calm river. Covering 15 feet costs him 30 feet of movement. In a storm an Athletics check would be added."
+        }
       },
       "Crawl": {
         "Title": "Crawling",
-        "Subtitle": "While prone, every step of movement costs double.",
-        "Summary": "While you have the Prone condition, each foot of movement costs double. You cannot vault obstacles you would otherwise step around, and low ceilings often force you to crawl. Standing up from prone costs half your speed (see the \"Stand Up\" card).",
-        "Example": "A Cleric is on the ground but wants to crawl closer to the falling Fighter. Crawling 5 ft costs 10 ft of her 30 ft of speed."
+        "Subtitle": {
+          "metric": "While prone, each metre costs one extra metre.",
+          "imperial": "While prone, each foot costs one extra foot."
+        },
+        "Summary": {
+          "metric": "While crawling, each metre of movement costs one extra metre, or two extra metres in Difficult Terrain. Crawling and standing up are your only movement options while you have the Prone condition.",
+          "imperial": "While crawling, each foot of movement costs one extra foot, or two extra feet in Difficult Terrain. Crawling and standing up are your only movement options while you have the Prone condition."
+        },
+        "Example": {
+          "metric": "A Cleric lies on the ground and crawls 1.5 metres to the fallen Fighter. That costs 3 metres of her 9 metre Speed.",
+          "imperial": "A Cleric lies on the ground and crawls 5 feet to the fallen Fighter. That costs 10 feet of her 30 foot Speed."
+        }
       },
       "Fall": {
         "Title": "Falling",
@@ -295,170 +330,239 @@
           "imperial": "1d6 bludgeoning damage per 10 ft fallen, capped at 20d6."
         },
         "Summary": {
-          "metric": "Without a soft landing you take 1d6 bludgeoning damage per 3 m of falling distance. The cap sits at 20d6 — about 60 m of fall reaches the mechanical maximum. You land Prone unless a magical effect like Feather Fall intervenes.",
-          "imperial": "Without a soft landing you take 1d6 bludgeoning damage per 10 ft of falling distance. The cap sits at 20d6 — about 200 ft of fall reaches the mechanical maximum. You land Prone unless a magical effect like Feather Fall intervenes."
+          "metric": "A falling creature takes 1d6 bludgeoning damage at the end of the fall for every 3 metres fallen, up to a maximum of 20d6. On landing it gains the Prone condition unless it avoids all damage from the fall. A creature falling into water or another liquid can use its Reaction to make a DC 15 Athletics or Acrobatics check, halving the damage on a success.",
+          "imperial": "A falling creature takes 1d6 bludgeoning damage at the end of the fall for every 10 feet fallen, up to a maximum of 20d6. On landing it gains the Prone condition unless it avoids all damage from the fall. A creature falling into water or another liquid can use its Reaction to make a DC 15 Athletics or Acrobatics check, halving the damage on a success."
         },
         "Example": {
           "metric": "A Rogue falls 9 m and takes 3d6 bludgeoning damage — landing prone.",
           "imperial": "A Rogue falls 30 ft and takes 3d6 bludgeoning damage — landing prone."
         },
         "Notes": {
-          "metric": "Soft surfaces (hay, water) can reduce or negate damage at the DM's narration.",
-          "imperial": "Soft surfaces (hay, water) can reduce or negate damage at the DM's narration."
+          "metric": "The Prone condition is avoided only if the fall damage is negated entirely, for example by Feather Fall.",
+          "imperial": "The Prone condition is avoided only if the fall damage is negated entirely, for example by Feather Fall."
         }
       },
       "StandUp": {
         "Title": "Stand Up",
-        "Subtitle": "Standing up from prone costs half your speed.",
-        "Summary": "While Prone, standing up costs half your speed (rounded by DM ruling). If your remaining movement is too low, you cannot stand up this turn. Some features let you stand up at no cost or as a bonus action — check your class or feat descriptions.",
-        "Example": "A Fighter with 30 ft speed stands up from prone (15 ft consumed) and uses the remaining 15 ft to close on the Goblin."
+        "Subtitle": {
+          "metric": "Standing up costs half your Speed, rounded down.",
+          "imperial": "Standing up costs half your Speed, rounded down."
+        },
+        "Summary": {
+          "metric": "While you have the Prone condition, standing up costs movement equal to half your Speed, rounded down, and ends the condition. If your Speed is 0 you cannot stand up. If your remaining movement is not enough, you must stay prone or crawl.",
+          "imperial": "While you have the Prone condition, standing up costs movement equal to half your Speed, rounded down, and ends the condition. If your Speed is 0 you cannot stand up. If your remaining movement is not enough, you must stay prone or crawl."
+        },
+        "Example": {
+          "metric": "A Fighter with 9 metres of Speed stands up from prone for 4.5 metres and uses the remaining 4.5 metres to reach the Goblin.",
+          "imperial": "A Fighter with 30 feet of Speed stands up from prone for 15 feet and uses the remaining 15 feet to reach the Goblin."
+        }
       }
     },
-
     "Condition": {
       "Blinded": {
         "Title": "Blinded",
         "Subtitle": "You cannot see — attacks against you have advantage, your attacks have disadvantage.",
-        "Summary": "Sight is impossible; any check that requires sight automatically fails. Attack rolls against you have advantage, your own have disadvantage. Effects that require sight (like Opportunity Attacks against movement, some spells) do not function.",
-        "Example": "A Wizard is blinded by a Dust Devil. Until he frees himself, he misses the Storm Giant twice with disadvantage, while the giant lands its swing easily with advantage.",
-        "Notes": "Magical sight like Truesight or Tremorsense can bypass or compensate for Blinded depending on its description."
+        "Summary": "You cannot see and automatically fail any check that requires sight. Attack rolls against you have Advantage, and your own attack rolls have Disadvantage.",
+        "Example": "A Wizard is blinded by a Dust Devil. He misses the Storm Giant twice with Disadvantage while the giant lands its blow with Advantage.",
+        "Notes": "Senses such as Blindsight or Tremorsense can offset the effect where their description says so."
       },
       "Charmed": {
         "Title": "Charmed",
         "Subtitle": "You cannot attack the charmer; they have advantage on social checks against you.",
-        "Summary": "You cannot attack the creature that charmed you, nor target it directly with a harmful effect. The charming creature also has advantage on Charisma checks aimed at influencing you. You remain otherwise capable — allies of the charmer are still fair game.",
-        "Example": "A Dryad casts Charm Person on the Fighter. The Fighter cannot attack the Dryad, but her Goblin guards are still valid targets.",
-        "Notes": "Charmed does not turn a creature into a puppet — it only protects the charmer from direct aggression."
+        "Summary": "You cannot attack the charmer or target them with damaging abilities or magical effects. The charmer also has Advantage on any check to interact with you socially. Otherwise you remain fully capable.",
+        "Example": "A Dryad casts Charm Person on the Fighter. He cannot attack the Dryad, but her Goblin guards are still fair game.",
+        "Notes": "Charmed does not turn you into a puppet. It only shields the charmer from your attacks and grants them a social edge."
       },
       "Deafened": {
         "Title": "Deafened",
         "Subtitle": "You cannot hear — auditory checks fail automatically.",
-        "Summary": "Hearing is impossible; any check that requires hearing automatically fails. You can still cast spells with verbal components if you can speak — you just do not hear the result. Warnings or commands meant to alert you do not reach you.",
+        "Summary": "You cannot hear and automatically fail any check that requires hearing. You can still cast spells with verbal components as long as you can speak.",
         "Example": "A Bard is deafened by a Thunderclap. He cannot hear the approaching Rogues, losing the edge their loud footsteps would have given him.",
-        "Notes": "Telepathic communication is unaffected by Deafened — it bypasses hearing entirely."
+        "Notes": "Telepathy is unaffected by Deafened, as it bypasses hearing entirely."
       },
       "Frightened": {
         "Title": "Frightened",
         "Subtitle": "You roll with disadvantage while you can see the source, and cannot willingly approach it.",
-        "Summary": "While you can see the source of your fear, ability checks and attack rolls have disadvantage. You cannot willingly move closer to the source. Breaking line of sight removes the disadvantage but the condition itself remains — you keep fleeing.",
-        "Example": "A Dragon uses its Frightful Presence. The Fighter fails the saving throw — frightened, he backs away and attacks the next round only with disadvantage.",
-        "Notes": "Effects like Bless against fear or magical resistance to fear can suppress the condition entirely."
+        "Summary": "While the source of your fear is in your line of sight you have Disadvantage on ability checks and attack rolls. You also cannot willingly move closer to the source. Breaking line of sight removes the Disadvantage but not the condition.",
+        "Example": "A Dragon uses its Frightful Presence. The Fighter fails the save, backs away and attacks the next round only with Disadvantage.",
+        "Notes": "The penalties depend purely on line of sight. Taking cover removes them without ending the condition."
       },
       "Grappled": {
         "Title": "Grappled",
-        "Subtitle": "Your speed becomes 0; attacks against creatures other than the grappler have disadvantage.",
-        "Summary": "Your speed drops to 0 and bonuses to speed do not apply. Your attack rolls against any creature other than the grappler have disadvantage. The condition ends when you escape (Strength or Dexterity check vs the grapple DC) or when the grappler becomes incapacitated.",
+        "Subtitle": "Speed 0; attacks against targets other than the grappler have Disadvantage.",
+        "Summary": "Your Speed is 0 and cannot be increased. You have Disadvantage on attack rolls against any target other than the grappler. The grappler can drag or carry you when moving, but each foot costs them one extra foot unless you are Tiny or much smaller.",
         "Example": "A Giant Crab grabs the Fighter with its claw. The Fighter is grappled, cannot move, and can only meaningfully attack the crab itself.",
-        "Notes": "New in 2024: Grappling is now an option of the Attack action (Unarmed Strike → Grapple). The DC is 8 + Strength mod + proficiency of the grappler."
+        "Notes": "The grapple comes from the Grapple option of the Unarmed Strike. The escape DC is 8 plus the grappler's Strength modifier and Proficiency Bonus."
       },
       "Incapacitated": {
         "Title": "Incapacitated",
         "Subtitle": "No actions, no bonus actions, no reactions. You also lose concentration on spells.",
-        "Summary": "While incapacitated you cannot take an action or bonus action on your turn, and no reaction outside your turn. Concentration on a spell breaks. Movement is not directly blocked — that comes from a paired condition like Prone, Grappled, or Unconscious.",
-        "Example": "A Wizard is hit by Hold Person — paralyzed and therefore also incapacitated. His concentration spell Bless on the party drops immediately.",
-        "Notes": "New in 2024: Incapacitated is cleanly described as the shared building block of many other conditions — it sits inside Paralyzed, Unconscious, Petrified, Stunned."
+        "Summary": "You cannot take an action, Bonus Action or Reaction. Your Concentration is broken and you cannot speak. If you are Incapacitated when you roll Initiative, you have Disadvantage on the roll.",
+        "Example": "A Wizard is caught by Hold Person. He is Paralyzed and therefore Incapacitated, so his Concentration spell Bless ends at once.",
+        "Notes": "Incapacitated is a building block inside Paralyzed, Petrified, Stunned and Unconscious."
       },
       "Invisible": {
         "Title": "Invisible",
         "Subtitle": "Others cannot see you; attacks have advantage/disadvantage in your favor.",
-        "Summary": "You cannot be seen — creatures relying on sight cannot directly target you. As long as you remain undetected, you have advantage on attacks against visible targets, and attacks against you have disadvantage. Sound, smell, or physical traces can give you away — the DM decides when.",
+        "Summary": "You are not affected by effects that require a visible target, and neither is the equipment you wear or carry. Attack rolls against you have Disadvantage and your own have Advantage. If a creature can somehow see you, you lose that Advantage against it. Rolling Initiative while Invisible gives you Advantage on the roll.",
         "Example": "A Monk drinks a potion of invisibility, sneaks up on a cultist, and attacks with advantage — the first strike reveals her position.",
-        "Notes": "New in 2024: the Hide action explicitly grants this condition — not just \"hidden\"."
+        "Notes": "The Hide action grants this condition on a successful Stealth check against DC 15."
       },
       "Paralyzed": {
         "Title": "Paralyzed",
         "Subtitle": "Incapacitated + immobile. Hits within reach are automatic critical hits.",
-        "Summary": "You are incapacitated and cannot move or speak. Strength and Dexterity saving throws fail automatically. Attacks against you have advantage, and any hit within 1.5 m / 5 ft is automatically a critical hit.",
+        "Summary": "You have the Incapacitated condition, and your Speed is 0 and cannot be increased. Strength and Dexterity saving throws fail automatically. Attack rolls against you have Advantage, and any hit from within 5 feet is automatically a Critical Hit.",
         "Example": "A Deep Wizard is paralyzed by a spell. The enemy Fighter swings in melee — every hit is automatically critical.",
-        "Notes": "Concentration spells break automatically (consequence of Incapacitated)."
+        "Notes": "Because Paralyzed includes Incapacitated, Concentration on ongoing spells also breaks."
       },
       "Petrified": {
         "Title": "Petrified",
         "Subtitle": "Turned to stone. Heavy resistances, but Strength/Dex saves fail automatically.",
-        "Summary": "Your body becomes stone. You are incapacitated, immobile, and unaware. You do not age. You gain resistance to all damage and immunity to poison and many diseases — but you are trivially easy to hit because Strength and Dexterity saves fail automatically.",
+        "Summary": "You and your nonmagical possessions turn into a solid inanimate substance, your weight increases tenfold and you stop aging. You have the Incapacitated condition, your Speed is 0, and Strength and Dexterity saving throws fail automatically. You have Resistance to all damage and Immunity to the Poisoned condition.",
         "Example": "A Wizard is hit by a Basilisk's gaze, fails the saving throw, and is petrified. Until a healing spell intervenes, he is out of the fight.",
-        "Notes": "Petrification is usually not undone by ordinary healing — Greater Restoration or Stone to Flesh is needed."
+        "Notes": "Petrification does not end through ordinary healing. It takes magic such as Greater Restoration."
       },
       "Poisoned": {
         "Title": "Poisoned",
         "Subtitle": "Attack rolls and ability checks have disadvantage.",
-        "Summary": "You roll attack rolls and ability checks with disadvantage. Saving throws are not affected. Source and duration depend on the trigger — some poisons last one round, others until the next day, some can be ended early by a saving throw.",
+        "Summary": "You have Disadvantage on attack rolls and ability checks. Saving throws are unaffected. Duration and ending depend on the effect that caused it.",
         "Example": "A Rogue is bitten by a spider — she fails the first saving throw and is poisoned for an hour, with disadvantage on every attack.",
-        "Notes": "Resistance to poison damage is not the same as immunity to the Poisoned condition — these are often confused."
+        "Notes": "Resistance to poison damage does not protect against the Poisoned condition. That requires Immunity to the condition itself."
       },
       "Prone": {
         "Title": "Prone",
-        "Subtitle": "You crawl. Melee attacks against you have advantage; ranged attacks have disadvantage.",
-        "Summary": "While prone, every foot of movement costs double (crawling). Standing up costs half your speed. Melee attacks against you have advantage, ranged attacks against you have disadvantage. Your own attacks have disadvantage — melee or ranged.",
-        "Example": "A Fighter is shoved prone. He stays prone until his next turn — the Goblins in melee attack with advantage, the Archer further back with disadvantage.",
-        "Notes": "Unconscious and Petrified include Prone as well."
+        "Subtitle": {
+          "metric": "Only crawling or standing up; melee attacks against you have Advantage.",
+          "imperial": "Only crawling or standing up; melee attacks against you have Advantage."
+        },
+        "Summary": {
+          "metric": "Your only movement options are to crawl or to stand up, which costs half your Speed and ends the condition. You have Disadvantage on attack rolls. An attack roll against you has Advantage if the attacker is within 1.5 metres, otherwise it has Disadvantage.",
+          "imperial": "Your only movement options are to crawl or to stand up, which costs half your Speed and ends the condition. You have Disadvantage on attack rolls. An attack roll against you has Advantage if the attacker is within 5 feet, otherwise it has Disadvantage."
+        },
+        "Example": {
+          "metric": "A Fighter is shoved to the ground. The Goblins in melee attack with Advantage, while the archer further away attacks with Disadvantage.",
+          "imperial": "A Fighter is shoved to the ground. The Goblins in melee attack with Advantage, while the archer further away attacks with Disadvantage."
+        },
+        "Notes": {
+          "metric": "If your Speed is 0 you cannot stand up. Unconscious and Petrified include the Prone condition.",
+          "imperial": "If your Speed is 0 you cannot stand up. Unconscious and Petrified include the Prone condition."
+        }
       },
       "Restrained": {
         "Title": "Restrained",
-        "Subtitle": "Speed 0, attacks against you with advantage, Dexterity saves with disadvantage.",
-        "Summary": "Your speed becomes 0. Attack rolls against you have advantage and your own have disadvantage. Dexterity saving throws are also at disadvantage. The condition is usually maintained by a source — webbing, vines, magical effects — and ends when you escape or the source is removed.",
-        "Example": "A Rogue is restrained by an Entangle spell. He cannot reach the Goblin archer, rolls his Dex saves with disadvantage, and is easy prey in melee.",
-        "Notes": "Restrained differs from Grappled: only Restrained imposes disadvantage on attacks targeting you and on your Dex saves."
+        "Subtitle": "Speed 0; attacks against you have Advantage, Dexterity saves Disadvantage.",
+        "Summary": "Your Speed is 0 and cannot be increased. Attack rolls against you have Advantage and your own have Disadvantage. You also have Disadvantage on Dexterity saving throws.",
+        "Example": "A Rogue is restrained by Entangle. He cannot reach the Goblin archer, rolls his Dexterity saves with Disadvantage and is easy prey in melee.",
+        "Notes": "Restrained hits harder than Grappled: only here do attacks against you have Advantage and your Dexterity saves Disadvantage."
       },
       "Stunned": {
         "Title": "Stunned",
         "Subtitle": "Incapacitated, speed 0, Strength/Dex saves fail automatically.",
-        "Summary": "You are incapacitated, cannot move, and speak only haltingly. Strength and Dexterity saving throws fail automatically. Attacks against you have advantage.",
-        "Example": "A Monk uses Stunning Strike; the Goblin fails the save and is stunned — the Rogue immediately uses the advantage for Sneak Attack.",
-        "Notes": "Concentration on a spell breaks (consequence of Incapacitated)."
+        "Summary": "You have the Incapacitated condition. Strength and Dexterity saving throws fail automatically, and attack rolls against you have Advantage.",
+        "Example": "A Monk stuns a Goblin that fails its save. The Rogue immediately uses the Advantage for a Sneak Attack.",
+        "Notes": "As a consequence of Incapacitated, Concentration on ongoing spells breaks here too."
       },
       "Unconscious": {
         "Title": "Unconscious",
-        "Subtitle": "Incapacitated, prone, dropping items, Strength/Dex saves fail automatically.",
-        "Summary": "You lose consciousness, are unaware of your surroundings, and fall — you gain the Prone condition as part of being unconscious. You drop whatever you were holding. Strength and Dexterity saving throws fail automatically. Attacks against you have advantage; melee hits within 1.5 m / 5 ft are automatic critical hits.",
-        "Example": "A Fighter drops to 0 HP and falls unconscious. He lies on the ground, drops his sword, and must roll death saving throws.",
-        "Notes": "New in 2024: Unconscious now explicitly includes the Prone condition — there is no longer a separate mention of \"prone\" needed."
+        "Subtitle": {
+          "metric": "Incapacitated and Prone; hits from within 1.5 metres are critical.",
+          "imperial": "Incapacitated and Prone; hits from within 5 feet are critical."
+        },
+        "Summary": {
+          "metric": "You have the Incapacitated and Prone conditions and drop whatever you are holding. Your Speed is 0. Strength and Dexterity saving throws fail automatically, attack rolls against you have Advantage, and any hit from within 1.5 metres is a Critical Hit.",
+          "imperial": "You have the Incapacitated and Prone conditions and drop whatever you are holding. Your Speed is 0. Strength and Dexterity saving throws fail automatically, attack rolls against you have Advantage, and any hit from within 5 feet is a Critical Hit."
+        },
+        "Example": {
+          "metric": "A Fighter drops to 0 hit points and falls unconscious. He drops his sword, lies on the ground and rolls death saving throws.",
+          "imperial": "A Fighter drops to 0 hit points and falls unconscious. He drops his sword, lies on the ground and rolls death saving throws."
+        },
+        "Notes": {
+          "metric": "When the Unconscious condition ends you remain Prone and must stand up normally.",
+          "imperial": "When the Unconscious condition ends you remain Prone and must stand up normally."
+        }
       }
     },
-
     "Exhaustion": {
-      "Title": "Exhaustion (2024)",
-      "Intro": "Exhaustion has 6 cumulative levels. Each level adds −2 to all d20 tests (attacks, saves, ability checks) and reduces speed by 5 ft (1.5 m). Level 6 means death.",
-      "L1": "−2 on all d20 tests · −5 ft / −1.5 m speed",
-      "L2": "−4 on all d20 tests · −10 ft / −3.0 m speed",
-      "L3": "−6 on all d20 tests · −15 ft / −4.5 m speed",
-      "L4": "−8 on all d20 tests · −20 ft / −6.0 m speed",
-      "L5": "−10 on all d20 tests · −25 ft / −7.5 m speed",
-      "L6": "Death",
-      "Notes": "A long rest reduces exhaustion by one level (assuming you eat and drink properly). Spells like Greater Restoration remove a level instantly. The new scale (−2 per level) fully replaces the discrete effects from 2014."
+      "Title": "Exhaustion",
+      "Intro": "Exhaustion is cumulative: each time you gain it your Exhaustion level rises by 1. Each level reduces every D20 Test by 2 and your Speed by {unitStep}. At level 6 you die.",
+      "LevelLine": "{d20} on D20 Tests · {speed} Speed",
+      "LevelDeath": "Death",
+      "Notes": "Finishing a Long Rest removes 1 Exhaustion level. When your level reaches 0 the condition ends. Magic such as Greater Restoration removes a level instantly."
     },
-
     "Calendar": {
-      "Intro": "A year in this homebrew calendar has 365 days. It consists of 12 months of 30 days each, divided into 3 ten-day weeks. Between the months sit 5 special holidays that do not count as month days. Every 4 years adds a sixth leap-year holiday.",
+      "Intro": "A year in the Calendar of Harptos has 365 days. It is made up of 12 months of 30 days each (3 tendays). Between certain months sit 5 special holidays that do not count as month days. Every 4 years adds Shieldmeet after Midsummer as a 6th leap-year holiday.",
       "WeekName": "Tenday",
       "Month": {
-        "M01": "1st Month",
-        "M02": "2nd Month",
-        "M03": "3rd Month",
-        "M04": "4th Month",
-        "M05": "5th Month",
-        "M06": "6th Month",
-        "M07": "7th Month",
-        "M08": "8th Month",
-        "M09": "9th Month",
-        "M10": "10th Month",
-        "M11": "11th Month",
-        "M12": "12th Month"
+        "M01": {
+          "Name": "Hammer",
+          "Subtitle": "Deepwinter"
+        },
+        "M02": {
+          "Name": "Alturiak",
+          "Subtitle": "The Claw of Winter"
+        },
+        "M03": {
+          "Name": "Ches",
+          "Subtitle": "The Claw of the Sunsets"
+        },
+        "M04": {
+          "Name": "Tarsakh",
+          "Subtitle": "The Claw of the Storms"
+        },
+        "M05": {
+          "Name": "Mirtul",
+          "Subtitle": "The Melting"
+        },
+        "M06": {
+          "Name": "Kythorn",
+          "Subtitle": "The Time of Flowers"
+        },
+        "M07": {
+          "Name": "Flamerule",
+          "Subtitle": "Summertide"
+        },
+        "M08": {
+          "Name": "Eleasis",
+          "Subtitle": "Highsun"
+        },
+        "M09": {
+          "Name": "Eleint",
+          "Subtitle": "The Fading"
+        },
+        "M10": {
+          "Name": "Marpenoth",
+          "Subtitle": "Leaffall"
+        },
+        "M11": {
+          "Name": "Uktar",
+          "Subtitle": "The Rotting"
+        },
+        "M12": {
+          "Name": "Nightal",
+          "Subtitle": "The Drawing Down"
+        }
       },
       "Holiday": {
-        "NewYear": "New Year",
-        "NewYearDesc": "The first holiday of the year, before the 1st month.",
-        "Spring": "Spring Festival",
-        "SpringDesc": "Holiday after the 3rd month — start of the warm season.",
+        "Midwinter": "Midwinter",
+        "MidwinterDesc": "Holiday between Hammer and Alturiak — the cold middle of winter.",
+        "Greengrass": "Greengrass",
+        "GreengrassDesc": "Holiday between Tarsakh and Mirtul — the first day of spring.",
         "Midsummer": "Midsummer",
-        "MidsummerDesc": "Holiday after the 6th month — middle of the year.",
-        "Harvest": "Harvest Day",
-        "HarvestDesc": "Holiday after the 9th month — end of the harvest.",
-        "Winter": "Winter Solstice",
-        "WinterDesc": "Holiday after the 12th month — shortest day of the year.",
-        "Leap": "Shieldmoot",
-        "LeapDesc": "Additional leap-year holiday placed right after Midsummer, every 4 years."
+        "MidsummerDesc": "Holiday between Flamerule and Eleasis — summer solstice.",
+        "Shieldmeet": "Shieldmeet",
+        "ShieldmeetDesc": "Leap-year holiday right after Midsummer, every 4 years — day of great gatherings and oaths.",
+        "Highharvest": "Higharvestide",
+        "HighharvestDesc": "Holiday between Eleint and Marpenoth — harvest festival and end of high summer.",
+        "Moonfest": "Feast of the Moon",
+        "MoonfestDesc": "Holiday between Uktar and Nightal — day of remembrance for the dead."
       }
+    },
+    "Phb": {
+      "SourceGermanPhb": "Player's Handbook (German)",
+      "SourcePhb": "Player's Handbook",
+      "SourceSystem": "System rules reference",
+      "ButtonTooltip": "Open {page} in {source}",
+      "NotFound": "The handbook page could not be found."
     }
   }
 }

@@ -2,6 +2,7 @@
 // Foundry VTT v13/v14 init/ready hooks, settings, keybinding, integrations.
 
 import { NDRSApplication } from "./ndrs-app.js";
+import { buildPhbIndex, resetPhbIndex, hasPhbIndex } from "./phb-link.js";
 
 const MODULE_ID = "ndrs";
 
@@ -138,6 +139,19 @@ Hooks.once("init", () => {
     type: Boolean,
     default: true
   });
+
+  game.settings.register(MODULE_ID, "phbLinks", {
+    name: "NDRS.Settings.PhbLinks.Name",
+    hint: "NDRS.Settings.PhbLinks.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true,
+    onChange: () => {
+      resetPhbIndex();
+      buildPhbIndex().then(() => ndrsApp?.rendered && ndrsApp.render({ parts: ["main"] }));
+    }
+  });
 });
 
 // ─── ready ────────────────────────────────────────────────────────────
@@ -160,6 +174,13 @@ Hooks.once("ready", () => {
     gotoTab,
     setSearch: (q) => { openApp(); setTimeout(() => ndrsApp?.setSearch?.(q), 50); }
   };
+
+  // Optional handbook deep links. Failure here must never block the module.
+  buildPhbIndex()
+    .then(() => {
+      if (hasPhbIndex()) console.log("NDRS | Handbook deep links available");
+    })
+    .catch(err => console.warn("NDRS | Handbook index unavailable", err));
 
   console.log("NDRS | Ready. API exposed at game.modules.get('ndrs').api");
 });

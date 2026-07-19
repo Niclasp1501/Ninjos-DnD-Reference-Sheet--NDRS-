@@ -29,7 +29,7 @@ export const TABS = Object.freeze([
   },
   {
     id: "conditions",
-    iconClass: "fa-circle-radiation",
+    iconClass: "fa-skull",
     labelKey: "NDRS.UI.TabConditions",
     sections: [
       { titleKey: "NDRS.UI.SectionConditions", entries: CONDITIONS },
