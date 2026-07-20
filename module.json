@@ -20,6 +20,13 @@
   "styles": [
     "styles/ndrs.css"
   ],
+  "url": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-",
+  "manifest": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json",
+  "download": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.zip",
+  "readme": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/blob/main/README.md",
+  "changelog": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/blob/main/CHANGELOG.md",
+  "license": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/blob/main/LICENSE",
+  "bugs": "https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/issues",
   "languages": [
     {
       "lang": "de",

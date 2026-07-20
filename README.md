@@ -31,8 +31,11 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 1. Open Foundry VTT and go to **Add-on Modules**.
 2. Click **Install Module**.
-3. Paste the manifest URL (released versions only — beta link follows).
-4. Restart Foundry, enable **Ninjo's DnD Reference Sheet (NDRS)** in your world.
+3. Paste one of these manifest URLs:
+   - **Stable:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
+   - **Beta:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/download/beta-latest/module-beta.json`
+4. Restart Foundry and enable **Ninjo's DnD Reference Sheet (NDRS)** in your world.
+5. Channel note: both links install the same module id (`ndrs`). Use one channel per world.
 
 ### Usage
 
@@ -70,8 +73,11 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 1. Foundry VTT öffnen und in den Reiter **Zusatzmodule** wechseln.
 2. **Modul installieren** anklicken.
-3. Manifest-URL einfügen (veröffentlichte Versionen — Beta-Link folgt).
+3. Eine dieser Manifest-URLs einfügen:
+   - **Stable:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
+   - **Beta:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/download/beta-latest/module-beta.json`
 4. Foundry neu starten und **Ninjo's DnD Reference Sheet (NDRS)** in deiner Welt aktivieren.
+5. Kanal-Hinweis: Beide Links verwenden dieselbe Modul-ID (`ndrs`). Pro Welt nur einen Kanal nutzen.
 
 ### Anleitung
 
