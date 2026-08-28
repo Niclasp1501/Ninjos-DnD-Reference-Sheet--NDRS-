@@ -24,12 +24,14 @@ jobs:
           zip -r ./module.zip . \
             -x ".git/*" \
                ".github/*" \
+               ".gitignore" \
                "tools/*" \
                "AGENTS.md" \
                "DEVELOPER_GUIDE.md" \
                "CONTENT-INVENTORY.md" \
                "TODO.md" \
-               "UI-UPGRADE-PLAN.md"
+               "UI-UPGRADE-PLAN.md" \
+               "HINWEIS-VEROEFFENTLICHUNG.md"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
