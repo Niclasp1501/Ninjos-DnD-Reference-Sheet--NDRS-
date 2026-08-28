@@ -1,6 +1,6 @@
 # Ninjo's DnD Reference Sheet (NDRS)
 
-**Current Version / Aktuelle Version:** `14.2605.1-beta.1`
+**Current Version / Aktuelle Version:** `14.2605.1`
 
 A lightweight, in-session quick reference for **D&D 5.5 (2024)** rules — actions, movement, conditions, exhaustion, and a homebrew calendar — natively integrated into Foundry VTT v13 and v14, in the FANG-Fantasy visual design.
 

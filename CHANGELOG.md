@@ -5,9 +5,10 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
-## [14.2605.1-beta.1] — Public Beta
+## [14.2605.1] — First stable release
 
-First public beta release.
+First public release on GitHub and the Foundry package registry.
+Rule text follows the official German dnd5e 2024 translation (Rules Glossary).
 
 ### Added
 - Foundry VTT v13/v14 module skeleton (ApplicationV2 + HandlebarsApplicationMixin).
@@ -29,5 +30,5 @@ First public beta release.
 - MIT license.
 
 ### Notes
-- This is a beta. Expect minor UX tweaks before the first stable `14.2605.1`.
-- PHB-deeplinks are stubbed in the data model (`phbUuid` field) but inactive; activation is planned for `v14.2606.x`.
+- Optional Player's Handbook cross-references: when a supported handbook module is active, expanded cards show a link to the matching page. No hardcoded UUIDs — pages are matched by name at runtime.
+- The homebrew calendar uses Harptos month and holiday names; rename them freely in `lang/*.json` for your own setting.

@@ -2,7 +2,7 @@
   "id": "ndrs",
   "title": "Ninjo's DnD Reference Sheet (NDRS)",
   "description": "An in-session quick reference for D&D 5.5 (2024) rules — actions, movement, conditions, exhaustion and calendar — natively integrated into Foundry VTT v13 and v14, in the FANG-Fantasy visual design. Read-only, lightweight, and strictly 2024.",
-  "version": "14.2605.1-beta.1",
+  "version": "14.2605.1",
   "compatibility": {
     "minimum": "13",
     "verified": "14",
