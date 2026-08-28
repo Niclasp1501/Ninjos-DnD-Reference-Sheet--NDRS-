@@ -68,7 +68,7 @@ jobs:
             --exclude "CONTENT-INVENTORY.md" \
             --exclude "TODO.md" \
             --exclude "UI-UPGRADE-PLAN.md" \
-            --exclude "HINWEIS-VEROEFFENTLICHUNG.md"
+            --exclude "HINWEIS-*.md"
 
           cp module-beta.json .beta-dist/module.json
 

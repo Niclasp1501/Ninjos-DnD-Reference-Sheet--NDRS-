@@ -35,7 +35,7 @@ jobs:
                "CONTENT-INVENTORY.md" \
                "TODO.md" \
                "UI-UPGRADE-PLAN.md" \
-               "HINWEIS-VEROEFFENTLICHUNG.md"
+               "HINWEIS-*.md"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1

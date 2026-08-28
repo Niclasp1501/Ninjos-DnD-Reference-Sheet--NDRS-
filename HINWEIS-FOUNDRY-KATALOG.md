@@ -1,5 +1,12 @@
 # Hinweis für den Agenten: Release steht, Katalogeintrag fehlt noch
 
+> **Stand 28.08.2026, später am Tag — Punkt 1 ist erledigt.**
+> Der Katalogeintrag existiert: <https://foundryvtt.com/packages/ndrs> ist live,
+> mit Version 14.2605.1, Tags, KI-Deklaration und System „Dungeons & Dragons Fifth Edition“.
+> **Offen bleibt allein das Geheimnis `PACKAGE_TOKEN`** im Repository, damit künftige
+> Tags automatisch in den Katalog veröffentlichen. Der Token liegt unter
+> <https://foundryvtt.com/packages/ndrs/edit> ganz unten.
+
 *Angelegt am 28.08.2026. Ersetzt den früheren Hinweis „kein Release" — der ist erledigt.*
 
 ## Was inzwischen erledigt ist
