@@ -144,7 +144,7 @@ Every rule entry conforms to this shape:
     id: "attack",                          // unique kebab-case
     icon: "fa-swords",                     // Font Awesome class without "fa-solid"
     tags: ["combat", "core"],              // for filter chips
-    source: { book: "PHB 2024", page: 25 },// REQUIRED — see AGENTS.md
+    source: { book: "PHB 2024" },          // page optional, see AGENTS.md
     phbUuid: { de: "", en: "" },           // optional deeplink, empty in v1
     units: false,                          // true if body has metric/imperial split
     new2024: true,                         // shows "Neu 2024" gold badge
@@ -246,7 +246,7 @@ NDRS.Condition.Charmed.Title
 NDRS is a 2024-only reference. The 2014 rules are explicitly out of scope. See `AGENTS.md` for the full 2024-audit ruleset (forbidden terms, required terms, peer-review checklist). Hard requirements that touch this guide:
 
 - Every rule entry must populate `source.book = "PHB 2024"` (or another verified 2024 source).
-- `source.page` is required. The validator fails if missing.
+- `source.page` is optional and only set when verified. The validator rejects malformed values.
 - When writing summaries, consult the 2024 PHB. If the German PHB module (`dnd-players-handbook-deutsch`) is available, use it as cross-check — but write your own concise summary; do not paste PHB prose.
 - When in doubt whether a rule changed in 2024, set `new2024: true` and add a `notesKey` explaining the change.
 

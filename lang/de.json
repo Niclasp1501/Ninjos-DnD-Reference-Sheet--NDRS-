@@ -43,7 +43,8 @@
       "CalendarMonths": "Monate",
       "CalendarHolidays": "Feiertage",
       "CalendarLeap": "Schaltjahr",
-      "OpenInPhb": "Im Spielerhandbuch"
+      "OpenInPhb": "Im Spielerhandbuch",
+      "SearchAllTabs": "Suche läuft über alle Bereiche."
     },
     "Settings": {
       "DefaultTab": {
@@ -129,8 +130,8 @@
       },
       "Influence": {
         "Title": "Beeinflussen",
-        "Subtitle": "Dränge ein Monster mit einem Attributswurf dazu, etwas zu tun.",
-        "Summary": "Du beschreibst oder spielst aus, wie du mit dem Monster kommunizierst, und der SL entscheidet, ob es willig, unwillig oder zögerlich ist. Ist es willig, erfüllt es die Bitte ohne Wurf; ist es unwillig, gibt es ohne Wurf nicht nach. Nur bei einem zögerlichen Monster würfelst du, meist auf Täuschung, Einschüchterung, Auftreten, Überzeugen oder Tierumgang. Der SG ist 15 oder der Intelligenzwert des Monsters, je nachdem, welcher Wert höher ist.",
+        "Subtitle": "Mit der Aktion Beeinflussen drängst du ein Monster dazu, etwas zu tun.",
+        "Summary": "Mit der Aktion Beeinflussen drängst du ein Monster dazu, etwas zu tun. Du beschreibst oder spielst aus, wie du mit dem Monster kommunizierst, und der SL entscheidet, ob es willig, unwillig oder zögerlich ist. Ist es willig, erfüllt es die Bitte ohne Wurf; ist es unwillig, gibt es ohne Wurf nicht nach. Nur bei einem zögerlichen Monster würfelst du, meist auf Täuschung, Einschüchterung, Auftreten, Überzeugen oder Tierumgang. Der SG ist 15 oder der Intelligenzwert des Monsters, je nachdem, welcher Wert höher ist.",
         "Example": "Eine Bardin will einen Wachhauptmann überzeugen, die Gefangene freizulassen. Der SL stuft ihn als zögerlich ein, und die Bardin würfelt Charisma (Überzeugen) gegen SG 15.",
         "Notes": "Nach einem misslungenen Wurf musst du 24 Stunden warten, bevor du dasselbe Monster auf dieselbe Weise erneut drängen kannst."
       },

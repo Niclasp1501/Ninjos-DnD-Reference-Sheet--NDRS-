@@ -17,8 +17,8 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 - **Strict 2024 rules**: Every entry is verified against the 2024 PHB. The included validator scans for stray 2014-era phrasings.
 - **Four core tabs**: Round Actions (Action / Bonus / Reaction), Movement, Conditions (incl. Exhaustion 2024 table), Homebrew Calendar.
 - **Concise card + drill-down modal**: Each card shows a one-sentence summary; click for what it does, an example, and any "Neu 2024" notes.
-- **Full-text search** across all tabs.
-- **Favorites** per user (gold-bordered cards).
+- **Full-text search** across every tab, matching titles, summaries, examples and notes.
+- **Favorites** per user: pinned cards move to the top of their section and are gold-bordered.
 - **FT/M unit toggle** in the footer — instant switch on units-aware entries.
 - **FANG-Fantasy theme** (red / gold / parchment), automatically inheriting FANG's CSS variables when FANG is active.
 - **Only-Sheet integration**: NDRS injects a button into the Only-Sheet button bar.
@@ -41,7 +41,7 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 - Press `Shift + R` to open or close the window.
 - Click any card to open its detail modal.
-- Use the search field to filter entries across the active tab; press Esc to clear.
+- Use the search field to filter entries across every tab; press Esc to clear.
 - Click the star icon on a card to mark it as a favorite.
 - Toggle FT ↔ M from the footer; affected entries update instantly.
 
@@ -59,8 +59,8 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 - **Strikt 2024er-Regeln**: Jeder Eintrag ist gegen das PHB 2024 geprüft. Der mitgelieferte Validator findet versehentliche 2014er-Formulierungen.
 - **Vier Kerntabs**: Rundenaktionen (Aktion / Bonusaktion / Reaktion), Bewegung, Zustände (inkl. Erschöpfungs-Tabelle 2024), Homebrew-Kalender.
 - **Karte + Detail-Modal**: Jede Karte zeigt einen knappen Untertitel; ein Klick öffnet eine ausführlichere Beschreibung, ein Beispiel und ggf. „Neu 2024"-Hinweise.
-- **Volltextsuche** über alle Karten des aktiven Tabs.
-- **Favoriten** pro Benutzer (goldumrandete Karten).
+- **Volltextsuche** über alle Bereiche hinweg, inklusive Zusammenfassung, Beispiel und Hinweisen.
+- **Favoriten** pro Benutzer: angeheftete Karten rutschen in ihrem Abschnitt nach oben und sind goldumrandet.
 - **FT/M-Schalter** im Footer — wechselt sofort die maßeinheits-abhängigen Texte.
 - **FANG-Fantasy-Theme** (rot / gold / pergament). Wenn FANG installiert ist, übernimmt NDRS dessen CSS-Variablen automatisch.
 - **Only-Sheet-Integration**: NDRS fügt einen Button in die Only-Sheet-Buttonleiste ein.
@@ -83,7 +83,7 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 - `Shift + R` öffnet oder schließt das Fenster.
 - Klick auf eine Karte öffnet das Detail-Modal.
-- Das Suchfeld filtert die aktuellen Tabs; Esc leert die Suche.
+- Das Suchfeld durchsucht alle Bereiche; Esc leert die Suche.
 - Klick auf das Stern-Symbol einer Karte setzt sie auf die Favoritenliste.
 - FT/M lässt sich im Footer umschalten; betroffene Karten aktualisieren sich sofort.
 

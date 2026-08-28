@@ -13,10 +13,11 @@ function getApp() {
   return ndrsApp;
 }
 
-function openApp() {
+async function openApp() {
   const app = getApp();
   if (app.rendered) app.bringToFront?.();
-  else app.render({ force: true });
+  else await app.render({ force: true });
+  return app;
 }
 
 function closeApp() {
@@ -28,10 +29,9 @@ function toggleApp() {
   else openApp();
 }
 
-function gotoTab(tabId) {
-  openApp();
-  // tab change happens after render
-  setTimeout(() => ndrsApp?.gotoTab?.(tabId), 50);
+async function gotoTab(tabId) {
+  const app = await openApp();
+  await app?.gotoTab?.(tabId);
 }
 
 // ─── Journal-button delegated click (capture-phase, install once) ─────
@@ -172,13 +172,19 @@ Hooks.once("ready", () => {
     close: closeApp,
     toggle: toggleApp,
     gotoTab,
-    setSearch: (q) => { openApp(); setTimeout(() => ndrsApp?.setSearch?.(q), 50); }
+    setSearch: async (q) => {
+      const app = await openApp();
+      await app?.setSearch?.(q);
+    }
   };
 
   // Optional handbook deep links. Failure here must never block the module.
   buildPhbIndex()
     .then(() => {
-      if (hasPhbIndex()) console.log("NDRS | Handbook deep links available");
+      if (!hasPhbIndex()) return;
+      console.log("NDRS | Handbook deep links available");
+      // The window may already be open; refresh so the links show up.
+      if (ndrsApp?.rendered) ndrsApp.render({ parts: ["main"] });
     })
     .catch(err => console.warn("NDRS | Handbook index unavailable", err));
 

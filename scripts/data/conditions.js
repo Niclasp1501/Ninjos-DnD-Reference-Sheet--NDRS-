@@ -67,7 +67,7 @@ const cond = (id, icon, { new2024 = false, units = false, tags = ["condition"] }
   id: `cond-${id}`,
   icon,
   tags,
-  source: { book: "PHB 2024", page: 36 },
+  source: { book: "PHB 2024" },
   phbUuid: { de: "", en: "" },
   units,
   new2024,

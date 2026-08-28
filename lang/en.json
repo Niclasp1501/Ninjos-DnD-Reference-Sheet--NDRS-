@@ -43,7 +43,8 @@
       "CalendarMonths": "Months",
       "CalendarHolidays": "Holidays",
       "CalendarLeap": "Leap year",
-      "OpenInPhb": "In the handbook"
+      "OpenInPhb": "In the handbook",
+      "SearchAllTabs": "Searching across every tab."
     },
     "Settings": {
       "DefaultTab": {
@@ -129,8 +130,8 @@
       },
       "Influence": {
         "Title": "Influence",
-        "Subtitle": "Get an NPC to do something via Persuasion, Deception, Intimidation, or Performance.",
-        "Summary": "You describe or roleplay how you communicate with the monster, and the DM decides whether it is willing, unwilling or hesitant. A willing monster complies without a check; an unwilling one refuses without a check. Only a hesitant monster calls for a check, usually Deception, Intimidation, Performance, Persuasion or Animal Handling. The DC is 15 or the monster's Intelligence score, whichever is higher.",
+        "Subtitle": "Get a monster to do something with the Influence action.",
+        "Summary": "The Influence action pushes a monster to do something. You describe or roleplay how you communicate with the monster, and the DM decides whether it is willing, unwilling or hesitant. A willing monster complies without a check; an unwilling one refuses without a check. Only a hesitant monster calls for a check, usually Deception, Intimidation, Performance, Persuasion or Animal Handling. The DC is 15 or the monster's Intelligence score, whichever is higher.",
         "Example": "A Bard tries to persuade a guard captain to release a prisoner. The DM rules him hesitant, so the Bard rolls Charisma (Persuasion) against DC 15.",
         "Notes": "After a failed check you must wait 24 hours before pressing the same monster in the same way again."
       },

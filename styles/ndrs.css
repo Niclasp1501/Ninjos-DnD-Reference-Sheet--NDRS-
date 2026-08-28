@@ -15,6 +15,15 @@
     --ndrs-font-main:    var(--fang-font-main,    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
     --ndrs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --ndrs-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Semantic greys, so no component has to invent its own. */
+    --ndrs-text-strong: #111111;
+    --ndrs-text-body:   #333333;
+    --ndrs-text-muted:  #555555;
+    --ndrs-text-soft:   #888888;
+    --ndrs-rule-soft:   #eeeeee;
+    --ndrs-gold-dark:   #b8860b;
+    --ndrs-focus-ring:  0 0 0 2px var(--ndrs-bg-color), 0 0 0 4px var(--ndrs-accent-gold);
 }
 
 /* Defeat any FANG cyberpunk override globally — NDRS is Fantasy-only. */
@@ -29,6 +38,12 @@
     --ndrs-accent-gold: #D4AF37;
     --ndrs-header-text: #ffffff;
     --ndrs-font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ndrs-text-strong: #111111;
+    --ndrs-text-body: #333333;
+    --ndrs-text-muted: #555555;
+    --ndrs-text-soft: #888888;
+    --ndrs-rule-soft: #eeeeee;
+    --ndrs-gold-dark: #b8860b;
 }
 
 .ndrs-app-window .window-content {
@@ -72,7 +87,7 @@
 
 .ndrs-logo {
     font-weight: 800;
-    color: #444;
+    color: var(--ndrs-text-body);
     font-size: 1.15rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -113,7 +128,7 @@
 .ndrs-search button {
     background: transparent;
     border: none;
-    color: #999;
+    color: var(--ndrs-text-soft);
     cursor: pointer;
     width: auto;
     line-height: 1;
@@ -133,7 +148,7 @@
 .ndrs-tab-btn {
     background: transparent;
     border: none;
-    color: #555;
+    color: var(--ndrs-text-muted);
     padding: 8px 14px;
     font-size: 0.92rem;
     cursor: pointer;
@@ -150,7 +165,7 @@
 }
 
 .ndrs-tab-btn:hover {
-    color: #000;
+    color: var(--ndrs-text-strong);
     background: rgba(139, 0, 0, 0.05);
 }
 
@@ -173,12 +188,16 @@
 }
 
 .ndrs-section-header {
+    /* Rendered as <h2>: reset Foundry's heading defaults. */
+    font-size: 0.92rem;
+    line-height: 1.3;
+    border: none;
+    margin-top: 0;
     background: var(--ndrs-primary-red);
     color: var(--ndrs-header-text);
     padding: 7px 14px;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.92rem;
     margin-bottom: 12px;
     border-radius: 2px;
     border-bottom: 2px solid var(--ndrs-accent-gold);
@@ -187,7 +206,7 @@
 }
 
 .ndrs-empty {
-    color: #888;
+    color: var(--ndrs-text-soft);
     font-style: italic;
     padding: 6px 4px;
 }
@@ -215,7 +234,7 @@
 .ndrs-card:hover {
     box-shadow: var(--ndrs-shadow-md);
     transform: translateY(-2px);
-    border-color: #bbb;
+    border-color: var(--ndrs-text-soft);
 }
 
 .ndrs-card.is-favorite {
@@ -239,14 +258,14 @@
 .ndrs-card-title {
     font-weight: 700;
     font-size: 1.05rem;
-    color: #111;
+    color: var(--ndrs-text-strong);
     flex-grow: 1;
 }
 
 .ndrs-card-fav {
     background: transparent;
     border: none;
-    color: #ccc;
+    color: var(--ndrs-border-color);
     cursor: pointer;
     font-size: 1rem;
     line-height: 1;
@@ -260,24 +279,9 @@
 
 .ndrs-card-subtitle {
     font-size: 0.86rem;
-    color: #666;
+    color: var(--ndrs-text-muted);
     font-style: italic;
     line-height: 1.35;
-}
-
-.ndrs-badge-2024 {
-    position: absolute;
-    top: -8px;
-    right: 8px;
-    background: var(--ndrs-accent-gold);
-    color: #1a1a1a;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 2px;
-    box-shadow: var(--ndrs-shadow-sm);
-    letter-spacing: 0.5px;
 }
 
 /* ─── Modal ──────────────────────────────────────────────────────── */
@@ -319,7 +323,7 @@
 }
 
 .ndrs-modal-subtitle {
-    color: #666;
+    color: var(--ndrs-text-muted);
     font-style: italic;
     font-size: 0.95rem;
 }
@@ -330,7 +334,7 @@
     right: 14px;
     background: transparent;
     border: none;
-    color: #999;
+    color: var(--ndrs-text-soft);
     font-size: 1.6rem;
     cursor: pointer;
     line-height: 1;
@@ -347,14 +351,14 @@
     overflow-y: auto;
     font-size: 1rem;
     line-height: 1.55;
-    color: #333;
+    color: var(--ndrs-text-body);
 }
 
 .ndrs-modal-section {
     margin-bottom: 14px;
 }
 
-.ndrs-modal-section h4 {
+.ndrs-modal-section h3 {
     color: var(--ndrs-primary-red);
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -367,9 +371,9 @@
 .ndrs-modal-footer {
     padding: 10px 22px;
     background: #f9f9f9;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--ndrs-rule-soft);
     font-size: 0.82rem;
-    color: #888;
+    color: var(--ndrs-text-soft);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -400,7 +404,7 @@
 .ndrs-phb-btn:hover {
     background: var(--ndrs-accent-gold);
     color: #1a1a1a;
-    border-color: #b8860b;
+    border-color: var(--ndrs-gold-dark);
 }
 
 /* ─── Exhaustion table ───────────────────────────────────────────── */
@@ -425,8 +429,8 @@
 
 .ndrs-exh-table td {
     padding: 10px 12px;
-    border-bottom: 1px solid #eee;
-    color: #333;
+    border-bottom: 1px solid var(--ndrs-rule-soft);
+    color: var(--ndrs-text-body);
     font-size: 0.95rem;
 }
 
@@ -449,7 +453,7 @@
 
 .ndrs-exh-intro,
 .ndrs-exh-notes {
-    color: #444;
+    color: var(--ndrs-text-body);
     font-size: 0.92rem;
     margin: 0 0 12px 0;
     line-height: 1.5;
@@ -469,7 +473,7 @@
     padding: 12px 14px;
     margin-bottom: 14px;
     line-height: 1.55;
-    color: #333;
+    color: var(--ndrs-text-body);
     box-shadow: var(--ndrs-shadow-sm);
 }
 
@@ -505,7 +509,7 @@
 .ndrs-tenday-label {
     width: 100%;
     font-size: 0.72rem;
-    color: #888;
+    color: var(--ndrs-text-soft);
     text-transform: uppercase;
     letter-spacing: 0.4px;
     font-weight: 600;
@@ -516,7 +520,7 @@
     width: 28px;
     height: 28px;
     background: #f0ece4;
-    color: #555;
+    color: var(--ndrs-text-muted);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -537,20 +541,20 @@
     background: var(--ndrs-accent-gold);
     color: #1a1a1a;
     font-weight: 700;
-    border-color: #b8860b;
+    border-color: var(--ndrs-gold-dark);
     box-shadow: 0 1px 3px rgba(184, 134, 11, 0.3);
 }
 
 .ndrs-calendar-leap-meta {
     font-size: 0.75rem;
-    color: #b8860b;
+    color: var(--ndrs-gold-dark);
     font-weight: 500;
     margin-left: 6px;
     font-style: italic;
 }
 
 .ndrs-calendar-month-sub {
-    color: #888;
+    color: var(--ndrs-text-soft);
     font-weight: 400;
     font-style: italic;
     font-size: 0.85em;
@@ -562,7 +566,7 @@
     font-weight: 800;
     margin-bottom: 6px;
     font-size: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--ndrs-rule-soft);
     padding-bottom: 4px;
 }
 
@@ -585,13 +589,13 @@
 }
 
 .ndrs-calendar-holiday-name {
-    color: #b8860b;
+    color: var(--ndrs-gold-dark);
     font-weight: 700;
 }
 
 .ndrs-calendar-holiday-desc {
     font-size: 0.88rem;
-    color: #555;
+    color: var(--ndrs-text-muted);
 }
 
 .ndrs-calendar-leap {
@@ -618,7 +622,7 @@
     padding: 8px 14px;
     text-align: center;
     font-size: 0.82rem;
-    color: #555;
+    color: var(--ndrs-text-muted);
     flex-shrink: 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -648,7 +652,7 @@
 .ndrs-unit-seg {
     background: transparent;
     border: none;
-    color: #555;
+    color: var(--ndrs-text-muted);
     padding: 4px 14px;
     font-size: 0.78rem;
     font-weight: 700;
@@ -680,4 +684,133 @@
 
 .ndrs-unit-seg.active:hover {
     background: var(--ndrs-primary-red);
+}
+
+
+/* ─── Keyboard focus ─────────────────────────────────────────────────
+ * Cards are divs with role="button", so they need a visible focus ring of
+ * their own; Foundry supplies none for non-form elements.
+ */
+.ndrs-app-container :focus-visible {
+    outline: none;
+    box-shadow: var(--ndrs-focus-ring);
+    border-radius: 3px;
+}
+
+.ndrs-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: var(--ndrs-shadow-md), var(--ndrs-focus-ring);
+}
+
+.ndrs-search:focus-within {
+    border-color: var(--ndrs-accent-gold);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.ndrs-search-icon {
+    color: var(--ndrs-text-soft);
+    flex-shrink: 0;
+}
+
+/* ─── Cross-tab search hint ──────────────────────────────────────── */
+.ndrs-search-scope {
+    margin: 0 0 12px 0;
+    padding: 6px 12px;
+    background: var(--ndrs-nav-bg);
+    border-left: 3px solid var(--ndrs-accent-gold);
+    border-radius: 2px;
+    font-size: 0.85rem;
+    color: var(--ndrs-text-muted);
+    font-style: italic;
+}
+
+.ndrs-search-scope i {
+    margin-right: 6px;
+    color: var(--ndrs-gold-dark);
+}
+
+/* ─── Actor Directory button ─────────────────────────────────────────
+ * Injected into a Foundry sidebar header, which supplies no styling of
+ * its own for custom buttons.
+ */
+#ndrs-directory-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 4px;
+    padding: 4px 8px;
+    background: var(--ndrs-primary-red);
+    color: var(--ndrs-header-text);
+    border: 1px solid var(--ndrs-accent-gold);
+    border-radius: 3px;
+    font-family: var(--ndrs-font-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+#ndrs-directory-btn:hover {
+    background: #600000;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
+}
+
+/* ─── Narrow windows ─────────────────────────────────────────────────
+ * The window is resizable, so the calendar's three-column month grid has
+ * to give way before the day cells overflow.
+ */
+@media (max-width: 900px) {
+    .ndrs-calendar-month-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .ndrs-logo {
+        font-size: 1rem;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .ndrs-search {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .ndrs-tab-btn {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+
+    .ndrs-calendar-month-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ndrs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ndrs-modal {
+        width: 96%;
+        max-height: 92%;
+    }
+
+    .ndrs-modal-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Respect users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+    .ndrs-app-container *,
+    .ndrs-app-container *::before,
+    .ndrs-app-container *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

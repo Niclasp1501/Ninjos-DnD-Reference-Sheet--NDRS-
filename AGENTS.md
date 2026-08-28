@@ -41,7 +41,7 @@ NDRS is a **D&D 5.5 (2024 PHB)** reference. The 2014 rules are explicitly out of
 ### 2.1 Required for Every Rule Entry
 
 - `source.book` is set, typically `"PHB 2024"`.
-- `source.page` is set to a verified 2024 page number.
+- `source.page` is optional. Set it only when the page has actually been checked in the book; an approximate or shared page number is worse than none, because the modal presents it as a citation.
 - Card text is **our own concise summary**, not copied prose from any rulebook.
 - Examples reference 2024 mechanics (e.g., the 2024 exhaustion scale, the new Influence action, the new Study action, Grapple/Shove as Unarmed-Strike options).
 - If the rule changed between 2014 and 2024, set `new2024: true` and add a `notesKey` that names the change in one sentence.
@@ -185,7 +185,7 @@ Register `Shift+R` as the default toggle keybinding (`openCheatSheet`). Users ma
 
 Before merging any PR that adds or edits a rule entry:
 
-1. `source.book` and `source.page` are set and verified against the 2024 PHB.
+1. `source.book` is set; any `source.page` given has been verified against the 2024 PHB.
 2. Card subtitle is one sentence, ≤ 100 characters.
 3. Summary is in our own words, 3–6 sentences (validator warns above 8).
 4. Example is original (not lifted) and uses 2024 mechanics.

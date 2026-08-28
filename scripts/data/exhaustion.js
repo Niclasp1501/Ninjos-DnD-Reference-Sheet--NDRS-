@@ -4,7 +4,7 @@
 
 export const EXHAUSTION = Object.freeze({
   id: "exhaustion-2024",
-  source: { book: "PHB 2024", page: 39 },
+  source: { book: "PHB 2024" },
   new2024: true,
   titleKey: "NDRS.Exhaustion.Title",
   introKey: "NDRS.Exhaustion.Intro",

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// NDRS Validator — locale parity, key resolution, source.page presence,
+// NDRS Validator — locale parity, key resolution, source metadata,
 // length warnings, and (optional) 2024-rules audit.
 //
 // Usage:
@@ -78,8 +78,11 @@ ok(`Loaded ${ALL_ENTRIES.length} rule entries.`);
 // ─── 4. Source.page presence ──────────────────────────────────────────
 for (const e of ALL_ENTRIES) {
   if (!e.source?.book) fail(`Entry "${e.id}" missing source.book`);
-  if (e.source?.page === undefined || e.source?.page === null)
-    fail(`Entry "${e.id}" missing source.page`);
+  // A page number is optional, but if one is given it has to be a real page.
+  // Uniform placeholder pages (every condition on p. 36) were worse than none.
+  const page = e.source?.page;
+  if (page !== undefined && (!Number.isInteger(page) || page <= 0))
+    fail(`Entry "${e.id}" has an invalid source.page: ${page}`);
 }
 
 // ─── 5. Key resolution ────────────────────────────────────────────────
@@ -131,6 +134,14 @@ for (const e of ALL_ENTRIES) {
 if (audit2024) {
   console.log("\n--- 2024 Rules Audit ---");
 
+  // Only rule prose is audited. UI labels legitimately mention a
+  // "Player's Handbook" module by name and must not trip the citation rule.
+  const RULE_PREFIXES = [
+    "NDRS.Action.", "NDRS.Bonus.", "NDRS.Reaction.",
+    "NDRS.Movement.", "NDRS.Condition.", "NDRS.Exhaustion."
+  ];
+  const isRuleKey = (k) => RULE_PREFIXES.some(p => k.startsWith(p));
+
   const FORBIDDEN_DE = [
     /1\s+Stufe\s+Ersch[öo]pfung\s+pro/i,
     /Player.?s?\s+Handbook(?!\s+(2024|2014))/i
@@ -140,38 +151,51 @@ if (audit2024) {
     /Player.?s?\s+Handbook(?!\s+(2024|2014))/i
   ];
 
-  const REQUIRED_BY_ID = {
-    "exhaustion-2024": [/(−|-)2/, /6\s+(Stufen|levels)/i, /(−|-)5\s*ft|(−|-)1[,.]5\s*m/i],
-    "cond-Hide": [],
-    "hide": [/Invisible|Unsichtbar/i],
-    "cond-Grappled": [/Unbewaffnet|Unarmed|Waffenloser/i],
+  for (const [flat, rules, file] of [[deFlat, FORBIDDEN_DE, "de.json"], [enFlat, FORBIDDEN_EN, "en.json"]]) {
+    for (const [k, v] of Object.entries(flat)) {
+      if (typeof v !== "string" || !isRuleKey(k)) continue;
+      for (const rx of rules) {
+        if (rx.test(v)) fail(`Forbidden 2014-style phrasing in ${file} key ${k}: ${rx}`);
+      }
+    }
+  }
+
+  // Entry ids do not appear in lang keys, so resolve each entry to its own key
+  // prefix (NDRS.Movement.Jump.Title -> NDRS.Movement.Jump).
+  const prefixFor = new Map();
+  for (const e of ALL_ENTRIES) {
+    const titleKey = e.i18n?.titleKey;
+    if (titleKey) prefixFor.set(e.id, titleKey.replace(/\.Title$/, ""));
+  }
+  prefixFor.set("exhaustion", "NDRS.Exhaustion");
+
+  const REQUIRED = {
+    "exhaustion":       [/(−|-)\s?2|um 2|by 2/i, /6/, /(−|-)\s?5\s*ft|(−|-)\s?1[,.]5\s*m|\{unitStep\}/i],
+    "hide":             [/Invisible|Unsichtbar/i],
+    "cond-Grappled":    [/Unbewaffnet|Unarmed|Waffenlos/i],
     "cond-Unconscious": [/Prone|Liegend/i],
-    "mv-jump": [/St[aä]rke|Strength/i]
+    "mv-jump":          [/St[aä]rke|Strength/i],
+    "influence":        [/Aktion|action/i],
+    "study":            [/Intelligen/i]
   };
 
-  for (const [k, v] of Object.entries(deFlat)) {
-    if (typeof v !== "string") continue;
-    for (const rx of FORBIDDEN_DE) {
-      if (rx.test(v)) fail(`Forbidden 2014-style phrasing in de.json key ${k}: ${rx}`);
-    }
-  }
-  for (const [k, v] of Object.entries(enFlat)) {
-    if (typeof v !== "string") continue;
-    for (const rx of FORBIDDEN_EN) {
-      if (rx.test(v)) fail(`Forbidden 2014-style phrasing in en.json key ${k}: ${rx}`);
-    }
-  }
+  for (const [id, requirements] of Object.entries(REQUIRED)) {
+    const prefix = prefixFor.get(id);
+    if (!prefix) { fail(`Audit refers to unknown entry id "${id}"`); continue; }
 
-  for (const [id, requirements] of Object.entries(REQUIRED_BY_ID)) {
-    if (!requirements.length) continue;
-    const entryKeys = Object.keys(deFlat).filter(k => k.toLowerCase().includes(id.replace(/^cond-/, "").toLowerCase()));
-    const blob = entryKeys.map(k => `${deFlat[k]}\n${enFlat[k] ?? ""}`).join("\n");
+    const blob = Object.entries(deFlat)
+      .concat(Object.entries(enFlat))
+      .filter(([k]) => k.startsWith(prefix + "."))
+      .map(([, v]) => (typeof v === "string" ? v : ""))
+      .join("\n");
+
+    if (!blob) { fail(`Audit found no text for entry "${id}" (prefix ${prefix})`); continue; }
     for (const rx of requirements) {
-      if (!rx.test(blob)) warn(`Entry "${id}" missing required 2024 marker ${rx}`);
+      if (!rx.test(blob)) fail(`Entry "${id}" is missing required 2024 marker ${rx}`);
     }
   }
 
-  ok("2024 audit pass complete.");
+  ok(`2024 audit checked ${Object.keys(REQUIRED).length} entries against required markers.`);
 }
 
 // ─── Summary ──────────────────────────────────────────────────────────

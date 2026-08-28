@@ -7,7 +7,7 @@
 
 export const CALENDAR = Object.freeze({
   id: "calendar-homebrew",
-  source: { book: "Homebrew", page: 0 },
+  source: { book: "Homebrew" },
   new2024: false,
   introKey: "NDRS.Calendar.Intro",
   weekNameKey: "NDRS.Calendar.WeekName",
@@ -38,5 +38,10 @@ export const CALENDAR = Object.freeze({
     nameKey: "NDRS.Calendar.Holiday.Shieldmeet",
     descKey: "NDRS.Calendar.Holiday.ShieldmeetDesc",
     everyYears: 4
-  }
+  },
+
+  // Shape of a month: 30 days drawn as 3 tendays of 10.
+  daysPerMonth: 30,
+  tendaysPerMonth: 3,
+  daysPerTenday: 10
 });

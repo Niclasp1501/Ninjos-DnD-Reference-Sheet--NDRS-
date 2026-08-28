@@ -1,7 +1,7 @@
 // NDRS Application — ApplicationV2 + HandlebarsApplicationMixin
 // Foundry VTT v13/v14
 
-import { TABS, ALL_ENTRIES, EXHAUSTION, CALENDAR, findEntryById } from "./data/index.js";
+import { TABS, EXHAUSTION, CALENDAR, findEntryById } from "./data/index.js";
 import { findPhbLink, openPhbPage } from "./phb-link.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -22,20 +22,24 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     },
     position: { width: 1100, height: 720 },
     actions: {
-      selectTab:           NDRSApplication._onSelectTab,
-      openCard:            NDRSApplication._onOpenCard,
-      closeModal:          NDRSApplication._onCloseModal,
-      closeModalBackdrop:  NDRSApplication._onCloseModalBackdrop,
-      toggleFav:           NDRSApplication._onToggleFav,
-      toggleUnits:         NDRSApplication._onToggleUnits,
-      setUnits:            NDRSApplication._onSetUnits,
-      clearSearch:         NDRSApplication._onClearSearch,
-      openPhb:             NDRSApplication._onOpenPhb
+      selectTab:          NDRSApplication._onSelectTab,
+      openCard:           NDRSApplication._onOpenCard,
+      closeModal:         NDRSApplication._onCloseModal,
+      closeModalBackdrop: NDRSApplication._onCloseModalBackdrop,
+      toggleFav:          NDRSApplication._onToggleFav,
+      setUnits:           NDRSApplication._onSetUnits,
+      clearSearch:        NDRSApplication._onClearSearch,
+      openPhb:            NDRSApplication._onOpenPhb
     }
   };
 
   static PARTS = {
-    main: { template: "modules/ndrs/templates/ndrs-app.hbs" }
+    main: {
+      template: "modules/ndrs/templates/ndrs-app.hbs",
+      // Without this, Foundry resets the scroll position on every re-render —
+      // and we re-render on each keystroke, card click and favourite toggle.
+      scrollable: [".ndrs-content"]
+    }
   };
 
   constructor(options = {}) {
@@ -46,51 +50,59 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     this._openCardId = null;
   }
 
+  /** True while a search term is active; the search then spans every tab. */
+  get isSearching() {
+    return this._search.trim().length > 0;
+  }
+
   // ─────────────────────────────────────────────────────────────────────
   // Context
   // ─────────────────────────────────────────────────────────────────────
   async _prepareContext(options) {
     const favorites = new Set(game.user.getFlag(MODULE_ID, "favorites") ?? []);
-    const tab = TABS.find(t => t.id === this._activeTab) ?? TABS[0];
+    const searching = this.isSearching;
 
-    const sections = tab.sections.map(sec => {
-      if (sec.custom === "exhaustion") {
-        return {
-          titleKey: sec.titleKey,
-          custom: "exhaustion",
-          data: this._prepareExhaustion()
-        };
-      }
-      if (sec.custom === "calendar") {
-        return {
-          titleKey: sec.titleKey,
-          custom: "calendar",
-          data: this._prepareCalendar()
-        };
-      }
-      return {
-        titleKey: sec.titleKey,
-        cards: this._filterEntries(sec.entries, favorites)
-      };
-    });
+    // While searching we look across every tab, otherwise only the active one.
+    const sourceTabs = searching
+      ? TABS
+      : [TABS.find(t => t.id === this._activeTab) ?? TABS[0]];
 
-    let openCard = null;
-    if (this._openCardId) {
-      const entry = findEntryById(this._openCardId);
-      if (entry) openCard = this._prepareCard(entry, favorites);
+    const sections = [];
+    for (const tab of sourceTabs) {
+      for (const sec of tab.sections) {
+        // Custom views (exhaustion table, calendar) hold no cards to search.
+        if (sec.custom) {
+          if (searching) continue;
+          sections.push({
+            titleKey: sec.titleKey,
+            custom: sec.custom,
+            data: sec.custom === "exhaustion" ? this._prepareExhaustion() : this._prepareCalendar()
+          });
+          continue;
+        }
+
+        const cards = this._filterEntries(sec.entries, favorites);
+        if (searching && !cards.length) continue;
+        sections.push({ titleKey: sec.titleKey, cards });
+      }
     }
+
+    const openCard = this._openCardId
+      ? this._prepareCard(findEntryById(this._openCardId), favorites, { withPhbLink: true })
+      : null;
 
     return {
       tabs: TABS.map(t => ({
         id: t.id,
         iconClass: t.iconClass,
         label: game.i18n.localize(t.labelKey),
-        active: t.id === this._activeTab
+        active: !searching && t.id === this._activeTab
       })),
       activeTab: this._activeTab,
       sections,
       search: this._search,
-      units: this._units,
+      searching,
+      noResults: searching && !sections.length,
       isMetric: this._units === "metric",
       openCard,
       hasOpenCard: !!openCard,
@@ -98,47 +110,61 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
+  /**
+   * Filter and order the cards of one section.
+   * Favourites are pinned to the top, otherwise the authored order is kept.
+   */
   _filterEntries(entries, favorites) {
     const needle = this._search.trim().toLowerCase();
-    return entries
-      .map(e => this._prepareCard(e, favorites))
-      .filter(c => !needle
-        || c.title.toLowerCase().includes(needle)
-        || c.subtitle.toLowerCase().includes(needle)
-        || (c.tags ?? []).some(t => t.toLowerCase().includes(needle)));
+    const cards = entries.map(e => this._prepareCard(e, favorites));
+    const matches = needle ? cards.filter(c => c.haystack.includes(needle)) : cards;
+
+    // Stable partition: favourites first, authored order kept within groups.
+    return [...matches.filter(c => c.isFavorite), ...matches.filter(c => !c.isFavorite)];
   }
 
-  _prepareCard(entry, favorites) {
-    const t = (key) => key ? game.i18n.localize(key) : "";
-    const unit = this._units;
+  /**
+   * @param {object} entry                   A rule entry from the data modules.
+   * @param {Set<string>} favorites          Ids the current user has pinned.
+   * @param {object} [options]
+   * @param {boolean} [options.withPhbLink]  Resolve the handbook link (modal only).
+   */
+  _prepareCard(entry, favorites, { withPhbLink = false } = {}) {
+    if (!entry) return null;
 
-    const localizeUnitAware = (key) => {
+    const unit = this._units;
+    const localize = (key) => {
       if (!key) return "";
-      const raw = game.i18n.translations?.NDRS?.__unitMap?.[key];
-      // Foundry i18n flattens; we use a convention: "<key>" or "<key>.metric"/"<key>.imperial".
       if (entry.units) {
         const variantKey = `${key}.${unit}`;
-        const v = game.i18n.localize(variantKey);
-        if (v && v !== variantKey) return v;
+        const variant = game.i18n.localize(variantKey);
+        if (variant && variant !== variantKey) return variant;
       }
       return game.i18n.localize(key);
     };
 
-    const title = t(entry.i18n.titleKey);
+    const title = game.i18n.localize(entry.i18n.titleKey);
+    const subtitle = localize(entry.i18n.subtitleKey);
+    const summary = localize(entry.i18n.summaryKey);
+    const example = localize(entry.i18n.exampleKey);
+    const notes = entry.i18n.notesKey ? localize(entry.i18n.notesKey) : "";
+    const tags = entry.tags ?? [];
 
     return {
       id: entry.id,
       icon: entry.icon || "fa-circle",
-      tags: entry.tags ?? [],
+      tags,
       title,
-      subtitle: localizeUnitAware(entry.i18n.subtitleKey),
-      summary: localizeUnitAware(entry.i18n.summaryKey),
-      example: localizeUnitAware(entry.i18n.exampleKey),
-      notes: entry.i18n.notesKey ? localizeUnitAware(entry.i18n.notesKey) : "",
-      hasNotes: !!entry.i18n.notesKey,
+      subtitle,
+      summary,
+      example,
+      notes,
+      hasNotes: !!notes,
       source: entry.source,
       isFavorite: favorites.has(entry.id),
-      phbLink: findPhbLink([title, ...(entry.phbAliases ?? [])])
+      // Everything a search should match, lowercased once per render.
+      haystack: [title, subtitle, summary, example, notes, ...tags].join(" ").toLowerCase(),
+      phbLink: withPhbLink ? findPhbLink([title, ...(entry.phbAliases ?? [])]) : null
     };
   }
 
@@ -146,14 +172,15 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     const t = (k) => game.i18n.localize(k);
     const f = (k, d) => game.i18n.format(k, d);
     const isMetric = this._units === "metric";
-    const lang = game.i18n.lang || "en";
-    const nfmt = new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const nfmt = new Intl.NumberFormat(game.i18n.lang || "en", {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1
+    });
 
     const unitStep = isMetric ? `${nfmt.format(1.5)} m` : "5 ft";
-    const formatSpeed = (l) => isMetric
+    const speed = (l) => isMetric
       ? `−${nfmt.format(Math.abs(l.speedM))} m`
       : `−${Math.abs(l.speedFt)} ft`;
-    const formatD20 = (l) => `−${Math.abs(l.d20Penalty)}`;
 
     return {
       title: t(EXHAUSTION.titleKey),
@@ -165,7 +192,7 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
         isDeath: l.level === 6,
         desc: l.level === 6
           ? t("NDRS.Exhaustion.LevelDeath")
-          : f("NDRS.Exhaustion.LevelLine", { d20: formatD20(l), speed: formatSpeed(l) })
+          : f("NDRS.Exhaustion.LevelLine", { d20: `−${Math.abs(l.d20Penalty)}`, speed: speed(l) })
       })),
       source: EXHAUSTION.source
     };
@@ -173,59 +200,47 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
 
   _prepareCalendar() {
     const t = (k) => game.i18n.localize(k);
-    const fmt = (k, data) => game.i18n.format(k, data);
+    const f = (k, d) => game.i18n.format(k, d);
 
-    // Build a 30-day grid as 3 tendays x 10 days for each month.
-    const buildDayGrid = () => {
-      const grid = [];
-      for (let td = 0; td < 3; td++) {
-        const days = [];
-        for (let d = 1; d <= 10; d++) {
-          const dayNum = td * 10 + d;
-          days.push({ day: dayNum, isTenday: dayNum % 10 === 0 });
-        }
-        grid.push({ label: fmt("NDRS.UI.TendayN", { n: td + 1 }), days });
+    // The day grid is identical for every month, so build it once per render.
+    const grid = [];
+    for (let td = 0; td < CALENDAR.tendaysPerMonth; td++) {
+      const days = [];
+      for (let d = 1; d <= CALENDAR.daysPerTenday; d++) {
+        const day = td * CALENDAR.daysPerTenday + d;
+        days.push({ day, isTenday: day % CALENDAR.daysPerTenday === 0 });
       }
-      return grid;
-    };
-
-    // Interleave months and holidays in calendar order.
-    const timeline = [];
-    const holidaysAfter = (monthIdx) => CALENDAR.holidays.filter(h => h.afterMonth === monthIdx);
-
-    // Year-opener holidays (afterMonth === 0) before month 1.
-    for (const h of holidaysAfter(0)) {
-      timeline.push({ type: "holiday", name: t(h.nameKey), desc: t(h.descKey), leap: false });
+      grid.push({ label: f("NDRS.UI.TendayN", { n: td + 1 }), days });
     }
 
-    // Each month, then any holidays positioned after it, then leap holiday if applicable.
+    const holidaysAfter = (idx) => CALENDAR.holidays.filter(h => h.afterMonth === idx);
+    const asHoliday = (h, leap = false) => ({
+      type: "holiday",
+      name: t(h.nameKey),
+      desc: t(h.descKey),
+      leap,
+      everyYears: leap ? CALENDAR.leap.everyYears : undefined
+    });
+
+    const timeline = [];
+    for (const h of holidaysAfter(0)) timeline.push(asHoliday(h));
+
     for (const m of CALENDAR.months) {
       timeline.push({
         type: "month",
         idx: m.idx,
         name: t(m.nameKey),
         subtitle: m.subtitleKey ? t(m.subtitleKey) : "",
-        grid: buildDayGrid()
+        grid
       });
-
-      for (const h of holidaysAfter(m.idx)) {
-        timeline.push({ type: "holiday", name: t(h.nameKey), desc: t(h.descKey), leap: false });
-      }
-
-      if (CALENDAR.leap?.afterMonth === m.idx) {
-        timeline.push({
-          type: "holiday",
-          name: t(CALENDAR.leap.nameKey),
-          desc: t(CALENDAR.leap.descKey),
-          leap: true,
-          everyYears: CALENDAR.leap.everyYears
-        });
-      }
+      for (const h of holidaysAfter(m.idx)) timeline.push(asHoliday(h));
+      if (CALENDAR.leap?.afterMonth === m.idx) timeline.push(asHoliday(CALENDAR.leap, true));
     }
 
     return {
       intro: t(CALENDAR.introKey),
       weekName: t(CALENDAR.weekNameKey),
+      daysPerMonth: CALENDAR.daysPerMonth,
       timeline
     };
   }
@@ -244,13 +259,41 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
         this._search = ev.target.value || "";
         this.render({ parts: ["main"] });
       });
-      searchInput.addEventListener("keydown", (ev) => {
-        if (ev.key === "Escape") {
-          this._search = "";
-          this.render({ parts: ["main"] });
-        }
+    }
+
+    // Escape must dismiss the detail dialog before Foundry's global "dismiss"
+    // keybinding closes the whole window. Foundry listens on `window` in the
+    // bubble phase, so stopping propagation here is enough.
+    root.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Escape") return;
+      if (this._openCardId) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        this._openCardId = null;
+        this.render({ parts: ["main"] });
+        return;
+      }
+      if (this._search) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        this._search = "";
+        this.render({ parts: ["main"] });
+      }
+    });
+
+    // Cards are divs so they can hold nested controls; make them behave like
+    // buttons for keyboard users.
+    for (const card of root.querySelectorAll(".ndrs-card")) {
+      card.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter" && ev.key !== " ") return;
+        ev.preventDefault();
+        this._openCardId = card.dataset.cardId ?? null;
+        this.render({ parts: ["main"] });
       });
     }
+
+    // Move focus into the dialog so Tab and Escape act on it right away.
+    if (this._openCardId) root.querySelector(".ndrs-modal-close")?.focus();
   }
 
   // ─────────────────────────────────────────────────────────────────────
@@ -260,6 +303,8 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     const tabId = target?.dataset?.tab;
     if (!tabId) return;
     this._activeTab = tabId;
+    // Picking a tab leaves the cross-tab search view.
+    this._search = "";
     game.settings.set(MODULE_ID, "defaultTab", tabId).catch(() => {});
     this.render({ parts: ["main"] });
   }
@@ -298,12 +343,6 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     this.render({ parts: ["main"] });
   }
 
-  static async _onToggleUnits() {
-    this._units = this._units === "metric" ? "imperial" : "metric";
-    await game.settings.set(MODULE_ID, "defaultUnits", this._units);
-    this.render({ parts: ["main"] });
-  }
-
   static async _onSetUnits(event, target) {
     const unit = target?.dataset?.unit;
     if (unit !== "metric" && unit !== "imperial") return;
@@ -321,14 +360,15 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   // ─────────────────────────────────────────────────────────────────────
   // Public API helpers
   // ─────────────────────────────────────────────────────────────────────
-  gotoTab(tabId) {
+  async gotoTab(tabId) {
     if (!TABS.find(t => t.id === tabId)) return;
     this._activeTab = tabId;
-    this.render({ parts: ["main"] });
+    this._search = "";
+    await this.render({ parts: ["main"] });
   }
 
-  setSearch(query) {
+  async setSearch(query) {
     this._search = String(query || "");
-    this.render({ parts: ["main"] });
+    await this.render({ parts: ["main"] });
   }
 }
