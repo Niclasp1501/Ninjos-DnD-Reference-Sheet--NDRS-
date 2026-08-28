@@ -1,6 +1,6 @@
 # Ninjo's DnD Reference Sheet (NDRS)
 
-**Current Version / Aktuelle Version:** `14.2605.1`
+**Current Version / Aktuelle Version:** `14.2608.1`
 
 A lightweight, in-session quick reference for **D&D 5.5 (2024)** rules — actions, movement, conditions, exhaustion, and a homebrew calendar — natively integrated into Foundry VTT v13 and v14, in the FANG-Fantasy visual design.
 
@@ -31,11 +31,10 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 1. Open Foundry VTT and go to **Add-on Modules**.
 2. Click **Install Module**.
-3. Paste one of these manifest URLs:
-   - **Stable:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
-   - **Beta:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/download/beta-latest/module-beta.json`
+3. Paste the manifest URL: `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
 4. Restart Foundry and enable **Ninjo's DnD Reference Sheet (NDRS)** in your world.
-5. Channel note: both links install the same module id (`ndrs`). Use one channel per world.
+
+NDRS is also listed in the in-app package browser, so you can search for it there instead.
 
 ### Usage
 
@@ -73,11 +72,10 @@ NDRS is read-only. It does not roll dice, edit actors, or replace character shee
 
 1. Foundry VTT öffnen und in den Reiter **Zusatzmodule** wechseln.
 2. **Modul installieren** anklicken.
-3. Eine dieser Manifest-URLs einfügen:
-   - **Stable:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
-   - **Beta:** `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/download/beta-latest/module-beta.json`
+3. Manifest-URL einfügen: `https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/latest/download/module.json`
 4. Foundry neu starten und **Ninjo's DnD Reference Sheet (NDRS)** in deiner Welt aktivieren.
-5. Kanal-Hinweis: Beide Links verwenden dieselbe Modul-ID (`ndrs`). Pro Welt nur einen Kanal nutzen.
+
+NDRS steht auch im Paket-Browser von Foundry — dort kannst du es stattdessen einfach suchen.
 
 ### Anleitung
 

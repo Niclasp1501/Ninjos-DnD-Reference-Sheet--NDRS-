@@ -26,7 +26,9 @@ Beta releases derive from the upcoming stable base version:
 14.2605.2-beta.<run>
 ```
 
-A persistent beta install link is the `beta-latest` GitHub prerelease manifest. Both channels share the same module id (`ndrs`). One channel per world — no parallel stable+beta installs in the same world.
+The beta channel is **dormant**: `release-beta.yml` is in place, but no `beta` branch exists, so there is no `beta-latest` prerelease and nothing advertises one. Do not link a beta manifest until the branch is actually pushed — a dead install URL is worse than no beta channel.
+
+To activate it: `git switch -c beta && git push -u origin beta`. The workflow then builds a rolling `beta-latest` prerelease with a generated manifest. Both channels share the module id (`ndrs`), so use one channel per world.
 
 The first internal milestone is `0.1.0` (skeleton, not released).
 The first public beta is `14.2605.1-beta.1`.

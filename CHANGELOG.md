@@ -5,6 +5,47 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2608.1] — Review pass
+
+A critical review of the module, with the findings verified against the
+Foundry client source rather than assumed.
+
+### Fixed
+- Scroll position was reset on every re-render, so opening a card, typing in
+  the search box or pinning a favourite jumped the list back to the top.
+- Escape closed the whole window instead of the open card. It now dismisses
+  the dialog first, then the search, before Foundry's global dismiss applies.
+- Search matched only titles, subtitles and tags; it now also covers
+  summaries, examples and notes, and spans every tab instead of one.
+- Favourites are now pinned to the top of their section instead of only
+  being tinted gold.
+- Cards were unreachable by keyboard. They are now focusable buttons with
+  Enter/Space activation and a visible focus ring; the detail dialog has
+  proper dialog semantics and takes focus.
+- The calendar's fixed three-column month grid overflowed in narrow windows.
+  Layout now steps down to two columns and one, and honours
+  prefers-reduced-motion.
+- The Actor Directory button had no styling of its own.
+- Handbook links no longer stay hidden when the window was opened before the
+  index finished building, and are resolved only for the card being shown.
+
+### Changed
+- Page numbers removed from source citations. They were placeholders (all
+  conditions shared one page), and the dialog presented them as verified.
+  The book is still cited; a page may be added once actually checked.
+- Hardcoded greys replaced by semantic CSS tokens.
+
+### Tooling
+- The 2024 rules audit never checked anything: it looked for language keys
+  containing the entry id, which never matches the actual key names. Fixed —
+  and it immediately caught that the Influence entry had lost its framing as
+  an explicit action, now restored in both languages.
+- Added `tools/ndrs-smoke-test.mjs`, which runs the render logic against
+  stubbed Foundry globals. It caught a missing calendar constant that would
+  have shipped every month without its day grid.
+
+---
+
 ## [14.2605.1] — First stable release
 
 First public release on GitHub and the Foundry package registry.
