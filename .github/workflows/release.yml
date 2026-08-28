@@ -12,6 +12,10 @@ jobs:
   build:
     if: ${{ startsWith(github.ref_name, 'v') && !contains(github.ref_name, 'beta') }}
     runs-on: ubuntu-latest
+    env:
+      # Job-level so the publish step's `if` can read it. A step's own env
+      # is not yet available when its `if` is evaluated.
+      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -49,8 +53,6 @@ jobs:
       - name: Publish Module to FoundryVTT Website
         if: ${{ env.PACKAGE_TOKEN != '' }}
         uses: cs96and/FoundryVTT-release-package@v1
-        env:
-          PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
         with:
           package-token: ${{ secrets.PACKAGE_TOKEN }}
           manifest-url: https://github.com/Niclasp1501/Ninjos-DnD-Reference-Sheet--NDRS-/releases/download/${{ github.ref_name }}/module.json
