@@ -100,7 +100,7 @@ If you cannot confirm a rule against the 2024 PHB:
 
 The following directories are **reference only**. NDRS never writes to them, copies files out of them, or imports their content verbatim.
 
-- `F:\KI-Agenten-Workspace\Ninjo´s DnD5e55 Spielerhandbuch-Deutsch\` — German PHB compendium (Foundry packs). Used as research cross-check when summarizing rules.
+- `F:\KI-Agenten-Workspace\Foundry-Module\Ninjos-Spielerhandbuch-Deutsch\` — German PHB compendium (Foundry packs). Used as research cross-check when summarizing rules.
 - The official English D&D 2024 PHB (your own copy / publisher channels). Used as the authoritative rules source.
 
 Rules:

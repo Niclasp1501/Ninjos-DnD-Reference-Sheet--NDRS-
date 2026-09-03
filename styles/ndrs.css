@@ -740,16 +740,30 @@
     gap: 6px;
     width: 100%;
     margin-top: 4px;
-    padding: 4px 8px;
+    padding: 3px 8px;
     background: var(--ndrs-primary-red);
     color: var(--ndrs-header-text);
     border: 1px solid var(--ndrs-accent-gold);
     border-radius: 3px;
     font-family: var(--ndrs-font-main);
-    font-size: 0.85rem;
-    font-weight: 700;
+    /* The sidebar is narrow. Keep the label on a single line and let it
+       ellipsise rather than wrapping into a two-line block. */
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
-    line-height: 1.4;
+}
+
+#ndrs-directory-btn i {
+    color: var(--ndrs-accent-gold);
+    flex-shrink: 0;
+}
+
+#ndrs-directory-btn:hover i {
+    color: var(--ndrs-header-text);
 }
 
 #ndrs-directory-btn:hover {
