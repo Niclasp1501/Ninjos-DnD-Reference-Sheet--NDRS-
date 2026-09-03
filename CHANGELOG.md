@@ -5,6 +5,16 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2608.2] — Sidebar button fix
+
+### Fixed
+- The Actor Directory button wrapped its label onto two lines in the narrow
+  sidebar, leaving it twice as tall as the controls around it. Smaller type,
+  tighter padding and a single-line layout with an ellipsis fallback; the
+  icon now carries the gold accent.
+
+---
+
 ## [14.2608.1] — Review pass
 
 A critical review of the module, with the findings verified against the
