@@ -5,6 +5,23 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2608.3] — Distinguishable Only-Sheet button
+
+### Changed
+- The button NDRS injects into the Only-Sheet bar used `fa-book-open`, which
+  sat directly beside Only-Sheet's own journal button (`fa-book`). At that
+  icon size the two were nearly indistinguishable, so the quickest way into
+  the reference sheet looked like a second journal button.
+- NDRS now identifies itself with `fa-rectangle-list` in all three places it
+  represents itself: the Only-Sheet bar, the Actor Directory button and the
+  window title. The icon reads as a reference card rather than a book, and it
+  exists in the free Font Awesome set as well, so it survives outside Foundry.
+- The "Open in the Player's Handbook" button inside a card keeps
+  `fa-book-open`: it does open a book, and it never appears next to the
+  Only-Sheet bar.
+
+---
+
 ## [14.2608.2] — Sidebar button fix
 
 ### Fixed

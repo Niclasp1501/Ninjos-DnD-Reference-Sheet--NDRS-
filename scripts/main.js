@@ -75,7 +75,7 @@ function _installOnlySheetObserver() {
     btn.id = "ndrs-so-btn";
     btn.title = game.i18n.localize("NDRS.ButtonOpen") || "Open NDRS";
     _applyOnlySheetStyle(btn);
-    btn.innerHTML = '<i class="fas fa-book-open"></i>';
+    btn.innerHTML = '<i class="fas fa-rectangle-list"></i>';
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       openApp();
@@ -199,7 +199,7 @@ Hooks.on("renderActorDirectory", (app, html) => {
 
   const button = document.createElement("button");
   button.id = "ndrs-directory-btn";
-  button.innerHTML = `<i class="fas fa-book-open"></i> ${game.i18n.localize("NDRS.ButtonOpen")}`;
+  button.innerHTML = `<i class="fas fa-rectangle-list"></i> ${game.i18n.localize("NDRS.ButtonOpen")}`;
   button.addEventListener("click", (e) => {
     e.preventDefault();
     openApp();

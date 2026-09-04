@@ -16,7 +16,7 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     tag: "div",
     window: {
       title: "NDRS.AppTitle",
-      icon: "fas fa-book-open",
+      icon: "fas fa-rectangle-list",
       resizable: true,
       contentClasses: ["ndrs-window-content"]
     },
