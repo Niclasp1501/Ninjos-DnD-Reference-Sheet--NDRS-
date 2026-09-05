@@ -177,6 +177,20 @@ Hooks.once("ready", () => {
       await app?.setSearch?.(q);
     }
   };
+Ninjo's In-Person Tools: its sheet view takes buttons through an API instead of a
+  // bar to search the DOM for. Register now and again when its API turns up later -
+  // a hook only reaches listeners that already exist when it fires.
+  const _ndrsInPersonRegister = api => {
+    if (!game.settings.get(MODULE_ID, "onlySheetButton")) return;
+    api?.sheetView?.registerButton?.({
+      id: "ndrs",
+      icon: "fa-rectangle-list",
+      title: game.i18n.localize("NDRS.ButtonOpen") || "Open NDRS",
+      onClick: () => openApp()
+    });
+  };
+  _ndrsInPersonRegister(game.modules.get("ninjos-inperson-tools")?.api);
+  Hooks.on("ninjosInPersonTools.ready", _ndrsInPersonRegister);
 
   // Optional handbook deep links. Failure here must never block the module.
   buildPhbIndex()

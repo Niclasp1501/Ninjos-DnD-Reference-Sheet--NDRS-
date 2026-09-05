@@ -5,6 +5,14 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2608.4] — Button in Ninjo's In-Person Tools sheet view
+
+### Changed
+- NDRS registers its button with the sheet view of Ninjo's In-Person Tools
+  through its API (`api.sheetView.registerButton`) instead of only watching
+  for Sheet Only's bar. Both paths stay: with Sheet Only the button shows up
+  there as before. The "onlySheetButton" setting governs both.
+
 ## [14.2608.3] — Distinguishable Only-Sheet button
 
 ### Changed
