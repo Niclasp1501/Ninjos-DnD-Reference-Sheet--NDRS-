@@ -3,6 +3,7 @@
 
 import { NDRSApplication } from "./ndrs-app.js";
 import { buildPhbIndex, resetPhbIndex, hasPhbIndex } from "./phb-link.js";
+import { willkommenEinrichten, willkommenZeigen } from "./willkommen.js";
 
 const MODULE_ID = "ndrs";
 
@@ -88,6 +89,7 @@ function _installOnlySheetObserver() {
 // ─── init ─────────────────────────────────────────────────────────────
 Hooks.once("init", () => {
   console.log("NDRS | Initializing Ninjo's DnD Reference Sheet");
+  willkommenEinrichten();
 
   Handlebars.registerHelper("eq", (a, b) => a === b);
 
@@ -177,7 +179,9 @@ Hooks.once("ready", () => {
       await app?.setSearch?.(q);
     }
   };
-Ninjo's In-Person Tools: its sheet view takes buttons through an API instead of a
+
+
+  // Ninjo's In-Person Tools: its sheet view takes buttons through an API instead of a
   // bar to search the DOM for. Register now and again when its API turns up later -
   // a hook only reaches listeners that already exist when it fires.
   const _ndrsInPersonRegister = api => {
@@ -203,6 +207,8 @@ Ninjo's In-Person Tools: its sheet view takes buttons through an API instead of 
     .catch(err => console.warn("NDRS | Handbook index unavailable", err));
 
   console.log("NDRS | Ready. API exposed at game.modules.get('ndrs').api");
+
+  willkommenZeigen();
 });
 
 // ─── Actor Directory header button ────────────────────────────────────

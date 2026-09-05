@@ -564,6 +564,18 @@
       "SourceSystem": "Regelreferenz des Systems",
       "ButtonTooltip": "{page} im {source} öffnen",
       "NotFound": "Die Seite im Spielerhandbuch konnte nicht gefunden werden."
+    },
+    "Willkommen": {
+      "Setting": "Willkommensfenster",
+      "Untertitel": "Schnellreferenz für D&D 5.5 (2024)",
+      "Einleitung": "NDRS ist der Spickzettel für den Tisch: Aktionen, Bewegung, Zustände und Erschöpfung, direkt in Foundry statt im aufgeschlagenen Buch neben dem Bildschirm. Es liest nur — es würfelt nichts, ändert keine Akteure und ersetzt keinen Charakterbogen.",
+      "Punkt1": "<strong>Strikt 2024</strong> — jeder Eintrag ist gegen das PHB 2024 geprüft, ein mitgelaufener Validator findet versehentliche 2014er-Formulierungen. Wer nachschlägt, bekommt die Regel, die am Tisch gilt.",
+      "Punkt2": "<strong>Karte, dann Detail</strong> — jede Karte sagt in einem Satz, worum es geht; ein Klick öffnet Wirkung, Beispiel und die „Neu 2024“-Hinweise. Die Volltextsuche läuft über alle Reiter zugleich.",
+      "Punkt3": "<strong>Für den Spielabend gebaut</strong> — Favoriten je Benutzer wandern nach oben, FT und Meter lassen sich unten umschalten, und mit Only-Sheet oder in der Akteursleiste ist NDRS einen Klick entfernt.",
+      "Start": "Zum Anfangen: <strong>Shift+R</strong> öffnet und schliesst das Fenster. Karte anklicken für die Einzelheiten, Esc leert die Suche.",
+      "ForgeZeile": "Alle Module, Anleitungen und deutschen Übersetzungen an einem Ort — Modulseite öffnen",
+      "Nie": "Nicht mehr anzeigen",
+      "Spaeter": "Später"
     }
   }
 }

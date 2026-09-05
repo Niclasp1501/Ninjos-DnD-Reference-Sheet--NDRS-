@@ -564,6 +564,18 @@
       "SourceSystem": "System rules reference",
       "ButtonTooltip": "Open {page} in {source}",
       "NotFound": "The handbook page could not be found."
+    },
+    "Willkommen": {
+      "Setting": "Welcome window",
+      "Untertitel": "Quick reference for D&D 5.5 (2024)",
+      "Einleitung": "NDRS is the cheat sheet for the table: actions, movement, conditions and exhaustion, inside Foundry instead of in an open book beside the screen. It only reads — it rolls nothing, edits no actors and replaces no character sheet.",
+      "Punkt1": "<strong>Strictly 2024</strong> — every entry is checked against the 2024 PHB, and a bundled validator catches stray 2014-era phrasings. What you look up is the rule your table actually plays.",
+      "Punkt2": "<strong>Card first, detail on click</strong> — each card says in one sentence what it is about; a click opens the effect, an example and the \"New in 2024\" notes. Full-text search runs across every tab at once.",
+      "Punkt3": "<strong>Built for game night</strong> — per-user favourites move to the top, feet and metres switch in the footer, and with Only-Sheet or the actor directory NDRS is one click away.",
+      "Start": "To begin: <strong>Shift+R</strong> opens and closes the window. Click a card for the details, Esc clears the search.",
+      "ForgeZeile": "Every module, its documentation and the German translations in one place — open the module page",
+      "Nie": "Don't show again",
+      "Spaeter": "Later"
     }
   }
 }

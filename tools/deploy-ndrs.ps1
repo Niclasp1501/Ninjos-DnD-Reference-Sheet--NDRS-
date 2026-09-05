@@ -44,7 +44,8 @@ $uploadItems = @(
     "scripts",
     "styles",
     "templates",
-    "lang"
+    "lang",
+    "assets"
 )
 
 # Hard denylist for safety.

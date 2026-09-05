@@ -5,13 +5,32 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
-## [14.2608.4] — Button in Ninjo's In-Person Tools sheet view
+## [14.2609.1] — Welcome window, and a button that finds both sheet views
+
+### Added
+- A welcome window on first start, following the pattern shared by the other
+  modules: what NDRS does, three points on how to use it, and a pointer to
+  the Forge. Shown to the GM only, remembered per device, and “don’t show
+  again” is respected — dismissing or pressing Escape counts as “later”.
+  The logo ships inside the module rather than being fetched from the
+  website, so the first impression is never an empty box.
 
 ### Changed
-- NDRS registers its button with the sheet view of Ninjo's In-Person Tools
+- NDRS registers its button with the sheet view of Ninjo’s In-Person Tools
   through its API (`api.sheetView.registerButton`) instead of only watching
-  for Sheet Only's bar. Both paths stay: with Sheet Only the button shows up
-  there as before. The "onlySheetButton" setting governs both.
+  for Sheet Only’s bar. Both paths stay: with Sheet Only the button shows up
+  there as before. The `onlySheetButton` setting governs both.
+- The welcome window carried `fa-book-open`, the icon dropped in 14.2608.3
+  for being indistinguishable from Sheet Only’s journal button. It now uses
+  `fa-rectangle-list` like every other place the module represents itself.
+
+### Note on the version number
+- The work above sat under `14.2608.4` while it was being written. That is an
+  August number and it was cut in September, so it moved to `14.2609.1`
+  before any of it was tagged or published. No release ever carried
+  `14.2608.4`.
+
+---
 
 ## [14.2608.3] — Distinguishable Only-Sheet button
 
