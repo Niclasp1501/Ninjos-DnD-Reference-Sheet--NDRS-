@@ -5,6 +5,31 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2609.2] — The window stays on the screen
+
+### Fixed
+- On a tablet the window opened wider and taller than the screen and ran off
+  the bottom edge: the lower part of the content was unreachable. Moving it
+  did not help, because its title bar was already at the top, and the only
+  remedy — dragging the bottom edge up — was itself off-screen. NDRS opened
+  at 1100 pixels wide, which is wider than an iPad in landscape.
+- `scripts/fensterpassen.js` now caps width and height against the visible
+  area, keeps the whole window inside it rather than just its top-left
+  corner, and re-checks after every draw and whenever the viewport changes
+  — rotating a tablet, an on-screen keyboard opening, a split screen.
+  Anything that does not fit scrolls instead of being cut off.
+
+### Note
+- The code for this shipped in the repository on 7 September without a
+  version of its own, so it reached neither the server nor the package. It
+  does now.
+
+### Changed
+- `styles/ninjo-marke.css` carries the shared brand tokens, loaded before the
+  module’s own stylesheet so the module’s tokens can point at it.
+
+---
+
 ## [14.2609.1] — Welcome window, and a button that finds both sheet views
 
 ### Added
