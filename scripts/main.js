@@ -4,6 +4,7 @@
 import { NDRSApplication } from "./ndrs-app.js";
 import { buildPhbIndex, resetPhbIndex, hasPhbIndex } from "./phb-link.js";
 import { willkommenEinrichten, willkommenZeigen } from "./willkommen.js";
+import { fensterPassenEinrichten } from "./fensterpassen.js";
 
 const MODULE_ID = "ndrs";
 
@@ -158,6 +159,7 @@ Hooks.once("init", () => {
 
 // ─── ready ────────────────────────────────────────────────────────────
 Hooks.once("ready", () => {
+  fensterPassenEinrichten();
   document.body?.classList?.toggle("role-player", !game.user.isGM);
   document.body?.classList?.toggle("role-gm", game.user.isGM);
 

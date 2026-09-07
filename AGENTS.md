@@ -240,3 +240,39 @@ Things NDRS will not become. If a contributor suggests these, redirect to the ap
 - Homebrew rule editor → out of scope (GM custom notes is the only authored-content surface, and only as a stretch feature).
 
 NDRS stays a cheat-sheet. Scope discipline is the feature.
+
+
+## Oberfläche: die acht Regeln
+
+Sie stehen vollständig in der [CLAUDE.md des Workspace](../../CLAUDE.md),
+Abschnitt „Regelgrundsätze für die Oberfläche der Foundry-Module", und gelten
+für jedes Modul: Fenster passen ins Bild · die Marke steht in einer Datei · die
+Schrift liefert Foundry · kein sichtbarer Text ohne Sprachschlüssel · die
+Rückmeldung steht dort, wo der Mensch hinschaut · jeder Knopf hat einen Namen ·
+Unwiderrufliches fragt vorher · neue Fenster sind ApplicationV2.
+
+Zwei Dateien werden dafür **kopiert, nicht geteilt** — wie `willkommen.js`:
+
+| Datei | Angepasst wird |
+|---|---|
+| `styles/ninjo-marke.css` | nichts, sie ist überall identisch |
+| `scripts/fensterpassen.js` | nur der `MODUL`-Block ganz oben |
+
+Verbessert man eine davon, gehört sie in alle Module nachgezogen.
+
+### Was hier gilt
+
+**Fensterklasse:** `ndrs-app-window`.
+
+**Die Vorlage ist der Maßstab für Regel 6.** `templates/ndrs-app.hbs` hat auf
+209 Zeilen 24 `aria`-Attribute: `aria-pressed` an den Reitern,
+`role="button" tabindex="0"` an den Karten, `role="dialog" aria-modal` am
+Detailfenster, `scope="col"` an den Tabellenköpfen. Wer in einem anderen Modul
+Barrierefreiheit nachrüstet, schaut hier ab.
+
+**`width: 1100` bleibt stehen** — die Zahl ist für einen breiten Bildschirm
+richtig, und `fensterpassen.js` deckelt sie jetzt auf allem, was schmaler ist.
+Vorher war das Fenster auf einem iPad quer breiter als der Bildschirm.
+
+**Offen:** keine Touch-Regeln (44 px) in einem Modul, das sich ausdrücklich in
+Sheet Only einhängt — `var(--ninjo-tippziel)` steht bereit.

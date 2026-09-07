@@ -4,15 +4,15 @@
  */
 
 :root {
-    --ndrs-bg-color:     var(--fang-bg-color,     #fdfbf7);
+    --ndrs-bg-color:     var(--fang-bg-color,     var(--ninjo-grund));
     --ndrs-card-bg:      var(--fang-card-bg,      #ffffff);
-    --ndrs-nav-bg:       var(--fang-nav-bg,       #f4f1ea);
-    --ndrs-text-color:   var(--fang-text-color,   #1a1a1a);
-    --ndrs-border-color: var(--fang-border-color, #dcd6cc);
-    --ndrs-primary-red:  var(--fang-primary-red,  #8B0000);
-    --ndrs-accent-gold:  var(--fang-accent-gold,  #D4AF37);
+    --ndrs-nav-bg:       var(--fang-nav-bg,       var(--ninjo-leiste));
+    --ndrs-text-color:   var(--fang-text-color,   var(--ninjo-text));
+    --ndrs-border-color: var(--fang-border-color, var(--ninjo-rand));
+    --ndrs-primary-red:  var(--fang-primary-red,  var(--ninjo-marke));
+    --ndrs-accent-gold:  var(--fang-accent-gold,  var(--ninjo-akzent));
     --ndrs-header-text:  var(--fang-header-text,  #ffffff);
-    --ndrs-font-main:    var(--fang-font-main,    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+    --ndrs-font-main:    var(--fang-font-main, var(--ninjo-schrift));
     --ndrs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --ndrs-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -22,28 +22,28 @@
     --ndrs-text-muted:  #555555;
     --ndrs-text-soft:   #888888;
     --ndrs-rule-soft:   #eeeeee;
-    --ndrs-gold-dark:   #b8860b;
+    --ndrs-gold-dark:   var(--ninjo-akzent-text);
     --ndrs-focus-ring:  0 0 0 2px var(--ndrs-bg-color), 0 0 0 4px var(--ndrs-accent-gold);
 }
 
 /* Defeat any FANG cyberpunk override globally — NDRS is Fantasy-only. */
 .ndrs-app-container,
 .ndrs-app-window .window-content {
-    --ndrs-bg-color: #fdfbf7;
+    --ndrs-bg-color: var(--ninjo-grund);
     --ndrs-card-bg: #ffffff;
-    --ndrs-nav-bg: #f4f1ea;
-    --ndrs-text-color: #1a1a1a;
-    --ndrs-border-color: #dcd6cc;
-    --ndrs-primary-red: #8B0000;
-    --ndrs-accent-gold: #D4AF37;
+    --ndrs-nav-bg: var(--ninjo-leiste);
+    --ndrs-text-color: var(--ninjo-text);
+    --ndrs-border-color: var(--ninjo-rand);
+    --ndrs-primary-red: var(--ninjo-marke);
+    --ndrs-accent-gold: var(--ninjo-akzent);
     --ndrs-header-text: #ffffff;
-    --ndrs-font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --ndrs-font-main: var(--ninjo-schrift);
     --ndrs-text-strong: #111111;
     --ndrs-text-body: #333333;
     --ndrs-text-muted: #555555;
     --ndrs-text-soft: #888888;
     --ndrs-rule-soft: #eeeeee;
-    --ndrs-gold-dark: #b8860b;
+    --ndrs-gold-dark: var(--ninjo-akzent-text);
 }
 
 .ndrs-app-window .window-content {
