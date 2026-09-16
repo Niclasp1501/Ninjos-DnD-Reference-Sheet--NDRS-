@@ -20,6 +20,12 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 - The GitHub release text is now the changelog section of its version. It
   used to be empty.
 
+### Fixed
+- The Shift+R shortcut read `KeyboardManager` as a global, which Foundry 13
+  deprecated and Foundry 15 removes. Every start logged a compatibility
+  warning, and on Foundry 15 NDRS would have failed while registering the
+  shortcut. It now uses `foundry.helpers.interaction.KeyboardManager`.
+
 ---
 
 ## [14.2609.2] — The window stays on the screen
