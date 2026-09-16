@@ -76,7 +76,7 @@ function _installOnlySheetObserver() {
 
     const btn = document.createElement("button");
     btn.id = "ndrs-so-btn";
-    btn.title = game.i18n.localize("NDRS.ButtonOpen") || "Open NDRS";
+    btn.title = game.i18n.localize("NDRS.ButtonOpen") || "Ninjo's DnD Reference Sheet";
     _applyOnlySheetStyle(btn);
     btn.innerHTML = '<i class="fas fa-rectangle-list"></i>';
     btn.addEventListener("click", (e) => {
@@ -192,7 +192,7 @@ Hooks.once("ready", () => {
     api?.sheetView?.registerButton?.({
       id: "ndrs",
       icon: "fa-rectangle-list",
-      title: game.i18n.localize("NDRS.ButtonOpen") || "Open NDRS",
+      title: game.i18n.localize("NDRS.ButtonOpen") || "Ninjo's DnD Reference Sheet",
       onClick: () => openApp()
     });
   };

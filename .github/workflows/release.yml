@@ -18,7 +18,7 @@ jobs:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Validate Module
         run: node tools/ndrs-validate.mjs
@@ -37,9 +37,16 @@ jobs:
                "UI-UPGRADE-PLAN.md" \
                "HINWEIS-*.md"
 
+      - name: Extract Release Notes
+        # The release text is the changelog section of this version, not empty.
+        env:
+          VERSION: ${{ github.ref_name }}
+        run: VERSION="${VERSION#v}" python .github/scripts/release_notes.py
+
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
+          body_path: release-notes.md
           files: |
             module.json
             module.zip

@@ -2,8 +2,8 @@
   "NDRS": {
     "AppTitle": "Ninjo's DnD Reference Sheet",
     "Subtitle": "Quick Reference",
-    "ButtonOpen": "Open Cheat-Sheet",
-    "ButtonShort": "Cheat-Sheet",
+    "ButtonOpen": "Ninjo's DnD Reference Sheet",
+    "ButtonShort": "NDRS",
     "KeybindingHint": "Toggles the NDRS window.",
     "Footer": {
       "By": "Module by Ninjo & Roxy",
