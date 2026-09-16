@@ -5,6 +5,7 @@ import { NDRSApplication } from "./ndrs-app.js";
 import { buildPhbIndex, resetPhbIndex, hasPhbIndex } from "./phb-link.js";
 import { willkommenEinrichten, willkommenZeigen } from "./willkommen.js";
 import { fensterPassenEinrichten } from "./fensterpassen.js";
+import { verzeichnisKnopfEinrichten } from "./verzeichnisknopf.js";
 
 const MODULE_ID = "ndrs";
 
@@ -98,7 +99,7 @@ Hooks.once("init", () => {
     name: "NDRS.ButtonOpen",
     hint: "NDRS.KeybindingHint",
     editable: [
-      { key: "KeyR", modifiers: [KeyboardManager.MODIFIER_KEYS.SHIFT] }
+      { key: "KeyR", modifiers: [foundry.helpers.interaction.KeyboardManager.MODIFIER_KEYS.SHIFT] }
     ],
     onDown: () => {
       toggleApp();
@@ -213,20 +214,13 @@ Hooks.once("ready", () => {
   willkommenZeigen();
 });
 
-// ─── Actor Directory header button ────────────────────────────────────
-Hooks.on("renderActorDirectory", (app, html) => {
-  const root = html instanceof HTMLElement ? html : html?.[0];
-  if (!root) return;
-  if (root.querySelector("#ndrs-directory-btn")) return;
-
-  const button = document.createElement("button");
-  button.id = "ndrs-directory-btn";
-  button.innerHTML = `<i class="fas fa-rectangle-list"></i> ${game.i18n.localize("NDRS.ButtonOpen")}`;
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    openApp();
-  });
-
-  const headerActions = root.querySelector(".directory-header .header-actions");
-  if (headerActions) headerActions.appendChild(button);
-});
+// ─── Actor Directory button ───────────────────────────────────────────
+// scripts/verzeichnisknopf.js places it the same way in every Ninjo module: one shared row
+// under Foundry's own buttons, Foundry's button style, a short label and the full name as
+// tooltip.
+verzeichnisKnopfEinrichten("ndrs", () => ({
+  symbol: "fas fa-rectangle-list",
+  text: "NDRS.ButtonShort",
+  tipp: "NDRS.ButtonOpen",
+  aktion: () => openApp()
+}));

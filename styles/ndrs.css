@@ -729,48 +729,6 @@
     color: var(--ndrs-gold-dark);
 }
 
-/* ─── Actor Directory button ─────────────────────────────────────────
- * Injected into a Foundry sidebar header, which supplies no styling of
- * its own for custom buttons.
- */
-#ndrs-directory-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100%;
-    margin-top: 4px;
-    padding: 3px 8px;
-    background: var(--ndrs-primary-red);
-    color: var(--ndrs-header-text);
-    border: 1px solid var(--ndrs-accent-gold);
-    border-radius: 3px;
-    font-family: var(--ndrs-font-main);
-    /* The sidebar is narrow. Keep the label on a single line and let it
-       ellipsise rather than wrapping into a two-line block. */
-    font-size: 0.78rem;
-    font-weight: 600;
-    line-height: 1.6;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-}
-
-#ndrs-directory-btn i {
-    color: var(--ndrs-accent-gold);
-    flex-shrink: 0;
-}
-
-#ndrs-directory-btn:hover i {
-    color: var(--ndrs-header-text);
-}
-
-#ndrs-directory-btn:hover {
-    background: #600000;
-    box-shadow: 0 0 6px rgba(212, 175, 55, 0.5);
-}
-
 /* ─── Narrow windows ─────────────────────────────────────────────────
  * The window is resizable, so the calendar's three-column month grid has
  * to give way before the day cells overflow.

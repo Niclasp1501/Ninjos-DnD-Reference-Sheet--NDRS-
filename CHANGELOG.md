@@ -5,6 +5,23 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [Unreleased]
+
+### Changed
+- The button in the actor directory was a red bar with a gold border, and next
+  to the buttons of FANG and Ninjo's Shops its label was cut off ("Cheat-Sheet
+  öff"). All three now share one row below Foundry's own buttons, in Foundry's
+  button style, equally wide and always in the same order. The label is short
+  ("Cheat-Sheet"); "Open Cheat-Sheet" shows as a tooltip.
+
+### Fixed
+- The Shift+R shortcut read `KeyboardManager` as a global, which Foundry 13
+  deprecated and Foundry 15 removes. Every start logged a compatibility
+  warning, and on Foundry 15 NDRS would have failed while registering the
+  shortcut. It now uses `foundry.helpers.interaction.KeyboardManager`.
+
+---
+
 ## [14.2609.2] — The window stays on the screen
 
 ### Fixed
