@@ -219,7 +219,7 @@
       },
       "Ready": {
         "Title": "Bereitgehaltene Reaktion",
-        "Subtitle": "Eine zuvor mit Bereithalten festgelegte Aktion löst aus.",
+        "Subtitle": "Tritt der Auslöser ein, nutzt du deine Reaktion für das Bereitgehaltene.",
         "Summary": "Die Reaktionsseite der Aktion Bereithalten. Tritt der von dir festgelegte Auslöser ein, verbrauchst du deine Reaktion und führst die geplante Aktion oder Bewegung aus. Du darfst den Auslöser auch ignorieren. Tritt er bis zum Beginn deines nächsten Zuges nicht ein, verfällt die Vorbereitung.",
         "Example": "Der Bogenschütze hat seinen Schuss auf den Türrahmen bereitgehalten. Sobald der erste Goblin hindurchtritt, löst die Reaktion aus."
       },

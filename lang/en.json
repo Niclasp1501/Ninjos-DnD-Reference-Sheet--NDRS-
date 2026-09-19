@@ -219,9 +219,9 @@
       },
       "Ready": {
         "Title": "Readied Reaction",
-        "Subtitle": "A previously readied action triggers now.",
+        "Subtitle": "When the trigger occurs, you use your Reaction for what you readied.",
         "Summary": "The Reaction half of the Ready action. When your chosen trigger occurs you spend your Reaction and take the planned action or movement. You may also ignore the trigger. If it does not occur before the start of your next turn, the readying is lost.",
-        "Example": "The Archer has readied a draw aimed at the doorframe. As soon as the first Goblin slips through, the reaction triggers — the arrow flies."
+        "Example": "The Archer has readied a draw aimed at the doorframe. As soon as the first Goblin slips through, the Archer uses the Reaction and the arrow flies."
       },
       "Spell": {
         "Title": "Reaction Spells",

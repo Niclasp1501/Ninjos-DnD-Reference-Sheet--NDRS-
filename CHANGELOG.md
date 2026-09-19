@@ -5,6 +5,17 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2609.4] Readied Reaction names the Reaction
+
+### Fixed
+- The short line on the Readied Reaction card said that "a previously readied
+  action triggers". On a card filed under reactions this read as if an action
+  were spent, and it was reported that way. What you spend is your Reaction:
+  the line now says so in both languages. The full rule text below it was
+  already correct.
+
+---
+
 ## [14.2609.3] Actor directory button in the shared row
 
 ### Changed
