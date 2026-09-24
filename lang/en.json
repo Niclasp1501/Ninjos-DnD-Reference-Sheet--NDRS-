@@ -574,7 +574,8 @@
       "Punkt2": "<strong>Card first, detail on click</strong> — each card says in one sentence what it is about; a click opens the effect, an example and the \"New in 2024\" notes. Full-text search runs across every tab at once.",
       "Punkt3": "<strong>Built for game night</strong> — per-user favourites move to the top, feet and metres switch in the footer, and with Only-Sheet or the actor directory NDRS is one click away.",
       "Start": "To begin: <strong>Shift+R</strong> opens and closes the window. Click a card for the details, Esc clears the search.",
-      "ForgeZeile": "Every module, its documentation and the German translations in one place — open the module page",
+      "ForgeZeile": "Every module, its documentation and the German translations in one place: open the module page",
+      "PatreonZeile": "The modules are free and stay free. On Patreon you can support my work and get premium add-ons in return.",
       "Nie": "Don't show again",
       "Spaeter": "Later"
     }

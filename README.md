@@ -125,6 +125,14 @@ am Tablet nur einen Tipp entfernt.
 
 ---
 
+## Support / Unterstützen
+
+The modules are free and stay free. If they help your group, you can support my work on [Patreon](https://www.patreon.com/ninjosforge) and get premium add-ons in return. What you get there is on the [premium page of Ninjo's Forge](https://ninjos-forge.web.app/en/premium).
+
+Die Module sind kostenlos und bleiben es. Wenn sie deiner Runde helfen, kannst du meine Arbeit auf [Patreon](https://www.patreon.com/ninjosforge) unterstützen und bekommst Premium-Erweiterungen dazu. Was es dort gibt, steht auf der [Premium-Seite der Forge](https://ninjos-forge.web.app/premium).
+
+---
+
 ## Technical notes
 
 NDRS exposes a small API at `game.modules.get("ndrs").api` with `open()`, `close()`, `toggle()`,
