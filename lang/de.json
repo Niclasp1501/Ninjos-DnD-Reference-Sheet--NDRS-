@@ -271,12 +271,12 @@
       "Jump": {
         "Title": "Springen",
         "Subtitle": {
-          "metric": "Weitsprung: Stärkewert × 0,3 m. Hoher Sprung: (3 + Stärkemod.) × 0,3 m.",
-          "imperial": "Weitsprung: Stärkewert in Fuß. Hoher Sprung: 3 + Stärkemodifikator in Fuß."
+          "metric": "Weitsprung: Stärkewert × 0,3 m. Hochsprung: (3 + Stärkemod.) × 0,3 m.",
+          "imperial": "Weitsprung: Stärkewert in Fuß. Hochsprung: 3 + Stärkemodifikator in Fuß."
         },
         "Summary": {
-          "metric": "Beim Weitsprung springst du horizontal bis zu Stärkewert × 0,3 Meter weit, sofern du dich unmittelbar vorher mindestens 3 Meter bewegt hast. Beim Hohen Sprung erreichst du (3 plus Stärkemodifikator) × 0,3 Meter, ebenfalls nach mindestens 3 Metern Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Meter kostet einen Meter Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend.",
-          "imperial": "Beim Weitsprung springst du horizontal bis zu so viele Fuß weit wie dein Stärkewert, sofern du dich unmittelbar vorher mindestens 10 Fuß bewegt hast. Beim Hohen Sprung erreichst du 3 plus deinen Stärkemodifikator in Fuß, ebenfalls nach mindestens 10 Fuß Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Fuß kostet einen Fuß Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend."
+          "metric": "Beim Weitsprung springst du horizontal bis zu Stärkewert × 0,3 Meter weit, sofern du dich unmittelbar vorher mindestens 3 Meter bewegt hast. Beim Hochsprung erreichst du (3 plus Stärkemodifikator) × 0,3 Meter, ebenfalls nach mindestens 3 Metern Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Meter kostet einen Meter Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend.",
+          "imperial": "Beim Weitsprung springst du horizontal bis zu so viele Fuß weit wie dein Stärkewert, sofern du dich unmittelbar vorher mindestens 10 Fuß bewegt hast. Beim Hochsprung erreichst du 3 plus deinen Stärkemodifikator in Fuß, ebenfalls nach mindestens 10 Fuß Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Fuß kostet einen Fuß Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend."
         },
         "Example": {
           "metric": "Ein Barbar mit Stärke 18 nimmt Anlauf und springt 5,4 Meter weit über eine Schlucht, denn 18 × 0,3 ergibt 5,4.",

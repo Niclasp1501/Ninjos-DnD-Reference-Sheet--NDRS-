@@ -5,6 +5,14 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [Unreleased]
+
+### Changed
+- German: "Hochsprung" again instead of "Hoher Sprung". Ninjo's German
+  handbook settled on Hochsprung in 2.2.18.11, and NDRS follows its terms.
+
+---
+
 ## [14.2610.1] Rules review against the German handbook, and spell scrolls
 
 Every card was checked again, this time against the English 2024 Player's
