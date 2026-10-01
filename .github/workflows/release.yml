@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Validate Module
-        run: node tools/ndrs-validate.mjs
+        run: node tools/ndrs-validate.mjs --audit-2024
 
       - name: Create Module Archive
         run: |

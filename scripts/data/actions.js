@@ -36,6 +36,23 @@ export const ACTIONS = Object.freeze([
     }
   },
   {
+    id: "spell-scroll",
+    phbAliases: ["Zauberschriftrollen", "Zauberschriftrolle", "Spell Scroll", "Spell Scrolls"],
+    icon: "fa-scroll",
+    tags: ["magic", "items"],
+    source: { book: "PHB 2024" },
+    phbUuid: { de: "", en: "" },
+    units: false,
+    new2024: false,
+    i18n: {
+      titleKey: "NDRS.Action.Scroll.Title",
+      subtitleKey: "NDRS.Action.Scroll.Subtitle",
+      summaryKey: "NDRS.Action.Scroll.Summary",
+      exampleKey: "NDRS.Action.Scroll.Example",
+      notesKey: "NDRS.Action.Scroll.Notes"
+    }
+  },
+  {
     id: "dash",
     phbAliases: ["Spurt", "Dash"],
     icon: "fa-person-running",
@@ -53,7 +70,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "disengage",
-    phbAliases: ["Rückzug", "Disengage"],
+    phbAliases: ["Zurückziehen", "Rückzug", "Disengage"],
     icon: "fa-arrows-turn-to-dots",
     tags: ["movement", "combat", "core"],
     source: { book: "PHB 2024" },
@@ -119,7 +136,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "influence",
-    phbAliases: ["Beeinflussen", "Influence", "Soziale Interaktion"],
+    phbAliases: ["Einfluss nehmen", "Beeinflussen", "Influence", "Soziale Interaktion"],
     icon: "fa-comments",
     tags: ["social", "core"],
     source: { book: "PHB 2024" },
@@ -136,7 +153,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "ready",
-    phbAliases: ["Bereithalten", "Ready", "Vorbereiten"],
+    phbAliases: ["Bereit halten", "Bereithalten", "Ready", "Vorbereiten"],
     icon: "fa-stopwatch",
     tags: ["combat", "tactics", "core"],
     source: { book: "PHB 2024" },
@@ -168,7 +185,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "study",
-    phbAliases: ["Studieren", "Study"],
+    phbAliases: ["Studium", "Studieren", "Study"],
     icon: "fa-book-open-reader",
     tags: ["knowledge", "core"],
     source: { book: "PHB 2024" },
@@ -185,7 +202,7 @@ export const ACTIONS = Object.freeze([
   },
   {
     id: "utilize",
-    phbAliases: ["Benutzen", "Utilize", "Verwenden"],
+    phbAliases: ["Verwenden", "Benutzen", "Utilize"],
     icon: "fa-screwdriver-wrench",
     tags: ["utility", "core"],
     source: { book: "PHB 2024" },

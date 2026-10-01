@@ -36,7 +36,7 @@ export const REACTIONS = Object.freeze([
   },
   {
     id: "rx-ready",
-    phbAliases: ["Bereithalten", "Ready"],
+    phbAliases: ["Bereit halten", "Bereithalten", "Ready"],
     icon: "fa-clock",
     tags: ["combat", "tactics"],
     source: { book: "PHB 2024" },

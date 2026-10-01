@@ -5,13 +5,65 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
-## [Unreleased]
+## [14.2610.1] Rules review against the German handbook, and spell scrolls
+
+Every card was checked again, this time against the English 2024 Player's
+Handbook and Ninjo's German handbook side by side. The German handbook sets
+the terms; where it differed from the original in substance, the original
+won and the handbook was corrected as well.
 
 ### Added
+- **Spell Scroll card** in the Actions tab. A spell on your list you cast
+  directly, with a spellcasting ability check against DC 10 plus the spell's
+  level if it is above what you can normally cast. This table also lets you
+  try a spell that is not on your list: an Intelligence (Arcana) check
+  against DC 10 plus the spell's level, with a mishap if you miss by 5 or
+  more. The card marks this as a house rule from Ninjo's German handbook and
+  links to its page on spell scrolls.
 - **The welcome window mentions Patreon.** Below the link to Ninjo's Forge,
   one line now says that the modules are free and stay free, and that you can
   support the work on Patreon and get premium add-ons. Only GMs see the
   window, and "Don't show again" still hides it for good.
+
+### Fixed
+- **Bonus Action Spell** described the 2014 rule: after a Bonus Action spell
+  only a cantrip as your action. The 2024 rule counts spell slots instead.
+  You can expend only one spell slot per turn, so a cantrip, or a spell that
+  costs no slot, stays allowed alongside a Bonus Action spell.
+- **Hide** left out Three-Quarters Cover, and the note now says how an enemy
+  finds you: a Wisdom (Perception) check against your Stealth total.
+- **Magic** in English claimed the action was not for casting your own
+  spells. It is: the Magic action casts any spell with a casting time of an
+  action. Its example used Identify as a single action, but Identify takes a
+  minute.
+- **Two-Weapon Attack** now requires the Attack action, as the Light
+  property does.
+- **Reaction** no longer says the trigger must be perceivable, which is a
+  rule of Ready, not of every Reaction. Its example had a Fighter cast
+  Counterspell; it is a Wizard now.
+- **Petrified** was missing that attack rolls against you have Advantage, and
+  **Prone** claimed that Petrified includes Prone, which it does not.
+- **Jumping** in metres now uses Strength × 0.3, matching the handbook's High
+  Jump and the 1.5 m to 5 ft scale used everywhere else. Strength 18 gives
+  5.4 m, not 6 m. The low obstacle check is Strength (Athletics).
+- **Blinded** and **Deafened** fail ability checks that need sight or
+  hearing, not every roll.
+- Examples that did not hold under the 2024 rules: a Wizard concentrating on
+  Bless, Thunderclap deafening a Bard, a frightened Fighter attacking (the
+  dragon's Frightful Presence casts Fear, which makes you flee), Dispel Magic
+  ending petrification, a poison that lasted exactly one hour.
+- English Search example used Perception to find tracks; tracks are Survival.
+
+### Changed
+- German action names follow Ninjo's German handbook: Zurückziehen, Einfluss
+  nehmen, Bereit halten, Studium and Verwenden, the Unarmed Strike options
+  Packen and Stoßen, Hoher Sprung and Sturz. Skills read Arkane Kunde,
+  Einschüchtern and Mit Tieren umgehen, the cover is vollständige Deckung,
+  and the game master is the DM, as throughout the handbook. The links into
+  the handbook follow the new names.
+- The validator now runs its rules audit on every release and refuses the
+  2014 Bonus Action spell wording and "SL" in German rule texts.
+- No more dashes used as punctuation in any text.
 
 ---
 

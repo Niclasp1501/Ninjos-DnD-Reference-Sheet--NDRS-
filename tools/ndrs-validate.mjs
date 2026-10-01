@@ -144,11 +144,16 @@ if (audit2024) {
 
   const FORBIDDEN_DE = [
     /1\s+Stufe\s+Ersch[öo]pfung\s+pro/i,
-    /Player.?s?\s+Handbook(?!\s+(2024|2014))/i
+    /Player.?s?\s+Handbook(?!\s+(2024|2014))/i,
+    // 2014: after a Bonus Action spell only a cantrip. 2024 counts spell slots.
+    /nur\s+noch\s+einen\s+Zaubertrick/i,
+    // The German handbook calls the game master DM.
+    /\bSL\b/
   ];
   const FORBIDDEN_EN = [
     /level\s+of\s+exhaustion[^.]*disadvantage\s+on\s+ability\s+checks/i,
-    /Player.?s?\s+Handbook(?!\s+(2024|2014))/i
+    /Player.?s?\s+Handbook(?!\s+(2024|2014))/i,
+    /only\s+spell\s+you\s+may\s+cast[^.]*cantrip/i
   ];
 
   for (const [flat, rules, file] of [[deFlat, FORBIDDEN_DE, "de.json"], [enFlat, FORBIDDEN_EN, "en.json"]]) {
@@ -171,12 +176,14 @@ if (audit2024) {
 
   const REQUIRED = {
     "exhaustion":       [/(−|-)\s?2|um 2|by 2/i, /6/, /(−|-)\s?5\s*ft|(−|-)\s?1[,.]5\s*m|\{unitStep\}/i],
-    "hide":             [/Invisible|Unsichtbar/i],
     "cond-Grappled":    [/Unbewaffnet|Unarmed|Waffenlos/i],
     "cond-Unconscious": [/Prone|Liegend/i],
     "mv-jump":          [/St[aä]rke|Strength/i],
     "influence":        [/Aktion|action/i],
-    "study":            [/Intelligen/i]
+    "study":            [/Intelligen/i],
+    "hide":             [/Invisible|Unsichtbar/i, /Dreiviertel|Three-Quarters/i],
+    "ba-spell":         [/Zauberplatz/i, /spell slot/i],
+    "spell-scroll":     [/Arkane Kunde/i, /Arcana/i, /10/, /Patzer|mishap/i]
   };
 
   for (const [id, requirements] of Object.entries(REQUIRED)) {

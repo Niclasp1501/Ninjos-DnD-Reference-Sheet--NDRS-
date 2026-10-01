@@ -77,13 +77,20 @@
         "Subtitle": "Ein Angriffswurf mit einer Waffe oder einem Waffenlosen Schlag.",
         "Summary": "Mit der Aktion Angriff machst du einen Angriffswurf mit einer Waffe oder einem Waffenlosen Schlag. Merkmale wie Zusätzlicher Angriff erlauben dir mehrere Angriffe innerhalb derselben Aktion; zwischen diesen Angriffen darfst du dich bewegen. Du darfst als Teil der Aktion eine Waffe anlegen oder ablegen, vor oder nach dem Angriff. Beherrschst du die Waffenbeherrschungs-Eigenschaft deiner Waffe, kannst du sie bei diesem Angriff einsetzen.",
         "Example": "Eine Kämpferin auf Stufe 5 hat Zusätzlicher Angriff. Sie greift einen Goblin an, bewegt sich 3 Meter zum nächsten Gegner und führt dort ihren zweiten Angriff aus.",
-        "Notes": "Der Waffenlose Schlag bietet drei Optionen: Schaden, Ergreifen oder Wegstoßen. Ergreifen und Wegstoßen ersetzen den Schaden durch einen Effekt und sind keine eigenen Aktionen."
+        "Notes": "Der Waffenlose Schlag bietet drei Optionen: Schaden, Packen oder Stoßen. Packen und Stoßen ersetzen den Schaden durch einen Effekt und sind keine eigenen Aktionen."
       },
       "Magic": {
         "Title": "Magie",
         "Subtitle": "Wirke einen Zauber oder nutze einen magischen Gegenstand.",
         "Summary": "Mit der Aktion Magie wirkst du einen Zauber, dessen Wirkzeit eine Aktion beträgt, oder nutzt ein Merkmal beziehungsweise einen magischen Gegenstand, dessen Aktivierung die Aktion Magie erfordert. Bei Zaubern mit einer Wirkzeit von 1 Minute oder länger musst du in jeder Runde des Wirkvorgangs die Aktion Magie ausführen und dabei Konzentration aufrechterhalten. Wird die Konzentration unterbrochen, misslingt der Zauber, du verbrauchst aber keinen Zauberplatz.",
-        "Example": "Ein Schurke zieht eine Spruchrolle Identifizieren hervor und nutzt die Aktion Magie, um ihren Effekt auf einen frisch gefundenen Ring zu entladen."
+        "Example": "Ein Magier wirkt Identifizieren auf einen gefundenen Ring. Die Wirkzeit beträgt 1 Minute, also führt er in jeder Runde die Aktion Magie aus und hält dabei seine Konzentration."
+      },
+      "Scroll": {
+        "Title": "Zauberschriftrolle",
+        "Subtitle": "Zauber von deiner Liste wirkst du direkt, fremde mit Arkane Kunde gegen SG 10 + Grad.",
+        "Summary": "Du wirkst den Zauber der Schriftrolle mit seiner normalen Wirkzeit und ohne Materialkomponenten; danach zerfällt die Rolle zu Staub. Rettungswurf-SG und Angriffsbonus stehen auf der Rolle und hängen nicht von dir ab. Steht der Zauber auf deiner Zauberliste, brauchst du keinen Wurf, es sei denn, sein Grad ist höher, als du normalerweise wirken kannst: Dann legst du einen Wurf mit deinem Attribut zum Zauberwirken gegen SG 10 plus Grad ab. Steht er nicht auf deiner Liste, darfst du es trotzdem versuchen, auch ohne eigenes Zauberwirken: Du brauchst einen Intelligenzwurf (Arkane Kunde) gegen SG 10 plus Grad, auch bei einem Zaubertrick, und wirkst den Zauber dann mit Intelligenz. Misslingt ein Wurf, verschwindet der Zauber von der Rolle. Liegst du beim Intelligenzwurf um 5 oder mehr daneben, kommt es außerdem zu einem Patzer, den der DM bestimmt.",
+        "Example": "Ein Kämpfer hat beim Händler eine Schriftrolle mit Feuerball (Grad 3) gekauft. Der Zauber steht nicht auf seiner Liste, also würfelt er Intelligenz (Arkane Kunde) gegen SG 13. Mit einer 9 verfehlt er um 4: Der Zauber ist verloren, mehr passiert nicht. Mit einer 8 wäre es ein Patzer gewesen.",
+        "Notes": "Das Verlesen fremder Zauber ist eine Hausregel aus Ninjos Spielerhandbuch; nach den Grundregeln kann nur verlesen, wer den Zauber auf seiner Liste hat. Eine gefundene Rolle erkennst du nur, wenn ihr Zauber auf deiner Liste steht, sonst helfen Identifizieren oder eine kurze Rast mit der Rolle. Einen Magierzauber kannst du mit Intelligenz (Arkane Kunde) gegen SG 10 plus Grad ins Zauberbuch kopieren; die Rolle wird dabei in jedem Fall zerstört."
       },
       "Dash": {
         "Title": "Spurt",
@@ -92,10 +99,10 @@
         "Example": "Ein Mönch mit 9 Metern Bewegungsrate spurtet und kann sich in diesem Zug bis zu 18 Meter weit bewegen. Wurde seine Bewegungsrate auf 4,5 Meter gesenkt, sind es nur 9 Meter."
       },
       "Disengage": {
-        "Title": "Rückzug",
+        "Title": "Zurückziehen",
         "Subtitle": "Deine Bewegung provoziert für den Rest des Zuges keine Gelegenheitsangriffe.",
-        "Summary": "Mit der Aktion Rückzug provoziert deine Bewegung für den Rest des aktuellen Zuges keine Gelegenheitsangriffe. Du verzichtest dafür auf deine Aktion. Die Reichweite von Gegnern wird dadurch nicht aufgehoben, nur die Reaktion Gelegenheitsangriff greift nicht.",
-        "Example": "Ein Magier steht im Nahkampf eines Orks. Statt das Risiko einzugehen, nutzt er Rückzug und zieht sich gefahrlos 9 Meter zurück, um aus sicherer Distanz zu wirken."
+        "Summary": "Mit der Aktion Zurückziehen provoziert deine Bewegung für den Rest des aktuellen Zuges keine Gelegenheitsangriffe. Du verzichtest dafür auf deine Aktion. Die Reichweite von Gegnern wird dadurch nicht aufgehoben, nur die Reaktion Gelegenheitsangriff greift nicht.",
+        "Example": "Ein Magier steht im Nahkampf eines Orks. Statt das Risiko einzugehen, nutzt er die Aktion Zurückziehen und entfernt sich gefahrlos 9 Meter, um aus sicherer Distanz zu wirken."
       },
       "Dodge": {
         "Title": "Ausweichen",
@@ -118,26 +125,26 @@
           "imperial": "Die Schurkin steht direkt neben einem Ogerwächter und lenkt ihn ab. Der nächste Angriffswurf des Kämpfers gegen den Oger hat Vorteil."
         },
         "Notes": {
-          "metric": "Der SL entscheidet, ob deine Unterstützung überhaupt möglich ist. Du brauchst die passende Fertigkeits- oder Werkzeugübung, um einen Attributswurf zu unterstützen.",
-          "imperial": "Der SL entscheidet, ob deine Unterstützung überhaupt möglich ist. Du brauchst die passende Fertigkeits- oder Werkzeugübung, um einen Attributswurf zu unterstützen."
+          "metric": "Der DM entscheidet, ob deine Unterstützung überhaupt möglich ist. Du brauchst die passende Fertigkeits- oder Werkzeugübung, um einen Attributswurf zu unterstützen.",
+          "imperial": "Der DM entscheidet, ob deine Unterstützung überhaupt möglich ist. Du brauchst die passende Fertigkeits- oder Werkzeugübung, um einen Attributswurf zu unterstützen."
         }
       },
       "Hide": {
         "Title": "Verstecken",
         "Subtitle": "Ein Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15.",
-        "Summary": "Du machst einen Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15, während du Stark verdeckt bist oder Volle Deckung hast und keine Feinde dich sehen können. Bei Erfolg erhältst du den Zustand Unsichtbar. Der Zustand endet, sobald du ein Geräusch lauter als ein Flüstern machst, einen Angriff ausführst, einen Zauber mit verbaler Komponente wirkst oder ein Feind dich findet.",
+        "Summary": "Du machst einen Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15, während du Stark verdeckt bist oder hinter Dreivierteldeckung oder vollständiger Deckung stehst und außerhalb der Sichtlinie aller Feinde bist. Bei Erfolg hast du den Zustand Unsichtbar, solange du versteckt bist. Das endet, sobald du ein Geräusch lauter als ein Flüstern machst, einen Angriffswurf machst, einen Zauber mit verbaler Komponente wirkst oder ein Feind dich findet.",
         "Example": "Der Waldläufer duckt sich hinter einen Wagen und würfelt 18 auf Heimlichkeit. Er gilt als Unsichtbar; sein nächster Angriff aus der Deckung hat Vorteil, beendet aber sofort das Versteck.",
-        "Notes": "Der Zustand Unsichtbar ist an das Versteck gebunden. Findet dich ein Feind, endet der Zustand sofort, unabhängig von deinem Wurfergebnis."
+        "Notes": "Notiere das Ergebnis deines Wurfs. Es ist der SG, gegen den ein Feind mit einem Wurf auf Weisheit (Wahrnehmung) nach dir sucht. Findet er dich, endet der Zustand Unsichtbar sofort."
       },
       "Influence": {
-        "Title": "Beeinflussen",
-        "Subtitle": "Mit der Aktion Beeinflussen drängst du ein Monster dazu, etwas zu tun.",
-        "Summary": "Mit der Aktion Beeinflussen drängst du ein Monster dazu, etwas zu tun. Du beschreibst oder spielst aus, wie du mit dem Monster kommunizierst, und der SL entscheidet, ob es willig, unwillig oder zögerlich ist. Ist es willig, erfüllt es die Bitte ohne Wurf; ist es unwillig, gibt es ohne Wurf nicht nach. Nur bei einem zögerlichen Monster würfelst du, meist auf Täuschung, Einschüchterung, Auftreten, Überzeugen oder Tierumgang. Der SG ist 15 oder der Intelligenzwert des Monsters, je nachdem, welcher Wert höher ist.",
-        "Example": "Eine Bardin will einen Wachhauptmann überzeugen, die Gefangene freizulassen. Der SL stuft ihn als zögerlich ein, und die Bardin würfelt Charisma (Überzeugen) gegen SG 15.",
-        "Notes": "Nach einem misslungenen Wurf musst du 24 Stunden warten, bevor du dasselbe Monster auf dieselbe Weise erneut drängen kannst."
+        "Title": "Einfluss nehmen",
+        "Subtitle": "Mit der Aktion Einfluss nehmen drängst du ein Monster dazu, etwas zu tun.",
+        "Summary": "Mit der Aktion Einfluss nehmen drängst du ein Monster dazu, etwas zu tun. Du beschreibst oder spielst aus, wie du mit dem Monster kommunizierst, und der DM entscheidet, ob es willig, unwillig oder zögerlich ist. Ist es willig, erfüllt es die Bitte ohne Wurf; ist es unwillig, gibt es ohne Wurf nicht nach. Nur bei einem zögerlichen Monster würfelst du, meist auf Täuschung, Einschüchtern, Auftreten, Überzeugen oder Mit Tieren umgehen. Der SG ist 15 oder der Intelligenzwert des Monsters, je nachdem, welcher Wert höher ist.",
+        "Example": "Eine Bardin will einen Wachhauptmann überzeugen, die Gefangene freizulassen. Der DM stuft ihn als zögerlich ein, und die Bardin würfelt Charisma (Überzeugen) gegen SG 15.",
+        "Notes": "Nach einem misslungenen Wurf musst du 24 Stunden warten (oder so lange, wie der DM festlegt), bevor du dasselbe Monster auf dieselbe Weise erneut drängen kannst."
       },
       "Ready": {
-        "Title": "Bereithalten",
+        "Title": "Bereit halten",
         "Subtitle": "Lege einen Auslöser fest und handle später mit deiner Reaktion.",
         "Summary": "Du legst einen wahrnehmbaren Umstand als Auslöser fest und wählst die Aktion, die du daraufhin ausführst, oder eine Bewegung bis zu deiner Bewegungsrate. Tritt der Auslöser vor Beginn deines nächsten Zuges ein, führst du sie mit deiner Reaktion aus oder ignorierst den Auslöser. Hältst du einen Zauber bereit, sprichst du ihn sofort und verbrauchst die Ressourcen; du hältst seine Energie mit Konzentration zurück und setzt sie beim Auslöser frei.",
         "Example": "Der Magier sagt: Wenn der Kultist auf die Falltür tritt, wirke ich Magisches Geschoss. Sobald der Kultist die Falltür betritt, nutzt der Magier seine Reaktion und der Zauber löst aus.",
@@ -150,17 +157,17 @@
         "Example": "Der Waldläufer untersucht einen verlassenen Wachturm und würfelt 17 auf Weisheit (Überleben). Er findet frische Spuren einer mittelgroßen Kreatur, keine Stunde alt."
       },
       "Study": {
-        "Title": "Studieren",
+        "Title": "Studium",
         "Subtitle": "Ein Intelligenzwurf, um dir ein wichtiges Detail ins Gedächtnis zu rufen.",
-        "Summary": "Mit der Aktion Studieren machst du einen Intelligenzwurf, um dein Gedächtnis, ein Buch, einen Hinweis oder eine andere Wissensquelle auszuwerten. Arkanes deckt Zauber, magische Gegenstände und bestimmte Kreaturen ab, Geschichte historische Ereignisse und Zivilisationen, Nachforschungen Fallen, Chiffren und Apparaturen, Naturkunde Gelände, Flora und Wetter, Religion Gottheiten, Riten und Kulte.",
+        "Summary": "Mit der Aktion Studium machst du einen Intelligenzwurf, um dein Gedächtnis, ein Buch, einen Hinweis oder eine andere Wissensquelle auszuwerten. Arkane Kunde deckt Zauber, magische Gegenstände und bestimmte Kreaturen ab, Geschichte historische Ereignisse und Zivilisationen, Nachforschungen Fallen, Chiffren und Apparaturen, Naturkunde Gelände, Flora und Wetter, Religion Gottheiten, Riten und Kulte.",
         "Example": "Vor einem Wasserspeier-Wächter würfelt der Kleriker Intelligenz (Religion) und erinnert sich an dessen Anfälligkeit gegen Wuchtschaden.",
-        "Notes": "Jedes Wissensgebiet deckt auch bestimmte Kreaturentypen ab. Arkanes umfasst etwa Aberrationen, Konstrukte, Elementare, Feenwesen und Monstrositäten."
+        "Notes": "Jedes Wissensgebiet deckt auch bestimmte Kreaturentypen ab. Arkane Kunde umfasst etwa Aberrationen, Konstrukte, Elementare, Feenwesen und Monstrositäten."
       },
       "Utilize": {
-        "Title": "Benutzen",
-        "Subtitle": "Benutze einen nichtmagischen Gegenstand, der eine Aktion erfordert.",
-        "Summary": "Normalerweise interagierst du mit einem Objekt nebenbei, etwa wenn du im Rahmen der Aktion Angriff ein Schwert ziehst. Erfordert ein Objekt jedoch ausdrücklich eine Aktion für seine Verwendung, führst du die Aktion Benutzen aus. Für magische Gegenstände ist stattdessen die Aktion Magie zuständig.",
-        "Example": "Der Zwergenkämpfer steht vor einem rostigen Wandhebel. Er benutzt ihn, und die Falltür unter dem Trolltisch klappt auf."
+        "Title": "Verwenden",
+        "Subtitle": "Verwende einen nichtmagischen Gegenstand, der eine Aktion erfordert.",
+        "Summary": "Normalerweise interagierst du mit einem Objekt nebenbei, etwa wenn du im Rahmen der Aktion Angriff ein Schwert ziehst. Erfordert ein Objekt jedoch ausdrücklich eine Aktion für seine Verwendung, führst du die Aktion Verwenden aus. Für magische Gegenstände ist stattdessen die Aktion Magie zuständig.",
+        "Example": "Der Zwergenkämpfer steht vor einem rostigen Wandhebel. Er betätigt ihn mit der Aktion Verwenden, und die Falltür unter dem Trolltisch klappt auf."
       }
     },
     "Bonus": {
@@ -168,35 +175,35 @@
         "Title": "Bonusaktion",
         "Subtitle": "Eine zusätzliche Aktion, die nur ein Merkmal ausdrücklich gewähren kann.",
         "Summary": "Verschiedene Klassenmerkmale, Zauber und andere Fähigkeiten erlauben dir in deinem Zug eine zusätzliche Aktion. Du kannst eine Bonusaktion nur ausführen, wenn eine besondere Fähigkeit, ein Zauber oder ein Merkmal das ausdrücklich sagt. Pro Zug ist genau eine Bonusaktion möglich, auch wenn dir mehrere zur Verfügung stünden. Alles, was dich um deine Aktion bringt, verhindert auch deine Bonusaktion.",
-        "Example": "Ein Schurke greift mit seiner Aktion an und nutzt danach die Gerissene Aktion als Bonusaktion, um sich zu verstecken."
+        "Example": "Ein Schurke greift mit seiner Aktion an und nutzt danach die Raffinierte Aktion als Bonusaktion, um sich zu verstecken."
       },
       "OffHand": {
         "Title": "Angriff mit zweiter Waffe",
         "Subtitle": "Ein zusätzlicher Angriff mit einer Waffe der Eigenschaft Leicht.",
-        "Summary": "Greifst du mit einer Waffe an, die die Eigenschaft Leicht hat, kannst du als Bonusaktion einen weiteren Angriff mit einer anderen Leichten Waffe in deiner freien Hand machen. Beide Waffen müssen die Eigenschaft Leicht besitzen. Der Schaden des zweiten Angriffs erhält deinen Attributsmodifikator nur, wenn dieser negativ ist.",
+        "Summary": "Führst du in deinem Zug die Aktion Angriff aus und greifst mit einer Waffe mit der Eigenschaft Leicht an, kannst du später im selben Zug als Bonusaktion einen zusätzlichen Angriff mit einer anderen Leichten Waffe machen. Der Schaden dieses Angriffs erhält deinen Attributsmodifikator nur, wenn dieser negativ ist.",
         "Example": "Eine Schurkin greift mit ihrem Kurzschwert an und nutzt die Bonusaktion für einen zweiten Angriff mit ihrem Dolch. Der Dolch verursacht nur den Waffenwürfel ohne Geschicklichkeitsmodifikator.",
         "Notes": "Der Zweiwaffenkampf hängt allein an der Waffeneigenschaft Leicht und ist an keinen Kampfstil gebunden."
       },
       "Spell": {
         "Title": "Bonusaktions-Zauber",
-        "Subtitle": "Zauber mit einer Wirkzeit von einer Bonusaktion.",
-        "Summary": "Manche Zauber haben eine Wirkzeit von einer Bonusaktion und sind daran gebunden, dass du sie in deinem Zug wirkst. Wirkst du einen solchen Zauber, darfst du in derselben Runde als Aktion nur noch einen Zaubertrick wirken, keinen zweiten gestuften Zauber.",
-        "Example": "Der Kleriker wirkt Heilendes Wort als Bonusaktion auf den gefallenen Kämpfer. Als Aktion bleibt ihm in dieser Runde nur noch ein Zaubertrick wie Heilige Flamme.",
-        "Notes": "Die Regel greift nur bei gestuften Zaubern. Zaubertricks bleiben als Aktion immer erlaubt."
+        "Subtitle": "Zauber mit einer Wirkzeit von einer Bonusaktion. Pro Zug nur ein Zauberplatz.",
+        "Summary": "Manche Zauber haben eine Wirkzeit von einer Bonusaktion; einige davon wirkst du als Antwort auf einen Auslöser, der im Zauber steht. Für alle Zauber gilt: In einem Zug kannst du nur einen Zauberplatz aufwenden. Wirkst du einen Zauber mit Zauberplatz als Bonusaktion, kannst du mit deiner Aktion also keinen zweiten Zauber mit Zauberplatz wirken. Ein Zaubertrick oder ein Zauber, der keinen Zauberplatz kostet, bleibt erlaubt.",
+        "Example": "Der Kleriker wirkt Heilendes Wort als Bonusaktion auf den gefallenen Kämpfer. Mit seiner Aktion kann er danach noch Heilige Flamme wirken, aber nicht Lenkendes Geschoss, denn dafür bräuchte er einen zweiten Zauberplatz.",
+        "Notes": "Gezählt werden Zauberplätze, nicht Zauber. Ein Zaubertrick als Bonusaktion und ein Zauber mit Zauberplatz als Aktion sind im selben Zug erlaubt."
       },
       "Class": {
         "Title": "Klassen-Bonusaktionen",
         "Subtitle": "Bonusaktionen aus Klassenmerkmalen, siehe Klassenbeschreibung.",
-        "Summary": "Viele Klassenmerkmale bringen eigene Bonusaktionen mit. Der Schurke hat die Gerissene Aktion, der Barbar den Kampfrausch, der Mönch seine Fokus-Merkmale und der Paladin Göttliches Niederstrecken. Prüfe in deiner Klassenbeschreibung, welcher Auslöser gilt und ob das Merkmal begrenzt ist.",
-        "Example": "Ein Schurke setzt seine Gerissene Aktion ein, um sich als Bonusaktion zurückzuziehen, statt dafür seine Aktion aufzuwenden."
+        "Summary": "Viele Klassenmerkmale bringen eigene Bonusaktionen mit. Der Schurke hat die Raffinierte Aktion, der Barbar den Kampfrausch, der Mönch seine Fokus-Merkmale und der Kämpfer Zweite Luft. Prüfe in deiner Klassenbeschreibung, welcher Auslöser gilt und ob das Merkmal begrenzt ist.",
+        "Example": "Ein Schurke nutzt seine Raffinierte Aktion, um Zurückziehen als Bonusaktion auszuführen, statt dafür seine Aktion aufzuwenden."
       }
     },
     "Reaction": {
       "Overview": {
         "Title": "Reaktion",
-        "Subtitle": "Eine Antwort auf einen Auslöser, einmal pro Runde.",
-        "Summary": "Eine Reaktion ist eine besondere Aktion, die du als Antwort auf einen Auslöser ausführst. Du hast genau eine Reaktion pro Runde, die zu Beginn deines nächsten Zuges wieder zur Verfügung steht. Der Auslöser muss wahrnehmbar sein, und die Reaktion erfolgt direkt nach dem Auslöser, sofern nichts anderes beschrieben ist.",
-        "Example": "Eine Kämpferin sieht, wie eine Goblin-Magierin einen Zauber wirkt, und nutzt ihre Reaktion für Gegenzauber."
+        "Subtitle": "Eine Antwort auf einen Auslöser, eine bis zum Beginn deines nächsten Zuges.",
+        "Summary": "Eine Reaktion ist eine besondere Aktion, die du als Antwort auf einen Auslöser ausführst; der Auslöser steht in der Beschreibung der Reaktion. Du kannst sie im Zug einer anderen Kreatur ausführen, im eigenen Zug auch zusätzlich zu Aktion und Bonusaktion. Hast du eine Reaktion ausgeführt, kannst du bis zum Beginn deines nächsten Zuges keine weitere ausführen. Der Gelegenheitsangriff steht allen Kreaturen als Reaktion zur Verfügung.",
+        "Example": "Eine Magierin sieht, wie ein Goblin-Schamane einen Zauber wirkt, und nutzt ihre Reaktion für Gegenzauber."
       },
       "Opportunity": {
         "Title": "Gelegenheitsangriff",
@@ -213,20 +220,20 @@
           "imperial": "Ein Goblin will an der Kämpferin vorbei zur Magierin laufen. Die Kämpferin nutzt ihre Reaktion und schlägt zu, sobald der Goblin ihre Reichweite verlässt."
         },
         "Notes": {
-          "metric": "Die Aktion Rückzug verhindert Gelegenheitsangriffe. Eine Kreatur, die du nicht sehen kannst, provoziert nie einen Gelegenheitsangriff.",
-          "imperial": "Die Aktion Rückzug verhindert Gelegenheitsangriffe. Eine Kreatur, die du nicht sehen kannst, provoziert nie einen Gelegenheitsangriff."
+          "metric": "Die Aktion Zurückziehen verhindert Gelegenheitsangriffe. Eine Kreatur, die du nicht sehen kannst, provoziert nie einen Gelegenheitsangriff.",
+          "imperial": "Die Aktion Zurückziehen verhindert Gelegenheitsangriffe. Eine Kreatur, die du nicht sehen kannst, provoziert nie einen Gelegenheitsangriff."
         }
       },
       "Ready": {
         "Title": "Bereitgehaltene Reaktion",
-        "Subtitle": "Tritt der Auslöser ein, nutzt du deine Reaktion für das Bereitgehaltene.",
-        "Summary": "Die Reaktionsseite der Aktion Bereithalten. Tritt der von dir festgelegte Auslöser ein, verbrauchst du deine Reaktion und führst die geplante Aktion oder Bewegung aus. Du darfst den Auslöser auch ignorieren. Tritt er bis zum Beginn deines nächsten Zuges nicht ein, verfällt die Vorbereitung.",
+        "Subtitle": "Tritt der Auslöser ein, nutzt du deine Reaktion für das bereit Gehaltene.",
+        "Summary": "Die Reaktionsseite der Aktion Bereit halten. Tritt der von dir festgelegte Auslöser ein, verbrauchst du deine Reaktion und führst die geplante Aktion oder Bewegung aus. Du darfst den Auslöser auch ignorieren. Tritt er bis zum Beginn deines nächsten Zuges nicht ein, verfällt die Vorbereitung.",
         "Example": "Der Bogenschütze hat seinen Schuss auf den Türrahmen bereitgehalten. Sobald der erste Goblin hindurchtritt, löst die Reaktion aus."
       },
       "Spell": {
         "Title": "Zauber-Reaktionen",
         "Subtitle": "Zauber mit einer Wirkzeit von einer Reaktion.",
-        "Summary": "Manche Zauber haben eine Wirkzeit von einer Reaktion und sind an einen konkreten Auslöser gebunden, der in der Zauberbeschreibung steht. Sie verbrauchen einen Zauberplatz sowie deine Reaktion in dieser Runde. Da du nur eine Reaktion pro Runde hast, steht dir danach bis zum Beginn deines nächsten Zuges keine weitere zur Verfügung.",
+        "Summary": "Manche Zauber haben eine Wirkzeit von einer Reaktion und sind an einen konkreten Auslöser gebunden, der in der Zauberbeschreibung steht. Sie verbrauchen einen Zauberplatz und deine Reaktion; bis zum Beginn deines nächsten Zuges hast du danach keine weitere.",
         "Example": "Die Magierin wird von einem Pfeil getroffen, der ihre Rüstungsklasse knapp erreicht. Sie wirkt Schild als Reaktion und erhält +5 Rüstungsklasse, sodass der Pfeil verfehlt."
       }
     },
@@ -264,20 +271,20 @@
       "Jump": {
         "Title": "Springen",
         "Subtitle": {
-          "metric": "Weitsprung: Stärkewert geteilt durch 3 in Metern. Hochsprung: (3 + Stärkemod.) geteilt durch 3.",
-          "imperial": "Weitsprung: Stärkewert in Fuß. Hochsprung: 3 + Stärkemodifikator in Fuß."
+          "metric": "Weitsprung: Stärkewert × 0,3 m. Hoher Sprung: (3 + Stärkemod.) × 0,3 m.",
+          "imperial": "Weitsprung: Stärkewert in Fuß. Hoher Sprung: 3 + Stärkemodifikator in Fuß."
         },
         "Summary": {
-          "metric": "Beim Weitsprung springst du horizontal so viele Meter weit wie dein Stärkewert geteilt durch 3, sofern du dich unmittelbar vorher mindestens 3 Meter bewegt hast. Beim Hochsprung erreichst du (3 plus deinem Stärkemodifikator) geteilt durch 3 Meter. Aus dem Stand halbiert sich beides. Jeder gesprungene Meter kostet einen Meter Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Akrobatik gegen SG 10, sonst erhältst du den Zustand Liegend.",
-          "imperial": "Beim Weitsprung springst du horizontal so viele Fuß weit wie dein Stärkewert, sofern du dich unmittelbar vorher mindestens 10 Fuß bewegt hast. Beim Hochsprung erreichst du 3 plus deinen Stärkemodifikator in Fuß. Aus dem Stand halbiert sich beides. Jeder gesprungene Fuß kostet einen Fuß Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Akrobatik gegen SG 10, sonst erhältst du den Zustand Liegend."
+          "metric": "Beim Weitsprung springst du horizontal bis zu Stärkewert × 0,3 Meter weit, sofern du dich unmittelbar vorher mindestens 3 Meter bewegt hast. Beim Hohen Sprung erreichst du (3 plus Stärkemodifikator) × 0,3 Meter, ebenfalls nach mindestens 3 Metern Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Meter kostet einen Meter Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend.",
+          "imperial": "Beim Weitsprung springst du horizontal bis zu so viele Fuß weit wie dein Stärkewert, sofern du dich unmittelbar vorher mindestens 10 Fuß bewegt hast. Beim Hohen Sprung erreichst du 3 plus deinen Stärkemodifikator in Fuß, ebenfalls nach mindestens 10 Fuß Anlauf. Aus dem Stand halbiert sich beides. Jeder gesprungene Fuß kostet einen Fuß Bewegung. Landest du in Schwierigem Gelände, brauchst du einen Wurf auf Geschicklichkeit (Akrobatik) gegen SG 10, sonst erhältst du den Zustand Liegend."
         },
         "Example": {
-          "metric": "Ein Barbar mit Stärke 18 nimmt Anlauf und springt 6 Meter weit über eine Schlucht, denn 18 geteilt durch 3 ergibt 6.",
+          "metric": "Ein Barbar mit Stärke 18 nimmt Anlauf und springt 5,4 Meter weit über eine Schlucht, denn 18 × 0,3 ergibt 5,4.",
           "imperial": "Ein Barbar mit Stärke 18 nimmt Anlauf und springt 18 Fuß weit über eine Schlucht, denn sein Stärkewert entspricht der Sprungweite in Fuß."
         },
         "Notes": {
-          "metric": "Ein niedriges Hindernis auf der Sprungstrecke kann einen Wurf auf Athletik gegen SG 10 erfordern. Während des Sprungs kannst du deine Arme um die halbe Körpergröße über dich hinausstrecken.",
-          "imperial": "Ein niedriges Hindernis auf der Sprungstrecke kann einen Wurf auf Athletik gegen SG 10 erfordern. Während des Sprungs kannst du deine Arme um die halbe Körpergröße über dich hinausstrecken."
+          "metric": "Ein niedriges Hindernis auf der Sprungstrecke kann einen Wurf auf Stärke (Athletik) gegen SG 10 erfordern. Während des Sprungs kannst du deine Arme um die halbe Körpergröße über dich hinausstrecken.",
+          "imperial": "Ein niedriges Hindernis auf der Sprungstrecke kann einen Wurf auf Stärke (Athletik) gegen SG 10 erfordern. Während des Sprungs kannst du deine Arme um die halbe Körpergröße über dich hinausstrecken."
         }
       },
       "Climb": {
@@ -287,8 +294,8 @@
           "imperial": "Jeder Fuß kostet einen zusätzlichen Fuß, ohne Kletterbewegungsrate."
         },
         "Summary": {
-          "metric": "Beim Klettern kostet jeder Meter Bewegung einen zusätzlichen Meter, in Schwierigem Gelände sogar zwei zusätzliche Meter. Diese Zusatzkosten entfallen, wenn du eine Kletterbewegungsrate hast und sie zum Klettern nutzt. Auf rutschigen Oberflächen oder solchen mit wenigen Griffen kann der SL einen Wurf auf Athletik gegen SG 15 verlangen.",
-          "imperial": "Beim Klettern kostet jeder Fuß Bewegung einen zusätzlichen Fuß, in Schwierigem Gelände sogar zwei zusätzliche Fuß. Diese Zusatzkosten entfallen, wenn du eine Kletterbewegungsrate hast und sie zum Klettern nutzt. Auf rutschigen Oberflächen oder solchen mit wenigen Griffen kann der SL einen Wurf auf Athletik gegen SG 15 verlangen."
+          "metric": "Beim Klettern kostet jeder Meter Bewegung einen zusätzlichen Meter, in Schwierigem Gelände sogar zwei zusätzliche Meter. Diese Zusatzkosten entfallen, wenn du eine Kletterbewegungsrate hast und sie zum Klettern nutzt. Auf rutschigen Oberflächen oder solchen mit wenigen Griffen kann der DM einen Wurf auf Stärke (Athletik) gegen SG 15 verlangen.",
+          "imperial": "Beim Klettern kostet jeder Fuß Bewegung einen zusätzlichen Fuß, in Schwierigem Gelände sogar zwei zusätzliche Fuß. Diese Zusatzkosten entfallen, wenn du eine Kletterbewegungsrate hast und sie zum Klettern nutzt. Auf rutschigen Oberflächen oder solchen mit wenigen Griffen kann der DM einen Wurf auf Stärke (Athletik) gegen SG 15 verlangen."
         },
         "Example": {
           "metric": "Ein Schurke klettert 4,5 Meter an einer Hauswand hinauf. Das kostet ihn 9 Meter, also seine gesamte Bewegungsrate für diesen Zug.",
@@ -302,8 +309,8 @@
           "imperial": "Jeder Fuß kostet einen zusätzlichen Fuß, ohne Schwimmbewegungsrate."
         },
         "Summary": {
-          "metric": "Beim Schwimmen kostet jeder Meter Bewegung einen zusätzlichen Meter, in Schwierigem Gelände zwei zusätzliche Meter. Mit einer Schwimmbewegungsrate entfallen diese Zusatzkosten. In rauen Gewässern kann der SL für jede zurückgelegte Distanz einen Wurf auf Athletik gegen SG 15 verlangen.",
-          "imperial": "Beim Schwimmen kostet jeder Fuß Bewegung einen zusätzlichen Fuß, in Schwierigem Gelände zwei zusätzliche Fuß. Mit einer Schwimmbewegungsrate entfallen diese Zusatzkosten. In rauen Gewässern kann der SL für jede zurückgelegte Distanz einen Wurf auf Athletik gegen SG 15 verlangen."
+          "metric": "Beim Schwimmen kostet jeder Meter Bewegung einen zusätzlichen Meter, in Schwierigem Gelände zwei zusätzliche Meter. Mit einer Schwimmbewegungsrate entfallen diese Zusatzkosten. In rauen Gewässern kann der DM für jede zurückgelegte Distanz einen Wurf auf Stärke (Athletik) gegen SG 15 verlangen.",
+          "imperial": "Beim Schwimmen kostet jeder Fuß Bewegung einen zusätzlichen Fuß, in Schwierigem Gelände zwei zusätzliche Fuß. Mit einer Schwimmbewegungsrate entfallen diese Zusatzkosten. In rauen Gewässern kann der DM für jede zurückgelegte Distanz einen Wurf auf Stärke (Athletik) gegen SG 15 verlangen."
         },
         "Example": {
           "metric": "Ein Magier durchschwimmt einen ruhigen Fluss. 4,5 Meter Strecke kosten ihn 9 Meter Bewegung. Bei Sturm käme ein Athletik-Wurf hinzu.",
@@ -326,14 +333,14 @@
         }
       },
       "Fall": {
-        "Title": "Stürzen",
+        "Title": "Sturz",
         "Subtitle": {
           "metric": "1W6 Wuchtschaden je 3 Meter Sturzhöhe, höchstens 20W6.",
           "imperial": "1W6 Wuchtschaden je 10 Fuß Sturzhöhe, höchstens 20W6."
         },
         "Summary": {
-          "metric": "Eine stürzende Kreatur erleidet am Ende des Sturzes 1W6 Wuchtschaden für alle 3 Meter, die sie gefallen ist, bis zu höchstens 20W6. Beim Aufprall erhält sie den Zustand Liegend, es sei denn, sie vermeidet jeglichen Sturzschaden. Wer in Wasser oder eine andere Flüssigkeit stürzt, darf mit seiner Reaktion einen Wurf auf Athletik oder Akrobatik gegen SG 15 machen und halbiert bei Erfolg den Schaden.",
-          "imperial": "Eine stürzende Kreatur erleidet am Ende des Sturzes 1W6 Wuchtschaden für alle 10 Fuß, die sie gefallen ist, bis zu höchstens 20W6. Beim Aufprall erhält sie den Zustand Liegend, es sei denn, sie vermeidet jeglichen Sturzschaden. Wer in Wasser oder eine andere Flüssigkeit stürzt, darf mit seiner Reaktion einen Wurf auf Athletik oder Akrobatik gegen SG 15 machen und halbiert bei Erfolg den Schaden."
+          "metric": "Eine stürzende Kreatur erleidet am Ende des Sturzes 1W6 Wuchtschaden für alle 3 Meter, die sie gefallen ist, bis zu höchstens 20W6. Beim Aufprall erhält sie den Zustand Liegend, es sei denn, sie vermeidet jeglichen Sturzschaden. Wer in Wasser oder eine andere Flüssigkeit stürzt, darf mit seiner Reaktion einen Wurf auf Stärke (Athletik) oder Geschicklichkeit (Akrobatik) gegen SG 15 machen und halbiert bei Erfolg den Schaden.",
+          "imperial": "Eine stürzende Kreatur erleidet am Ende des Sturzes 1W6 Wuchtschaden für alle 10 Fuß, die sie gefallen ist, bis zu höchstens 20W6. Beim Aufprall erhält sie den Zustand Liegend, es sei denn, sie vermeidet jeglichen Sturzschaden. Wer in Wasser oder eine andere Flüssigkeit stürzt, darf mit seiner Reaktion einen Wurf auf Stärke (Athletik) oder Geschicklichkeit (Akrobatik) gegen SG 15 machen und halbiert bei Erfolg den Schaden."
         },
         "Example": {
           "metric": "Eine Schurkin stürzt 9 Meter tief und erleidet 3W6 Wuchtschaden. Sie landet mit dem Zustand Liegend.",
@@ -364,8 +371,8 @@
       "Blinded": {
         "Title": "Blind",
         "Subtitle": "Du kannst nicht sehen; Angriffe gegen dich haben Vorteil, deine Nachteil.",
-        "Summary": "Du kannst nicht sehen und scheiterst automatisch bei jedem Wurf, der Sicht erfordert. Angriffswürfe gegen dich haben Vorteil, und deine eigenen Angriffswürfe haben Nachteil.",
-        "Example": "Ein Magier wird von einem Staubteufel geblendet. Er verfehlt den Sturmriesen zweimal mit Nachteil, während der Riese seinen Schlag mit Vorteil landet.",
+        "Summary": "Du kannst nicht sehen und scheiterst automatisch bei jedem Attributswurf, der Sicht erfordert. Angriffswürfe gegen dich haben Vorteil, und deine eigenen Angriffswürfe haben Nachteil.",
+        "Example": "Ein Magier wird durch Blindheit/Taubheit geblendet. Er verfehlt den Oger zweimal mit Nachteil, während der Oger seinen Schlag mit Vorteil landet.",
         "Notes": "Wahrnehmungsarten wie Blindsicht oder Erschütterungssinn können die Auswirkungen ausgleichen, sofern deren Beschreibung das ausdrücklich vorsieht."
       },
       "Charmed": {
@@ -377,30 +384,30 @@
       },
       "Deafened": {
         "Title": "Taub",
-        "Subtitle": "Du kannst nicht hören; Würfe, die Gehör erfordern, scheitern automatisch.",
-        "Summary": "Du kannst nicht hören und scheiterst automatisch bei jedem Wurf, der Gehör erfordert. Zauber mit verbaler Komponente kannst du weiterhin wirken, solange du sprechen kannst.",
-        "Example": "Ein Barde wird von einem Donnerschlag taub. Er hört die heranschleichenden Schurken nicht und bemerkt ihren Hinterhalt zu spät.",
+        "Subtitle": "Du kannst nicht hören; Attributswürfe, die Gehör erfordern, scheitern automatisch.",
+        "Summary": "Du kannst nicht hören und scheiterst automatisch bei jedem Attributswurf, der Gehör erfordert. Zauber mit verbaler Komponente kannst du weiterhin wirken, solange du sprechen kannst.",
+        "Example": "Ein Barde wird durch Blindheit/Taubheit taub. Er hört die heranschleichenden Schurken nicht und bemerkt ihren Hinterhalt zu spät.",
         "Notes": "Telepathie ist von Taub nicht betroffen, da sie das Gehör vollständig umgeht."
       },
       "Frightened": {
         "Title": "Verängstigt",
         "Subtitle": "Nachteil, solange die Quelle in Sichtlinie ist; du kannst dich ihr nicht nähern.",
         "Summary": "Solange die Quelle deiner Furcht in deiner Sichtlinie ist, hast du Nachteil auf Attributswürfe und Angriffswürfe. Du kannst dich der Quelle außerdem nicht willentlich nähern. Bricht die Sichtlinie ab, entfallen die Nachteile, der Zustand selbst besteht aber fort.",
-        "Example": "Ein Drache setzt seine Furchterregende Präsenz ein. Der Kämpfer misslingt der Rettungswurf, er weicht zurück und greift in der nächsten Runde nur mit Nachteil an.",
+        "Example": "Ein Zauber versetzt den Kämpfer in Angst vor einem Oger. Solange er den Oger sieht, hat er Nachteil auf Angriffs- und Attributswürfe und kann nicht näher an ihn heran. Hinter einer Mauer, ohne Sichtlinie, entfallen die Nachteile.",
         "Notes": "Die Nachteile hängen allein an der Sichtlinie. Deckung zu suchen hebt sie auf, ohne den Zustand zu beenden."
       },
       "Grappled": {
         "Title": "Gepackt",
         "Subtitle": "Bewegungsrate 0; Angriffe gegen andere Ziele als den Greifer haben Nachteil.",
-        "Summary": "Deine Bewegungsrate ist 0 und kann nicht erhöht werden. Du hast Nachteil auf Angriffswürfe gegen jedes Ziel außer dem Greifer. Der Greifer kann dich beim Bewegen ziehen oder tragen, wobei ihn jeder Meter einen zusätzlichen Meter kostet, sofern du nicht winzig oder deutlich kleiner bist.",
+        "Summary": "Deine Bewegungsrate ist 0 und kann nicht erhöht werden. Du hast Nachteil auf Angriffswürfe gegen jedes Ziel außer dem Greifer. Der Greifer kann dich beim Bewegen ziehen oder tragen, wobei ihn jeder Meter einen zusätzlichen Meter kostet, es sei denn, du bist Winzig oder mindestens zwei Größenkategorien kleiner als er.",
         "Example": "Eine Riesenkrabbe packt den Kämpfer mit ihrer Schere. Er kann sich nicht bewegen und nur die Krabbe selbst ohne Nachteil angreifen.",
-        "Notes": "Der Griff entsteht über die Option Ergreifen des Waffenlosen Schlags. Der SG für Rettungs- und Fluchtwürfe beträgt 8 plus Stärkemodifikator plus Übungsbonus des Greifers."
+        "Notes": "Der Griff entsteht über die Option Packen des Waffenlosen Schlags. Der SG für Rettungs- und Fluchtwürfe beträgt 8 plus Stärkemodifikator plus Übungsbonus des Greifers."
       },
       "Incapacitated": {
         "Title": "Kampfunfähig",
         "Subtitle": "Keine Aktion, Bonusaktion oder Reaktion; Konzentration bricht.",
         "Summary": "Du kannst weder Aktion noch Bonusaktion noch Reaktion ausführen. Deine Konzentration ist gebrochen, und du kannst nicht sprechen. Bist du kampfunfähig, wenn du Initiative würfelst, hast du Nachteil auf den Wurf.",
-        "Example": "Ein Magier wird von Person festhalten getroffen. Er ist gelähmt und damit kampfunfähig, sein Konzentrationszauber Segnen endet sofort.",
+        "Example": "Ein Kleriker wird von Person festhalten getroffen. Er ist gelähmt und damit kampfunfähig, sein Konzentrationszauber Segnen endet sofort.",
         "Notes": "Kampfunfähig steckt als Baustein in Gelähmt, Versteinert, Betäubt und Bewusstlos."
       },
       "Invisible": {
@@ -420,22 +427,22 @@
       "Petrified": {
         "Title": "Versteinert",
         "Subtitle": "In Stein verwandelt: kampfunfähig, resistent gegen allen Schaden.",
-        "Summary": "Du wirst samt deiner nichtmagischen Gegenstände in eine feste, unbelebte Substanz verwandelt, dein Gewicht verzehnfacht sich und du hörst auf zu altern. Du hast den Zustand Kampfunfähig, deine Bewegungsrate ist 0, und Rettungswürfe auf Stärke und Geschicklichkeit scheitern automatisch. Du hast Resistenz gegen allen Schaden und Immunität gegen den Zustand Vergiftet.",
-        "Example": "Ein Magier scheitert am Blick eines Basilisken und wird versteinert. Bis Gegenmagie wirkt, ist er aus dem Kampf.",
+        "Summary": "Du wirst samt deiner nichtmagischen Gegenstände in eine feste, unbelebte Substanz verwandelt, dein Gewicht verzehnfacht sich und du hörst auf zu altern. Du hast den Zustand Kampfunfähig, deine Bewegungsrate ist 0, Angriffswürfe gegen dich haben Vorteil, und Rettungswürfe auf Stärke und Geschicklichkeit scheitern automatisch. Du hast Resistenz gegen allen Schaden und Immunität gegen den Zustand Vergiftet.",
+        "Example": "Ein Magier scheitert am Blick eines Basilisken und wird versteinert. Bis jemand Vollständige Genesung auf ihn wirkt, ist er aus dem Kampf.",
         "Notes": "Versteinerung endet nicht durch normale Heilung. Es braucht Magie wie Vollständige Genesung."
       },
       "Poisoned": {
         "Title": "Vergiftet",
         "Subtitle": "Nachteil auf Angriffswürfe und Attributswürfe.",
         "Summary": "Du hast Nachteil auf Angriffswürfe und Attributswürfe. Rettungswürfe sind nicht betroffen. Dauer und Ende hängen vom auslösenden Effekt ab.",
-        "Example": "Eine Schurkin wird von einer Riesenspinne gebissen und scheitert am Rettungswurf. Eine Stunde lang würfelt sie alle Angriffe mit Nachteil.",
+        "Example": "Eine Schurkin wird von einer Riesenspinne gebissen und scheitert am Rettungswurf. Solange das Gift wirkt, würfelt sie Angriffe und Attributswürfe mit Nachteil.",
         "Notes": "Resistenz gegen Giftschaden schützt nicht vor dem Zustand Vergiftet. Dafür braucht es Immunität gegen den Zustand selbst."
       },
       "Prone": {
         "Title": "Liegend",
         "Subtitle": {
-          "metric": "Nur Kriechen oder Aufstehen; Nahkampfangriffe gegen dich haben Vorteil.",
-          "imperial": "Nur Kriechen oder Aufstehen; Nahkampfangriffe gegen dich haben Vorteil."
+          "metric": "Nur Kriechen oder Aufstehen; Angriffe aus 1,5 Metern gegen dich haben Vorteil.",
+          "imperial": "Nur Kriechen oder Aufstehen; Angriffe aus 5 Fuß gegen dich haben Vorteil."
         },
         "Summary": {
           "metric": "Deine einzigen Bewegungsoptionen sind Kriechen oder Aufstehen, wobei das Aufstehen die Hälfte deiner Bewegungsrate kostet und den Zustand beendet. Du hast Nachteil auf Angriffswürfe. Ein Angriffswurf gegen dich hat Vorteil, wenn der Angreifer innerhalb von 1,5 Metern steht, sonst Nachteil.",
@@ -446,8 +453,8 @@
           "imperial": "Ein Kämpfer wird zu Boden gestoßen. Die Goblins im Nahkampf greifen mit Vorteil an, der Bogenschütze weiter hinten dagegen mit Nachteil."
         },
         "Notes": {
-          "metric": "Ist deine Bewegungsrate 0, kannst du dich nicht aufrichten. Bewusstlos und Versteinert schließen den Zustand Liegend mit ein.",
-          "imperial": "Ist deine Bewegungsrate 0, kannst du dich nicht aufrichten. Bewusstlos und Versteinert schließen den Zustand Liegend mit ein."
+          "metric": "Ist deine Bewegungsrate 0, kannst du dich nicht aufrichten. Bewusstlos schließt den Zustand Liegend mit ein.",
+          "imperial": "Ist deine Bewegungsrate 0, kannst du dich nicht aufrichten. Bewusstlos schließt den Zustand Liegend mit ein."
         }
       },
       "Restrained": {
@@ -455,7 +462,7 @@
         "Subtitle": "Bewegungsrate 0; Angriffe gegen dich haben Vorteil, Geschicklichkeitsrettungen Nachteil.",
         "Summary": "Deine Bewegungsrate ist 0 und kann nicht erhöht werden. Angriffswürfe gegen dich haben Vorteil, deine eigenen haben Nachteil. Zusätzlich hast du Nachteil auf Rettungswürfe auf Geschicklichkeit.",
         "Example": "Ein Schurke wird von Verstricken festgesetzt. Er erreicht den Bogen-Goblin nicht, würfelt seine Geschicklichkeitsrettung mit Nachteil und ist im Nahkampf leichte Beute.",
-        "Notes": "Festgesetzt trifft dich härter als Gepackt: Nur hier haben Angriffe gegen dich Vorteil und deine Geschicklichkeitsrettungen Nachteil."
+        "Notes": "Festgesetzt trifft dich härter als Gepackt: Anders als dort haben Angriffe gegen dich Vorteil, und deine Geschicklichkeitsrettungen haben Nachteil."
       },
       "Stunned": {
         "Title": "Betäubt",
@@ -569,10 +576,10 @@
     "Willkommen": {
       "Setting": "Willkommensfenster",
       "Untertitel": "Schnellreferenz für D&D 5.5 (2024)",
-      "Einleitung": "NDRS ist der Spickzettel für den Tisch: Aktionen, Bewegung, Zustände und Erschöpfung, direkt in Foundry statt im aufgeschlagenen Buch neben dem Bildschirm. Es liest nur — es würfelt nichts, ändert keine Akteure und ersetzt keinen Charakterbogen.",
-      "Punkt1": "<strong>Strikt 2024</strong> — jeder Eintrag ist gegen das PHB 2024 geprüft, ein mitgelaufener Validator findet versehentliche 2014er-Formulierungen. Wer nachschlägt, bekommt die Regel, die am Tisch gilt.",
-      "Punkt2": "<strong>Karte, dann Detail</strong> — jede Karte sagt in einem Satz, worum es geht; ein Klick öffnet Wirkung, Beispiel und die „Neu 2024“-Hinweise. Die Volltextsuche läuft über alle Reiter zugleich.",
-      "Punkt3": "<strong>Für den Spielabend gebaut</strong> — Favoriten je Benutzer wandern nach oben, FT und Meter lassen sich unten umschalten, und mit Only-Sheet oder in der Akteursleiste ist NDRS einen Klick entfernt.",
+      "Einleitung": "NDRS ist der Spickzettel für den Tisch: Aktionen, Bewegung, Zustände und Erschöpfung, direkt in Foundry statt im aufgeschlagenen Buch neben dem Bildschirm. Es liest nur: Es würfelt nichts, ändert keine Akteure und ersetzt keinen Charakterbogen.",
+      "Punkt1": "<strong>Strikt 2024.</strong> Jeder Eintrag ist gegen das PHB 2024 geprüft, ein mitgelaufener Validator findet versehentliche 2014er-Formulierungen. Wer nachschlägt, bekommt die Regel, die am Tisch gilt.",
+      "Punkt2": "<strong>Karte, dann Detail.</strong> Jede Karte sagt in einem Satz, worum es geht; ein Klick öffnet Wirkung, Beispiel und Hinweise. Die Volltextsuche läuft über alle Reiter zugleich.",
+      "Punkt3": "<strong>Für den Spielabend gebaut.</strong> Favoriten je Benutzer wandern nach oben, Fuß und Meter lassen sich unten umschalten, und mit Only-Sheet oder in der Akteursleiste ist NDRS einen Klick entfernt.",
       "Start": "Zum Anfangen: <strong>Shift+R</strong> öffnet und schliesst das Fenster. Karte anklicken für die Einzelheiten, Esc leert die Suche.",
       "ForgeZeile": "Alle Module, Anleitungen und deutschen Übersetzungen an einem Ort: Modulseite öffnen",
       "PatreonZeile": "Die Module sind kostenlos und bleiben es. Auf Patreon kannst du meine Arbeit unterstützen und bekommst Premium-Erweiterungen dazu.",

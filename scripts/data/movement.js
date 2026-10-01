@@ -35,7 +35,7 @@ export const MOVEMENT = Object.freeze([
   },
   {
     id: "mv-jump",
-    phbAliases: ["Springen", "Weitsprung", "Hochsprung", "Jumping", "Long Jump"],
+    phbAliases: ["Springen", "Weitsprung", "Hoher Sprung", "Hochsprung", "Jumping", "Long Jump"],
     icon: "fa-arrow-up-from-bracket",
     tags: ["movement"],
     source: { book: "PHB 2024" },
@@ -100,7 +100,7 @@ export const MOVEMENT = Object.freeze([
   },
   {
     id: "mv-fall",
-    phbAliases: ["Stürzen", "Falling", "Fallen"],
+    phbAliases: ["Sturz", "Stürzen", "Falling", "Fallen"],
     icon: "fa-arrow-down",
     tags: ["movement", "hazard"],
     source: { book: "PHB 2024" },

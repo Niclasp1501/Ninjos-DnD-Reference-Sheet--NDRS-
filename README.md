@@ -22,7 +22,7 @@ not the one somebody remembers.
 ### What's inside
 
 Under **Round Actions** you find every action, bonus action and reaction open to any character,
-from Attack through Help and Hide to Ready. **Movement** covers climbing, swimming, jumping,
+from Attack through Help and Hide to Ready, plus a card on spell scrolls. **Movement** covers climbing, swimming, jumping,
 crawling, difficult terrain and everything else that matters when you move across the map. Under
 **Conditions** you find every condition with its exact effects, along with a table for the six
 levels of exhaustion. And the **Calendar** shows the Calendar of Harptos with its twelve months,
@@ -81,7 +81,8 @@ sich jemand noch erinnert.
 ### Was drinsteht
 
 Unter **Rundenaktionen** findest du alle Aktionen, Bonusaktionen und Reaktionen, die jedem Charakter
-offenstehen, vom Angriff über Helfen und Verstecken bis zum Bereithalten. **Bewegung** erklärt
+offenstehen, vom Angriff über Helfen und Verstecken bis zu Bereit halten, dazu eine Karte zu
+Zauberschriftrollen. **Bewegung** erklärt
 Klettern, Schwimmen, Springen, Kriechen, schwieriges Gelände und alles Weitere, was beim Laufen über
 die Karte zählt. Unter **Zustände** stehen alle Zustände mit ihren genauen Auswirkungen, dazu eine
 Tabelle für die sechs Stufen der Erschöpfung. Der **Kalender** schließlich zeigt den Kalender von

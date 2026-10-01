@@ -80,7 +80,7 @@ check(ctx.tabs.length === 4, `four tabs (${ctx.tabs.map(t => t.label).join(", ")
 check(ctx.sections.length === 3, `actions tab has 3 sections, got ${ctx.sections.length}`);
 
 const allCards = ctx.sections.flatMap(s => s.cards ?? []);
-check(allCards.length === 20, `actions tab renders 20 cards, got ${allCards.length}`);
+check(allCards.length === 21, `actions tab renders 21 cards (13 actions incl. Spell Scroll, 4 bonus, 4 reactions), got ${allCards.length}`);
 
 const untranslated = allCards.filter(c => /^NDRS\./.test(c.title) || /^NDRS\./.test(c.subtitle));
 check(untranslated.length === 0,
