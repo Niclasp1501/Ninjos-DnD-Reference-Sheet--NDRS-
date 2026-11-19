@@ -102,32 +102,61 @@
                             {{/each}}
                         </div>
                     {{/if}}
-                {{else}}
-                    {{#if cards.length}}
-                        <div class="ndrs-grid">
-                            {{#each cards}}
-                            <div class="ndrs-card {{#if isFavorite}}is-favorite{{/if}}"
-                                 data-action="openCard" data-card-id="{{id}}"
-                                 role="button" tabindex="0"
-                                 aria-label="{{title}}">
-                                <div class="ndrs-card-header">
-                                    <i class="fas {{icon}} ndrs-card-icon" aria-hidden="true"></i>
-                                    <div class="ndrs-card-title">{{title}}</div>
-                                    <button type="button" class="ndrs-card-fav"
-                                            data-action="toggleFav" data-card-id="{{id}}"
-                                            aria-pressed="{{#if isFavorite}}true{{else}}false{{/if}}"
-                                            title="{{#if isFavorite}}{{localize 'NDRS.UI.FavoriteRemove'}}{{else}}{{localize 'NDRS.UI.Favorite'}}{{/if}}"
-                                            aria-label="{{#if isFavorite}}{{localize 'NDRS.UI.FavoriteRemove'}}{{else}}{{localize 'NDRS.UI.Favorite'}}{{/if}}">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                                <div class="ndrs-card-subtitle">{{subtitle}}</div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    {{else}}
-                        <div class="ndrs-empty">{{localize "NDRS.UI.Empty"}}</div>
+
+                    {{#if (eq custom "cover")}}
+                        <table class="ndrs-exh-table ndrs-cover-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">{{localize "NDRS.UI.CoverDegree"}}</th>
+                                    <th scope="col">{{localize "NDRS.UI.CoverBenefit"}}</th>
+                                    <th scope="col">{{localize "NDRS.UI.CoverSource"}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each data.rows}}
+                                <tr>
+                                    <th scope="row">{{name}}</th>
+                                    <td>
+                                        <span class="ndrs-cover-badge {{#unless bonus}}is-total{{/unless}}">
+                                            {{#if bonus}}{{bonus}}{{else}}<i class="fas fa-ban" aria-hidden="true"></i>{{/if}}
+                                        </span>
+                                        {{benefit}}
+                                    </td>
+                                    <td>{{source}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <p class="ndrs-exh-notes">{{data.notes}}</p>
                     {{/if}}
+                {{/if}}
+
+                {{#if cards.length}}
+                    <div class="ndrs-grid {{#if custom}}ndrs-grid-after-view{{/if}}">
+                        {{#each cards}}
+                        <div class="ndrs-card {{#if isFavorite}}is-favorite{{/if}}"
+                             data-action="openCard" data-card-id="{{id}}"
+                             role="button" tabindex="0"
+                             aria-label="{{title}}">
+                            <div class="ndrs-card-header">
+                                <i class="fas {{icon}} ndrs-card-icon" aria-hidden="true"></i>
+                                <div class="ndrs-card-title">{{title}}</div>
+                                <button type="button" class="ndrs-card-fav"
+                                        data-action="toggleFav" data-card-id="{{id}}"
+                                        aria-pressed="{{#if isFavorite}}true{{else}}false{{/if}}"
+                                        title="{{#if isFavorite}}{{localize 'NDRS.UI.FavoriteRemove'}}{{else}}{{localize 'NDRS.UI.Favorite'}}{{/if}}"
+                                        aria-label="{{#if isFavorite}}{{localize 'NDRS.UI.FavoriteRemove'}}{{else}}{{localize 'NDRS.UI.Favorite'}}{{/if}}">
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="ndrs-card-subtitle">{{subtitle}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    {{#unless custom}}
+                    <div class="ndrs-empty">{{localize "NDRS.UI.Empty"}}</div>
+                    {{/unless}}
                 {{/if}}
             </section>
         {{/each}}

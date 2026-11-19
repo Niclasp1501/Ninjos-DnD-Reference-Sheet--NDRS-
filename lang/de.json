@@ -20,6 +20,9 @@
       "SectionReaction": "Reaktion",
       "SectionMovement": "Bewegung",
       "SectionCover": "Deckung",
+      "CoverDegree": "Grad",
+      "CoverBenefit": "Vorzug für das Ziel",
+      "CoverSource": "Gewährt durch",
       "SectionConditions": "Zustände",
       "SectionExhaustion": "Erschöpfung",
       "SectionCalendar": "Kalender",
@@ -374,6 +377,24 @@
         "Example": "Eine Schurkin mit RK 14 kauert hinter einem umgestürzten Karren, der drei Viertel von ihr verdeckt. Gegen den Bogenschützen der Banditen zählt ihre RK jetzt als 19. Dass ihr Gefährte zusätzlich vor dem Karren steht, ändert nichts, denn Deckungen werden nicht addiert.",
         "Notes": "Zum Verstecken brauchst du Dreivierteldeckung oder vollständige Deckung, oder du bist stark verdeckt. Teildeckung reicht dafür nicht."
       }
+    },
+    "CoverTable": {
+      "Half": {
+        "Name": "Teildeckung",
+        "Benefit": "auf RK und Geschicklichkeitsrettungswürfe",
+        "Source": "Eine Kreatur oder ein Objekt verdeckt mindestens die Hälfte des Ziels."
+      },
+      "ThreeQuarters": {
+        "Name": "Dreivierteldeckung",
+        "Benefit": "auf RK und Geschicklichkeitsrettungswürfe",
+        "Source": "Ein Objekt verdeckt mindestens drei Viertel des Ziels."
+      },
+      "Total": {
+        "Name": "Vollständige Deckung",
+        "Benefit": "Kann nicht direkt als Ziel gewählt werden.",
+        "Source": "Ein Objekt verdeckt das ganze Ziel."
+      },
+      "Notes": "Deckung zählt nur gegen Angriffe und Effekte von der anderen Seite. Bei mehreren Deckungen gilt nur die stärkste. Verstecken geht erst ab Dreivierteldeckung."
     },
     "Condition": {
       "Blinded": {

@@ -21,3 +21,14 @@ export const COVER = Object.freeze([
     }
   }
 ]);
+
+// Übersichtstabelle über der Karte, damit man die Werte am Tisch auf einen
+// Blick sieht. Spalten wie die Deckungstabelle im Handbuch (Kampfkapitel).
+export const COVER_TABLE = Object.freeze({
+  notesKey: "NDRS.CoverTable.Notes",
+  rows: [
+    { bonus: "+2", nameKey: "NDRS.CoverTable.Half.Name",          benefitKey: "NDRS.CoverTable.Half.Benefit",          sourceKey: "NDRS.CoverTable.Half.Source" },
+    { bonus: "+5", nameKey: "NDRS.CoverTable.ThreeQuarters.Name", benefitKey: "NDRS.CoverTable.ThreeQuarters.Benefit", sourceKey: "NDRS.CoverTable.ThreeQuarters.Source" },
+    { bonus: null, nameKey: "NDRS.CoverTable.Total.Name",         benefitKey: "NDRS.CoverTable.Total.Benefit",         sourceKey: "NDRS.CoverTable.Total.Source" }
+  ]
+});

@@ -5,6 +5,16 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2611.2] Cover table at a glance
+
+### Added
+- **Cover table** at the top of the Cover section in the Movement tab. Each
+  degree shows its bonus as a badge (+2, +5, can't be targeted) next to what
+  grants it, so you read the values without opening the card. The card with
+  the example and the handbook link stays below the table.
+
+---
+
 ## [14.2611.1] Cover card, and "Hochsprung" again
 
 ### Added

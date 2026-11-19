@@ -20,6 +20,9 @@
       "SectionReaction": "Reaction",
       "SectionMovement": "Movement",
       "SectionCover": "Cover",
+      "CoverDegree": "Degree",
+      "CoverBenefit": "Benefit to the target",
+      "CoverSource": "Offered by",
       "SectionConditions": "Conditions",
       "SectionExhaustion": "Exhaustion",
       "SectionCalendar": "Calendar",
@@ -374,6 +377,24 @@
         "Example": "A Rogue with AC 14 crouches behind an overturned cart that blocks three quarters of her. Against the bandit archer her AC now counts as 19. Her companion standing in front of the cart as well changes nothing, because cover doesn't stack.",
         "Notes": "To Hide you need Three-Quarters Cover or Total Cover, or you are Heavily Obscured. Half Cover is not enough."
       }
+    },
+    "CoverTable": {
+      "Half": {
+        "Name": "Half Cover",
+        "Benefit": "to AC and Dexterity saving throws",
+        "Source": "Another creature or an object that covers at least half of the target."
+      },
+      "ThreeQuarters": {
+        "Name": "Three-Quarters Cover",
+        "Benefit": "to AC and Dexterity saving throws",
+        "Source": "An object that covers at least three quarters of the target."
+      },
+      "Total": {
+        "Name": "Total Cover",
+        "Benefit": "Can't be targeted directly.",
+        "Source": "An object that covers the whole target."
+      },
+      "Notes": "Cover only counts against attacks and effects from the other side. Behind several sources, only the strongest applies. Hiding needs at least Three-Quarters Cover."
     },
     "Condition": {
       "Blinded": {

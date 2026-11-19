@@ -1,7 +1,7 @@
 // NDRS Application — ApplicationV2 + HandlebarsApplicationMixin
 // Foundry VTT v13/v14
 
-import { TABS, EXHAUSTION, CALENDAR, findEntryById } from "./data/index.js";
+import { TABS, EXHAUSTION, CALENDAR, COVER_TABLE, findEntryById } from "./data/index.js";
 import { findPhbLink, openPhbPage } from "./phb-link.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -70,16 +70,19 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
     const sections = [];
     for (const tab of sourceTabs) {
       for (const sec of tab.sections) {
-        // Custom views (exhaustion table, calendar) hold no cards to search.
-        if (sec.custom) {
-          if (searching) continue;
+        // Custom views (exhaustion, calendar, cover table) are not searched.
+        // A custom section may carry cards as well; those show under the view
+        // and stay searchable like any other card.
+        if (sec.custom && !searching) {
           sections.push({
             titleKey: sec.titleKey,
             custom: sec.custom,
-            data: sec.custom === "exhaustion" ? this._prepareExhaustion() : this._prepareCalendar()
+            data: this._prepareCustom(sec.custom),
+            cards: this._filterEntries(sec.entries ?? [], favorites)
           });
           continue;
         }
+        if (sec.custom && !sec.entries?.length) continue;
 
         const cards = this._filterEntries(sec.entries, favorites);
         if (searching && !cards.length) continue;
@@ -165,6 +168,25 @@ export class NDRSApplication extends HandlebarsApplicationMixin(ApplicationV2) {
       // Everything a search should match, lowercased once per render.
       haystack: [title, subtitle, summary, example, notes, ...tags].join(" ").toLowerCase(),
       phbLink: withPhbLink ? findPhbLink([title, ...(entry.phbAliases ?? [])]) : null
+    };
+  }
+
+  _prepareCustom(kind) {
+    if (kind === "exhaustion") return this._prepareExhaustion();
+    if (kind === "cover") return this._prepareCover();
+    return this._prepareCalendar();
+  }
+
+  _prepareCover() {
+    const t = (k) => game.i18n.localize(k);
+    return {
+      rows: COVER_TABLE.rows.map(r => ({
+        bonus: r.bonus,
+        name: t(r.nameKey),
+        benefit: t(r.benefitKey),
+        source: t(r.sourceKey)
+      })),
+      notes: t(COVER_TABLE.notesKey)
     };
   }
 

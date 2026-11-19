@@ -132,6 +132,19 @@ check(exh.levels[0].desc.includes("1,5") || exh.levels[0].desc.includes("1.5"),
 check(!exh.levels[0].desc.includes("ft"), "exhaustion shows one unit system at a time");
 check(exh.intro.includes("{unitStep}") === false, "exhaustion intro interpolates its placeholder");
 
+app._activeTab = "movement";
+const mvCtx = await app._prepareContext({});
+const coverSec = mvCtx.sections.find(s => s.custom === "cover");
+check(!!coverSec && coverSec.data.rows.length === 3, "cover table has 3 rows (half, three-quarters, total)");
+check(coverSec?.data.rows.every(r => !/^NDRS\./.test(r.name + r.benefit + r.source)), "cover table rows are translated");
+check(coverSec?.cards?.some(c => c.id === "cover"), "cover card shows under the cover table");
+
+app._search = lang === "de" ? "Dreivierteldeckung" : "Three-Quarters Cover";
+const coverSearch = await app._prepareContext({});
+check(coverSearch.sections.flatMap(s => s.cards ?? []).some(c => c.id === "cover"),
+  "search finds the cover card inside a custom section");
+app._search = "";
+
 app._activeTab = "calendar";
 const calCtx = await app._prepareContext({});
 const cal = calCtx.sections.find(s => s.custom === "calendar")?.data;

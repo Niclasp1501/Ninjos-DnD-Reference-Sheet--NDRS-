@@ -465,6 +465,41 @@
     font-style: italic;
 }
 
+/* ─── Deckung ───────────────────────────────────────────────────── */
+.ndrs-cover-table th[scope="row"] {
+    background: none;
+    color: var(--ndrs-text-body);
+    border-bottom: 1px solid var(--ndrs-rule-soft);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.ndrs-cover-badge {
+    background: var(--ndrs-primary-red);
+    color: #fff;
+    border-radius: 6px;
+    min-width: 34px;
+    height: 26px;
+    padding: 0 6px;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.ndrs-cover-badge.is-total {
+    background: #555;
+}
+
+.ndrs-grid-after-view {
+    margin-top: 14px;
+}
+
 /* ─── Calendar ───────────────────────────────────────────────────── */
 .ndrs-calendar-intro {
     background: white;
