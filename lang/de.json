@@ -79,9 +79,9 @@
       "Attack": {
         "Title": "Angriff",
         "Subtitle": "Ein Angriffswurf mit einer Waffe oder einem Waffenlosen Schlag.",
-        "Summary": "Mit der Aktion Angriff machst du einen Angriffswurf mit einer Waffe oder einem Waffenlosen Schlag. Merkmale wie Zusätzlicher Angriff erlauben dir mehrere Angriffe innerhalb derselben Aktion; zwischen diesen Angriffen darfst du dich bewegen. Du darfst als Teil der Aktion eine Waffe anlegen oder ablegen, vor oder nach dem Angriff. Beherrschst du die Waffenbeherrschungs-Eigenschaft deiner Waffe, kannst du sie bei diesem Angriff einsetzen.",
-        "Example": "Eine Kämpferin auf Stufe 5 hat Zusätzlicher Angriff. Sie greift einen Goblin an, bewegt sich 3 Meter zum nächsten Gegner und führt dort ihren zweiten Angriff aus.",
-        "Notes": "Der Waffenlose Schlag bietet drei Optionen: Schaden, Packen oder Stoßen. Packen und Stoßen ersetzen den Schaden durch einen Effekt und sind keine eigenen Aktionen."
+        "Summary": "Mit der Aktion Angriff machst du einen Angriffswurf mit einer Waffe oder einem Waffenlosen Schlag. Merkmale wie Zusätzlicher Angriff erlauben dir mehrere Angriffe innerhalb derselben Aktion; zwischen diesen Angriffen darfst du dich bewegen. Bei jedem dieser Angriffe darfst du eine Waffe ausrüsten oder abrüsten, vor oder nach dem Angriff. Beherrschst du die Waffenbeherrschungs-Eigenschaft deiner Waffe, kannst du sie bei diesem Angriff einsetzen.",
+        "Example": "Eine Kämpferin auf Stufe 5 hat Zusätzlicher Angriff. Sie zieht ihr Langschwert und greift einen Goblin an. Dann bewegt sie sich 3 Meter zum nächsten Gegner, zieht mit der freien Hand einen Dolch und führt dort ihren zweiten Angriff aus. Beide Waffen hat sie mit ihren Angriffen gezogen, ihre kostenlose Interaktion mit einem Objekt ist noch frei.",
+        "Notes": "Ausrüsten heißt, eine Waffe aus der Scheide zu ziehen oder aufzuheben. Abrüsten heißt, sie niederzulegen, zu verstauen oder fallen zu lassen. Eine Waffe, die du vor dem Angriff ausrüstest, musst du für diesen Angriff nicht benutzen. Der Waffenlose Schlag bietet drei Optionen: Schaden, Packen oder Stoßen. Packen und Stoßen ersetzen den Schaden durch einen Effekt und sind keine eigenen Aktionen."
       },
       "Magic": {
         "Title": "Magie",
@@ -170,8 +170,9 @@
       "Utilize": {
         "Title": "Verwenden",
         "Subtitle": "Verwende einen nichtmagischen Gegenstand, der eine Aktion erfordert.",
-        "Summary": "Normalerweise interagierst du mit einem Objekt nebenbei, etwa wenn du im Rahmen der Aktion Angriff ein Schwert ziehst. Erfordert ein Objekt jedoch ausdrücklich eine Aktion für seine Verwendung, führst du die Aktion Verwenden aus. Für magische Gegenstände ist stattdessen die Aktion Magie zuständig.",
-        "Example": "Der Zwergenkämpfer steht vor einem rostigen Wandhebel. Er betätigt ihn mit der Aktion Verwenden, und die Falltür unter dem Trolltisch klappt auf."
+        "Summary": "Normalerweise interagierst du mit einem Objekt nebenbei, etwa wenn du im Rahmen der Aktion Angriff ein Schwert ziehst. Erfordert ein Objekt jedoch ausdrücklich eine Aktion für seine Verwendung, führst du die Aktion Verwenden aus. Dasselbe gilt, wenn du in deinem Zug mit einem zweiten Objekt interagieren willst: Nur die erste Interaktion ist kostenlos.",
+        "Example": "Der Zwergenkämpfer hat in diesem Zug schon eine Tür aufgestoßen. Für den Wandhebel dahinter braucht er deshalb die Aktion Verwenden. Er legt ihn um, und die Falltür unter dem Trolltisch klappt auf.",
+        "Notes": "Der DM kann von vornherein die Aktion Verwenden verlangen, wenn eine Interaktion besondere Sorgfalt erfordert oder ein ungewöhnliches Hindernis ist, etwa eine klemmende Tür oder eine Kurbel, die eine Zugbrücke herablässt. Die Aktion Magie gilt nur für Gegenstände, deren Beschreibung sie ausdrücklich verlangt."
       }
     },
     "Bonus": {
@@ -249,13 +250,20 @@
           "imperial": "Deine Bewegungsrate gibt an, wie weit du dich in einem Zug bewegen kannst."
         },
         "Summary": {
-          "metric": "In deinem Zug stehen dir Bewegungspunkte in Höhe deiner Bewegungsrate zur Verfügung; bei den meisten Spielercharakteren sind das 9 Meter. Du darfst die Bewegung frei mit Aktion, Bonusaktion und Objektinteraktionen mischen und sie in mehrere Abschnitte aufteilen. Nicht genutzte Bewegung verfällt am Ende deines Zuges.",
-          "imperial": "In deinem Zug stehen dir Bewegungspunkte in Höhe deiner Bewegungsrate zur Verfügung; bei den meisten Spielercharakteren sind das 30 Fuß. Du darfst die Bewegung frei mit Aktion, Bonusaktion und Objektinteraktionen mischen und sie in mehrere Abschnitte aufteilen. Nicht genutzte Bewegung verfällt am Ende deines Zuges."
+          "metric": "In deinem Zug stehen dir Bewegungspunkte in Höhe deiner Bewegungsrate zur Verfügung; bei den meisten Spielercharakteren sind das 9 Meter. Du darfst die Bewegung frei mit Aktion, Bonusaktion und deiner einen kostenlosen Interaktion mit einem Objekt mischen und sie in mehrere Abschnitte aufteilen. Nicht genutzte Bewegung verfällt am Ende deines Zuges.",
+          "imperial": "In deinem Zug stehen dir Bewegungspunkte in Höhe deiner Bewegungsrate zur Verfügung; bei den meisten Spielercharakteren sind das 30 Fuß. Du darfst die Bewegung frei mit Aktion, Bonusaktion und deiner einen kostenlosen Interaktion mit einem Objekt mischen und sie in mehrere Abschnitte aufteilen. Nicht genutzte Bewegung verfällt am Ende deines Zuges."
         },
         "Example": {
           "metric": "Eine Halbling-Schurkin mit 7,5 Metern Bewegungsrate zieht 4,5 Meter vor, greift einen Goblin an und schlüpft danach 3 Meter hinter eine Säule.",
           "imperial": "Eine Halbling-Schurkin mit 25 Fuß Bewegungsrate zieht 15 Fuß vor, greift einen Goblin an und schlüpft danach 10 Fuß hinter eine Säule."
         }
+      },
+      "Interact": {
+        "Title": "Mit Objekten interagieren",
+        "Subtitle": "Eine kostenlose Interaktion pro Zug, jede weitere kostet die Aktion Verwenden.",
+        "Summary": "Während deiner Bewegung oder deiner Aktion kannst du einmal pro Zug kostenlos mit einem Objekt oder einem Merkmal der Umgebung interagieren, etwa eine Tür öffnen, während du auf einen Feind zugehst. Willst du im selben Zug mit einem zweiten Objekt interagieren, brauchst du dafür die Aktion Verwenden.",
+        "Example": "Ein Kämpfer öffnet im Vorbeigehen eine Tür und greift die Wache dahinter an. Den Schlüssel von ihrem Gürtel zu nehmen, wäre eine zweite Interaktion: Dafür bräuchte er die Aktion Verwenden, und seine Aktion hat er für den Angriff schon verbraucht.",
+        "Notes": "Einige magische Gegenstände und andere besondere Objekte erfordern laut ihrer Beschreibung immer eine Aktion. Der DM kann außerdem von vornherein die Aktion Verwenden verlangen, wenn eine Interaktion besondere Sorgfalt erfordert oder ein ungewöhnliches Hindernis ist, etwa eine klemmende Tür oder eine Kurbel, die eine Zugbrücke herablässt. Eine Waffe, die du im Rahmen der Aktion Angriff ausrüstest oder abrüstest, verbraucht diese Interaktion nicht."
       },
       "Difficult": {
         "Title": "Schwieriges Gelände",

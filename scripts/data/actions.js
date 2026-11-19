@@ -213,7 +213,8 @@ export const ACTIONS = Object.freeze([
       titleKey: "NDRS.Action.Utilize.Title",
       subtitleKey: "NDRS.Action.Utilize.Subtitle",
       summaryKey: "NDRS.Action.Utilize.Summary",
-      exampleKey: "NDRS.Action.Utilize.Example"
+      exampleKey: "NDRS.Action.Utilize.Example",
+      notesKey: "NDRS.Action.Utilize.Notes"
     }
   }
 ]);

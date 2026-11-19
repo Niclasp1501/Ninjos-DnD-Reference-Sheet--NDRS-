@@ -138,6 +138,9 @@ const coverSec = mvCtx.sections.find(s => s.custom === "cover");
 check(!!coverSec && coverSec.data.rows.length === 3, "cover table has 3 rows (half, three-quarters, total)");
 check(coverSec?.data.rows.every(r => !/^NDRS\./.test(r.name + r.benefit + r.source)), "cover table rows are translated");
 check(coverSec?.cards?.some(c => c.id === "cover"), "cover card shows under the cover table");
+const mvIds = mvCtx.sections.find(s => !s.custom)?.cards?.map(c => c.id) ?? [];
+check(mvIds.indexOf("mv-interact") === mvIds.indexOf("mv-speed") + 1,
+  `object interaction card follows Speed in the movement section (${mvIds.slice(0, 3).join(", ")})`);
 
 app._search = lang === "de" ? "Dreivierteldeckung" : "Three-Quarters Cover";
 const coverSearch = await app._prepareContext({});

@@ -18,6 +18,25 @@ export const MOVEMENT = Object.freeze([
     }
   },
   {
+    // Die eine kostenlose Interaktion pro Zug (PHB 2024, Kampf: Dein Zug).
+    // Steht bei der Bewegung, weil sie während Bewegung oder Aktion stattfindet.
+    id: "mv-interact",
+    phbAliases: ["Mit Objekten Interagieren", "Mit Dingen interagieren", "Interacting with Objects"],
+    icon: "fa-door-open",
+    tags: ["movement", "core", "utility"],
+    source: { book: "PHB 2024" },
+    phbUuid: { de: "", en: "" },
+    units: false,
+    new2024: false,
+    i18n: {
+      titleKey: "NDRS.Movement.Interact.Title",
+      subtitleKey: "NDRS.Movement.Interact.Subtitle",
+      summaryKey: "NDRS.Movement.Interact.Summary",
+      exampleKey: "NDRS.Movement.Interact.Example",
+      notesKey: "NDRS.Movement.Interact.Notes"
+    }
+  },
+  {
     id: "mv-difficult",
     phbAliases: ["Schwieriges Gelände", "Difficult Terrain"],
     icon: "fa-mountain",

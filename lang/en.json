@@ -79,9 +79,9 @@
       "Attack": {
         "Title": "Attack",
         "Subtitle": "One attack roll with a weapon or an Unarmed Strike.",
-        "Summary": "When you take the Attack action you make one attack roll with a weapon or an Unarmed Strike. Features such as Extra Attack let you make several attacks within the same action, and you may move between those attacks. You can also draw or stow one weapon as part of the action, before or after the attack. If you have the weapon's mastery property, you can use it with this attack.",
-        "Example": "A level-5 Fighter has Extra Attack. She strikes a Goblin, moves 10 feet to the next enemy and makes her second attack there.",
-        "Notes": "The Unarmed Strike offers three options: Damage, Grapple or Shove. Grapple and Shove replace the damage with an effect and are not separate actions."
+        "Summary": "When you take the Attack action you make one attack roll with a weapon or an Unarmed Strike. Features such as Extra Attack let you make several attacks within the same action, and you may move between those attacks. With each of those attacks you can equip or unequip one weapon, before or after the attack. If you have the weapon's mastery property, you can use it with this attack.",
+        "Example": "A level-5 Fighter has Extra Attack. She draws her Longsword and strikes a Goblin. Then she moves 10 feet to the next enemy, draws a Dagger with her free hand and makes her second attack there. She drew both weapons with her attacks, so her free object interaction is still unused.",
+        "Notes": "Equipping a weapon means drawing it from a sheath or picking it up. Unequipping means setting it down, stowing it or dropping it. A weapon you equip before an attack doesn't have to be the one you attack with. The Unarmed Strike offers three options: Damage, Grapple or Shove. Grapple and Shove replace the damage with an effect and are not separate actions."
       },
       "Magic": {
         "Title": "Magic",
@@ -170,8 +170,9 @@
       "Utilize": {
         "Title": "Utilize",
         "Subtitle": "Use a nonmagical object that requires an action.",
-        "Summary": "Normally you interact with an object while doing something else, such as drawing a sword as part of the Attack action. If an object explicitly requires an action to use, you take the Utilize action. Magic items use the Magic action instead.",
-        "Example": "The Dwarf Fighter faces a rusty wall lever. He utilizes it, and the trapdoor under the troll's table swings open."
+        "Summary": "Normally you interact with an object while doing something else, such as drawing a sword as part of the Attack action. If an object explicitly requires an action to use, you take the Utilize action. The same goes for interacting with a second object on your turn: only the first interaction is free.",
+        "Example": "The Dwarf Fighter has already kicked a door open this turn, so the wall lever behind it takes the Utilize action. He pulls it, and the trapdoor under the troll's table swings open.",
+        "Notes": "The DM can require the Utilize action from the start when an interaction needs special care or is an unusual obstacle, such as a stuck door or a crank that lowers a drawbridge. The Magic action applies only to items whose description explicitly calls for it."
       }
     },
     "Bonus": {
@@ -249,13 +250,20 @@
           "imperial": "Your speed defines how far you can move in a single turn."
         },
         "Summary": {
-          "metric": "On your turn you have movement equal to your Speed, which is 9 metres for most player characters. You may freely interleave movement with your action, Bonus Action and object interactions, and split it into several stretches. Unused movement is lost at the end of your turn.",
-          "imperial": "On your turn you have movement equal to your Speed, which is 30 feet for most player characters. You may freely interleave movement with your action, Bonus Action and object interactions, and split it into several stretches. Unused movement is lost at the end of your turn."
+          "metric": "On your turn you have movement equal to your Speed, which is 9 metres for most player characters. You may freely interleave movement with your action, Bonus Action and your one free object interaction, and split it into several stretches. Unused movement is lost at the end of your turn.",
+          "imperial": "On your turn you have movement equal to your Speed, which is 30 feet for most player characters. You may freely interleave movement with your action, Bonus Action and your one free object interaction, and split it into several stretches. Unused movement is lost at the end of your turn."
         },
         "Example": {
           "metric": "A Halfling Rogue with 7.5 m of speed moves 4.5 m forward, attacks a Goblin, then slips 3 m behind a column.",
           "imperial": "A Halfling Rogue with 25 ft of speed moves 15 ft forward, attacks a Goblin, then slips 10 ft behind a column."
         }
+      },
+      "Interact": {
+        "Title": "Interacting with Objects",
+        "Subtitle": "One free interaction per turn, any further one costs the Utilize action.",
+        "Summary": "During your movement or your action you can interact with one object or feature of the environment for free each turn, such as opening a door as you stride toward a foe. If you want to interact with a second object on the same turn, you need the Utilize action.",
+        "Example": "A Fighter opens a door in passing and attacks the guard behind it. Taking the key from the guard's belt would be a second interaction: that needs the Utilize action, and he already spent his action on the attack.",
+        "Notes": "Some magic items and other special objects always require an action, as their descriptions say. The DM can also require the Utilize action from the start when an interaction needs special care or is an unusual obstacle, such as a stuck door or a crank that lowers a drawbridge. Equipping or unequipping a weapon as part of the Attack action does not use up this interaction."
       },
       "Difficult": {
         "Title": "Difficult Terrain",

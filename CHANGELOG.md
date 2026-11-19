@@ -5,6 +5,30 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2611.3] Interacting with objects, and drawing weapons per attack
+
+### Added
+- **Interacting with Objects card** in the Movement tab, right after Speed.
+  You get one free interaction with an object or a feature of the
+  environment per turn, during your movement or your action. A second one
+  takes the Utilize action, and the DM can call for Utilize from the start,
+  for a stuck door or a drawbridge crank.
+
+### Fixed
+- **Attack** let you draw or stow a weapon once per action. The 2024 rule
+  allows it with each attack of the action, so with Extra Attack you can
+  equip or unequip a weapon on every attack. The card now also says that
+  dropping a weapon counts as unequipping, that picking one up counts as
+  equipping, and that a weapon you draw doesn't have to be the one you
+  attack with. German uses the handbook's "ausrüsten" and "abrüsten".
+- **Utilize** said magic items always use the Magic action. That applies
+  only when an item's description asks for it. The card now covers the
+  second object interaction and the stuck door as well.
+- **Speed** spoke of "object interactions" as if there were no limit. It
+  now names your one free interaction.
+
+---
+
 ## [14.2611.2] Cover table at a glance
 
 ### Added

@@ -174,7 +174,12 @@ if (audit2024) {
     "study":            [/Intelligen/i],
     "hide":             [/Invisible|Unsichtbar/i, /Dreiviertel|Three-Quarters/i],
     "ba-spell":         [/Zauberplatz/i, /spell slot/i],
-    "spell-scroll":     [/Arkane Kunde/i, /Arcana/i, /10/, /Patzer|mishap/i]
+    "spell-scroll":     [/Arkane Kunde/i, /Arcana/i, /10/, /Patzer|mishap/i],
+    // Eine kostenlose Interaktion pro Zug, die zweite kostet Verwenden.
+    "mv-interact":      [/Verwenden/, /Utilize/, /klemmende Tür/i, /stuck door/i],
+    // Aus- und Abrüsten bei jedem Angriff, Fallenlassen zählt dazu.
+    "attack":           [/jedem dieser Angriffe/i, /each of those attacks/i, /fallen zu lassen/i, /dropping/i],
+    "utilize":          [/zweiten Objekt/i, /second object/i, /ausdrücklich verlangt/i, /explicitly calls/i]
   };
 
   for (const [id, requirements] of Object.entries(REQUIRED)) {
