@@ -5,7 +5,7 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
-## [Unreleased]
+## [14.2611.1] Cover card, and "Hochsprung" again
 
 ### Added
 - **Cover card** in the Movement tab, in a section of its own. Half Cover
