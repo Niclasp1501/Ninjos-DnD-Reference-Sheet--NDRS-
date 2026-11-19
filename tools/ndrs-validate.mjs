@@ -61,18 +61,9 @@ for (const [k, v] of Object.entries(deFlat)) if (v === "") fail(`Empty value in 
 for (const [k, v] of Object.entries(enFlat)) if (v === "") fail(`Empty value in en.json: ${k}`);
 
 // ─── 3. Load data modules ────────────────────────────────────────────
-const dataFiles = [
-  "actions.js", "bonus-actions.js", "reactions.js",
-  "movement.js", "conditions.js"
-];
-
-const ALL_ENTRIES = [];
-for (const f of dataFiles) {
-  const mod = await import(url.pathToFileURL(path.join(DATA_DIR, f)).href);
-  for (const exp of Object.values(mod)) {
-    if (Array.isArray(exp)) ALL_ENTRIES.push(...exp);
-  }
-}
+// Read the same list the app shows. A hand-kept file list here missed every
+// new data file until someone remembered to add it.
+const { ALL_ENTRIES } = await import(url.pathToFileURL(path.join(DATA_DIR, "index.js")).href);
 ok(`Loaded ${ALL_ENTRIES.length} rule entries.`);
 
 // ─── 4. Source.page presence ──────────────────────────────────────────

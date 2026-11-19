@@ -4,6 +4,7 @@ import { ACTIONS }       from "./actions.js";
 import { BONUS_ACTIONS } from "./bonus-actions.js";
 import { REACTIONS }     from "./reactions.js";
 import { MOVEMENT }      from "./movement.js";
+import { COVER }         from "./cover.js";
 import { CONDITIONS }    from "./conditions.js";
 import { EXHAUSTION }    from "./exhaustion.js";
 import { CALENDAR }      from "./calendar.js";
@@ -24,7 +25,8 @@ export const TABS = Object.freeze([
     iconClass: "fa-shoe-prints",
     labelKey: "NDRS.UI.TabMovement",
     sections: [
-      { titleKey: "NDRS.UI.SectionMovement", entries: MOVEMENT }
+      { titleKey: "NDRS.UI.SectionMovement", entries: MOVEMENT },
+      { titleKey: "NDRS.UI.SectionCover",    entries: COVER }
     ]
   },
   {
@@ -47,10 +49,10 @@ export const TABS = Object.freeze([
 ]);
 
 export const ALL_ENTRIES = Object.freeze([
-  ...ACTIONS, ...BONUS_ACTIONS, ...REACTIONS, ...MOVEMENT, ...CONDITIONS
+  ...ACTIONS, ...BONUS_ACTIONS, ...REACTIONS, ...MOVEMENT, ...COVER, ...CONDITIONS
 ]);
 
-export { ACTIONS, BONUS_ACTIONS, REACTIONS, MOVEMENT, CONDITIONS, EXHAUSTION, CALENDAR };
+export { ACTIONS, BONUS_ACTIONS, REACTIONS, MOVEMENT, COVER, CONDITIONS, EXHAUSTION, CALENDAR };
 
 export function findEntryById(id) {
   return ALL_ENTRIES.find(e => e.id === id) ?? null;

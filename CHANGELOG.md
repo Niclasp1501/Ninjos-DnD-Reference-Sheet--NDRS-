@@ -7,6 +7,13 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ## [Unreleased]
 
+### Added
+- **Cover card** in the Movement tab, in a section of its own. Half Cover
+  grants +2 to AC and Dexterity saving throws, Three-Quarters Cover +5, and
+  a target with Total Cover can't be targeted directly. Only the strongest
+  cover counts. The card also notes that hiding needs Three-Quarters or
+  Total Cover. German follows the handbook: "Teildeckung".
+
 ### Changed
 - German: "Hochsprung" again instead of "Hoher Sprung". Ninjo's German
   handbook settled on Hochsprung in 2.2.18.11, and NDRS follows its terms.

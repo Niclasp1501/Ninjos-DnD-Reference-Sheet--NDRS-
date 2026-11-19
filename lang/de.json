@@ -19,6 +19,7 @@
       "SectionBonus": "Bonusaktion",
       "SectionReaction": "Reaktion",
       "SectionMovement": "Bewegung",
+      "SectionCover": "Deckung",
       "SectionConditions": "Zustände",
       "SectionExhaustion": "Erschöpfung",
       "SectionCalendar": "Kalender",
@@ -365,6 +366,13 @@
           "metric": "Ein Kämpfer mit 9 Metern Bewegungsrate steht aus dem Liegen auf, was 4,5 Meter kostet, und nutzt die restlichen 4,5 Meter, um zum Goblin zu gelangen.",
           "imperial": "Ein Kämpfer mit 30 Fuß Bewegungsrate steht aus dem Liegen auf, was 15 Fuß kostet, und nutzt die restlichen 15 Fuß, um zum Goblin zu gelangen."
         }
+      },
+      "Cover": {
+        "Title": "Deckung",
+        "Subtitle": "Ein Hindernis schützt das Ziel: +2 oder +5 auf RK und Geschicklichkeitsrettungswürfe.",
+        "Summary": "Wände, Bäume, Kreaturen und andere Hindernisse decken ein Ziel, wenn der Angriff oder Effekt von der anderen Seite kommt. Teildeckung gibt +2 auf RK und Geschicklichkeitsrettungswürfe; dafür muss mindestens die Hälfte des Ziels verdeckt sein, auch eine andere Kreatur reicht. Dreivierteldeckung gibt +5 auf beides und verlangt ein Objekt, das mindestens drei Viertel verdeckt. Mit vollständiger Deckung kann das Ziel nicht direkt gewählt werden, weder für einen Angriff noch für einen Zauber. Steht das Ziel hinter mehreren Deckungen, zählt nur die stärkste.",
+        "Example": "Eine Schurkin mit RK 14 kauert hinter einem umgestürzten Karren, der drei Viertel von ihr verdeckt. Gegen den Bogenschützen der Banditen zählt ihre RK jetzt als 19. Dass ihr Gefährte zusätzlich vor dem Karren steht, ändert nichts, denn Deckungen werden nicht addiert.",
+        "Notes": "Zum Verstecken brauchst du Dreivierteldeckung oder vollständige Deckung, oder du bist stark verdeckt. Teildeckung reicht dafür nicht."
       }
     },
     "Condition": {
