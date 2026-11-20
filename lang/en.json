@@ -136,9 +136,9 @@
       "Hide": {
         "Title": "Hide",
         "Subtitle": "A Dexterity (Stealth) check against DC 15.",
-        "Summary": "You make a Dexterity (Stealth) check against DC 15 while you are Heavily Obscured or behind Three-Quarters Cover or Total Cover, and out of every enemy's line of sight. On a success you have the Invisible condition while hidden. It ends as soon as you make a sound louder than a whisper, make an attack roll, cast a spell with a Verbal component, or an enemy finds you.",
-        "Example": "The Ranger ducks behind a wagon, rolls an 18 on Stealth and gains the Invisible condition. His next attack from cover has Advantage, but that attack also ends the hiding.",
-        "Notes": "Note your check total. It is the DC an enemy must beat with a Wisdom (Perception) check to find you. If it does, the Invisible condition ends at once."
+        "Summary": "You make a Dexterity (Stealth) check against DC 15 while you are Heavily Obscured or behind Three-Quarters Cover or Total Cover, and out of every enemy's line of sight. If you can see a creature, you can discern whether it can see you. On a success you have the Invisible condition while hidden. It ends as soon as you make a sound louder than a whisper, make an attack roll, cast a spell with a Verbal component, or an enemy finds you.",
+        "Example": "The Ranger ducks behind a wagon that blocks at least three quarters of him. That is Three-Quarters Cover, so he can hide. He rolls an 18 on Stealth and gains the Invisible condition. His next attack from cover has Advantage, but that attack also ends the hiding.",
+        "Notes": "Note your check total. It is the DC for a creature that tries to find you with a Wisdom (Perception) check. If an enemy finds you, the Invisible condition ends at once."
       },
       "Influence": {
         "Title": "Influence",

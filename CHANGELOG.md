@@ -5,6 +5,18 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 
 ---
 
+## [14.2611.4] Hide follows the German handbook word for word
+
+### Changed
+- **Hide** now adds the handbook's line that if you can see a creature, you
+  can tell whether it can see you. Your Stealth total is the DC for any
+  creature that tries to find you, and hiding still ends when an enemy finds
+  you. German reads "außer Sichtweite" as the handbook does.
+- The example names the cover: the wagon blocks at least three quarters of
+  the Ranger, which is Three-Quarters Cover and lets him hide.
+
+---
+
 ## [14.2611.3] Interacting with objects, and drawing weapons per attack
 
 ### Added

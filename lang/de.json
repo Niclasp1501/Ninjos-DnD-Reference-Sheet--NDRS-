@@ -136,9 +136,9 @@
       "Hide": {
         "Title": "Verstecken",
         "Subtitle": "Ein Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15.",
-        "Summary": "Du machst einen Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15, während du Stark verdeckt bist oder hinter Dreivierteldeckung oder vollständiger Deckung stehst und außerhalb der Sichtlinie aller Feinde bist. Bei Erfolg hast du den Zustand Unsichtbar, solange du versteckt bist. Das endet, sobald du ein Geräusch lauter als ein Flüstern machst, einen Angriffswurf machst, einen Zauber mit verbaler Komponente wirkst oder ein Feind dich findet.",
-        "Example": "Der Waldläufer duckt sich hinter einen Wagen und würfelt 18 auf Heimlichkeit. Er gilt als Unsichtbar; sein nächster Angriff aus der Deckung hat Vorteil, beendet aber sofort das Versteck.",
-        "Notes": "Notiere das Ergebnis deines Wurfs. Es ist der SG, gegen den ein Feind mit einem Wurf auf Weisheit (Wahrnehmung) nach dir sucht. Findet er dich, endet der Zustand Unsichtbar sofort."
+        "Summary": "Du machst einen Wurf auf Geschicklichkeit (Heimlichkeit) gegen SG 15, während du Stark verdeckt bist oder hinter Dreivierteldeckung oder vollständiger Deckung stehst und außer Sichtweite aller Feinde bist. Wenn du eine Kreatur sehen kannst, kannst du erkennen, ob sie dich sehen kann. Bei Erfolg hast du den Zustand Unsichtbar, solange du versteckt bist. Das endet, sobald du ein Geräusch lauter als ein Flüstern machst, einen Angriffswurf machst, einen Zauber mit verbaler Komponente wirkst oder ein Feind dich findet.",
+        "Example": "Der Waldläufer duckt sich hinter einen Wagen, der mindestens drei Viertel von ihm verdeckt. Das ist Dreivierteldeckung, also darf er sich verstecken. Er würfelt 18 auf Heimlichkeit und gilt als Unsichtbar; sein nächster Angriff aus der Deckung hat Vorteil, beendet aber sofort das Versteck.",
+        "Notes": "Notiere das Ergebnis deines Wurfs. Es ist der SG für eine Kreatur, die dich mit einem Wurf auf Weisheit (Wahrnehmung) finden will. Findet dich ein Feind, endet der Zustand Unsichtbar sofort."
       },
       "Influence": {
         "Title": "Einfluss nehmen",
