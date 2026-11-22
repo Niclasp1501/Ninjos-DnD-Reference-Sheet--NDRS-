@@ -19,18 +19,31 @@ entry has been checked against the 2024 Player's Handbook, and a bundled checker
 that slips in from the old edition. So whoever looks something up gets the rule that applies today,
 not the one somebody remembers.
 
+![The Round Actions tab: every action, bonus action and reaction as a short card](docs/images/actions.png)
+
 ### What's inside
 
 Under **Round Actions** you find every action, bonus action and reaction open to any character,
 from Attack through Help and Hide to Ready, plus a card on spell scrolls. **Movement** covers climbing, swimming, jumping,
-crawling, difficult terrain and everything else that matters when you move across the map. Under
+crawling, difficult terrain, your one free object interaction per turn and everything else that
+matters when you move across the map. A table on **cover** shows the three degrees at a glance:
++2 for Half Cover, +5 for Three-Quarters Cover, and a target behind Total Cover can't be targeted
+at all. Under
 **Conditions** you find every condition with its exact effects, along with a table for the six
 levels of exhaustion. And the **Calendar** shows the Calendar of Harptos with its twelve months,
 the five holidays in between and Shieldmeet in leap years.
 
+![The Movement tab with the card on interacting with objects](docs/images/movement.png)
+
+![The cover table: the three degrees with their bonus and what grants them](docs/images/cover.png)
+
+![The six levels of exhaustion in one table](docs/images/exhaustion.png)
+
 Every entry appears as a short card that tells you in one sentence what it is about. Click it and
 the full explanation opens, with an example from play, the details people tend to miss, and the
 book the rule comes from.
+
+![An open card: the rule, an example from play and the notes](docs/images/card.png)
 
 ### Found in no time
 
@@ -39,10 +52,14 @@ explanation or an example. Cards you need all the time can be marked as favourit
 gold border and move to the top of their section, separately for every user. Distances switch
 between feet and metres at the bottom of the window, and every value changes along with it.
 
+![One search across every tab: "cover" finds actions, movement and the cover section](docs/images/search.png)
+
 You open the window with `Shift + R` or with the button in the actor directory. From a journal
 you can even open it straight on a particular section. Since the window only displays things and
 never changes your world, you can safely give it to all your players. Then everyone looks things
 up on their own, and you get asked a lot less.
+
+![The Calendar of Harptos with its months, tendays and holidays](docs/images/calendar.png)
 
 ### Installation
 
@@ -78,19 +95,31 @@ geprüft, und ein mitgelieferter Prüfer schlägt an, sobald sich eine Formulier
 Fassung einschleicht. Wer nachschlägt, bekommt also die Regel, die heute gilt, und nicht die, an die
 sich jemand noch erinnert.
 
+![Der Reiter Rundenaktionen: alle Aktionen, Bonusaktionen und Reaktionen als kurze Karten](docs/images/actions.png)
+
 ### Was drinsteht
 
 Unter **Rundenaktionen** findest du alle Aktionen, Bonusaktionen und Reaktionen, die jedem Charakter
 offenstehen, vom Angriff über Helfen und Verstecken bis zu Bereit halten, dazu eine Karte zu
 Zauberschriftrollen. **Bewegung** erklärt
-Klettern, Schwimmen, Springen, Kriechen, schwieriges Gelände und alles Weitere, was beim Laufen über
-die Karte zählt. Unter **Zustände** stehen alle Zustände mit ihren genauen Auswirkungen, dazu eine
+Klettern, Schwimmen, Springen, Kriechen, schwieriges Gelände, deine eine kostenlose Interaktion mit
+einem Objekt pro Zug und alles Weitere, was beim Laufen über die Karte zählt. Eine Tabelle zur
+**Deckung** zeigt die drei Grade auf einen Blick: +2 bei Teildeckung, +5 bei Dreivierteldeckung,
+und hinter vollständiger Deckung kann ein Ziel gar nicht gewählt werden. Unter **Zustände** stehen alle Zustände mit ihren genauen Auswirkungen, dazu eine
 Tabelle für die sechs Stufen der Erschöpfung. Der **Kalender** schließlich zeigt den Kalender von
 Harptos mit seinen zwölf Monaten, den fünf Feiertagen dazwischen und dem Schildtreff im Schaltjahr.
+
+![Der Reiter Bewegung mit der Karte zum Interagieren mit Objekten](docs/images/movement.png)
+
+![Die Deckungstabelle: die drei Grade mit ihrem Bonus und dem, was sie gewährt](docs/images/cover.png)
+
+![Die sechs Stufen der Erschöpfung in einer Tabelle](docs/images/exhaustion.png)
 
 Jeder Eintrag erscheint als kurze Karte, die in einem Satz sagt, worum es geht. Ein Klick darauf
 öffnet die ausführliche Erklärung mit einem Beispiel aus dem Spiel, den Feinheiten, die gern
 übersehen werden, und der Angabe, aus welchem Buch die Regel stammt.
+
+![Eine geöffnete Karte: die Regel, ein Beispiel aus dem Spiel und die Hinweise](docs/images/card.png)
 
 ### Schnell gefunden
 
@@ -100,10 +129,14 @@ bekommen einen goldenen Rahmen und rutschen an den Anfang ihres Abschnitts, und 
 Benutzer getrennt. Entfernungen stellst du unten im Fenster zwischen Fuß und Meter um, und alle
 Angaben ändern sich sofort mit.
 
+![Eine Suche über alle Reiter: „cover“ findet Aktionen, Bewegung und die Deckung](docs/images/search.png)
+
 Geöffnet wird das Fenster mit `Shift + R` oder über den Knopf im Akteursverzeichnis. Aus einem
 Journal heraus lässt es sich sogar direkt auf einem bestimmten Bereich öffnen. Da das Fenster nur
 anzeigt und nichts an deiner Welt verändert, kannst du es bedenkenlos allen Spielern freigeben.
 Dann schlägt jeder selbst nach, und du wirst seltener gefragt.
+
+![Der Kalender von Harptos mit seinen Monaten, Zehntagen und Feiertagen](docs/images/calendar.png)
 
 ### Installation
 

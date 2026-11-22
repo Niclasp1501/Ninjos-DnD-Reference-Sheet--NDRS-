@@ -30,6 +30,7 @@ jobs:
                ".github/*" \
                ".gitignore" \
                "tools/*" \
+               "docs/*" \
                "AGENTS.md" \
                "DEVELOPER_GUIDE.md" \
                "CONTENT-INVENTORY.md" \
