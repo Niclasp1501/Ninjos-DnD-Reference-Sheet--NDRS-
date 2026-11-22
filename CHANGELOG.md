@@ -15,6 +15,11 @@ Versioning follows the FANG scheme: `<foundry-major>.<YYMM>.<patch>` (see `AGENT
 - The example names the cover: the wagon blocks at least three quarters of
   the Ranger, which is Three-Quarters Cover and lets him hide.
 
+### Fixed
+- **A minimized window stays minimized.** Every redraw set a height, also on
+  a minimized window, which then grew from its title bar into half a window.
+  The same fix went into Ninjo's Shops after a game night.
+
 ---
 
 ## [14.2611.3] Interacting with objects, and drawing weapons per attack
